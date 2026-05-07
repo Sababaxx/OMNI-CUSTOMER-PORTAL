@@ -219,7 +219,14 @@ const reasonConfig = [
     headline: "Let support fix the product issue",
     body: "Choose what you are seeing so the team can route it correctly.",
     issueFields: true,
-    issueOptions: ["Melted or sticky gummies", "Damaged pouch or packaging", "Wrong flavor or item", "Missing item in the order", "Taste, smell, or texture seems off", "Other product issue"],
+    issueOptions: [
+      "Melted or sticky gummies",
+      "Damaged pouch or packaging",
+      "Wrong flavor or item",
+      "Missing item in the order",
+      "Taste, smell, or texture seems off",
+      "Other product issue",
+    ],
     ctas: [
       { label: "Contact support about this issue", action: "support", requiresDetail: true },
       { label: "Pause subscription", branch: "pause" },
@@ -234,7 +241,14 @@ const reasonConfig = [
     headline: "Let support fix the packaging issue",
     body: "Choose what happened so support can route this correctly.",
     issueFields: true,
-    issueOptions: ["Pouch arrived damaged", "Seal was open", "Box was damaged", "Items were missing", "Label or address issue", "Other packaging issue"],
+    issueOptions: [
+      "Pouch arrived damaged",
+      "Seal was open",
+      "Box was damaged",
+      "Items were missing",
+      "Label or address issue",
+      "Other packaging issue",
+    ],
     ctas: [
       { label: "Contact support about packaging", action: "support", requiresDetail: true },
       { label: "Pause subscription", branch: "pause" },
@@ -352,9 +366,10 @@ function getBranchConfig(branch, reason) {
 function ProductVisual({ imageKey }) {
   if (!imageKey) return null;
   const productTitle = imageKey === "electrolytes" ? "Electrolyte stick packs" : "Better product fit";
-  const productCopy = imageKey === "electrolytes"
-    ? "A sugar free stick pack direction for customers who want creatine with added hydration support."
-    : "A cleaner product fit area for swapping format or flavor without ending the subscription.";
+  const productCopy =
+    imageKey === "electrolytes"
+      ? "A sugar free stick pack direction for customers who want creatine with added hydration support."
+      : "A cleaner product fit area for swapping format or flavor without ending the subscription.";
 
   return (
     <article className={`cancel-product-visual cancel-product-visual-${imageKey}`}>
@@ -396,17 +411,19 @@ function CancellationReasonSelect({ selectedReasonId, onSelect, onContinue, onCl
 
       <div className="cancel-flow-actions">
         <Button variant="outline" onClick={onClose}>Back</Button>
-        <Button variant="primary" onClick={onContinue} disabled={!selectedReasonId}>Continue</Button>
+        <Button variant="primary" onClick={onContinue} disabled={!selectedReasonId}>Continue to next step</Button>
       </div>
     </div>
   );
 }
 
 function CancellationSavePage({ reason, onBack, onAction, onCancel }) {
-  const [selectedSubReason, setSelectedSubReason] = useState("");
-  const [note, setNote] = useState("");
   const isIssueFlow = Boolean(reason.issueFields);
   const diagnosticOptions = reason.issueOptions || reason.subReasons || [];
+  const [selectedSubReason, setSelectedSubReason] = useState(
+    diagnosticOptions.length > 0 && !isIssueFlow ? diagnosticOptions[0] : ""
+  );
+  const [note, setNote] = useState("");
   const needsDiagnosticAnswer = diagnosticOptions.length > 0;
   const engineLabel = isIssueFlow ? "Support option" : "Recommended option";
   const canContinue = !needsDiagnosticAnswer || Boolean(selectedSubReason);
@@ -461,7 +478,11 @@ function CancellationSavePage({ reason, onBack, onAction, onCancel }) {
           </label>
           <label>
             Short description of the issue
-            <textarea rows="3" placeholder={`Tell us about: ${selectedSubReason}`} onChange={(event) => setNote(event.target.value)} />
+            <textarea
+              rows="3"
+              placeholder={`Tell us about: ${selectedSubReason}`}
+              onChange={(event) => setNote(event.target.value)}
+            />
           </label>
         </div>
       )}
@@ -556,7 +577,9 @@ function CancellationBranchScreen({ branch, reason, preselect, onBack, onDone, o
       {config.note && <p className="cancel-offer-note">{config.note}</p>}
 
       <div className="cancel-flow-actions cancel-flow-actions-sticky">
-        <Button variant="primary" onClick={() => onDone(config.saved, choice)}>{choice ? `${config.cta}: ${choice}` : config.cta}</Button>
+        <Button variant="primary" onClick={() => onDone(config.saved, choice)}>
+          {choice ? `${config.cta}: ${choice}` : config.cta}
+        </Button>
         <button type="button" className="cancel-text-link" onClick={onCancel}>{FINAL_STEP_LABEL}</button>
       </div>
     </div>
@@ -663,9 +686,11 @@ function CancellationModalHeader({ onClose }) {
   return (
     <div className="cancel-modal-header">
       <div className="cancel-modal-logo" aria-label="OMNI">
-        <img src="/assets/omni-logo-dark.svg" alt="OMNI" />
+        <img src="/assets/omni-logo-white.svg" alt="OMNI" />
       </div>
-      <button className="cancel-flow-close" type="button" onClick={onClose} aria-label="Close cancellation flow">×</button>
+      <button className="cancel-flow-close" type="button" onClick={onClose} aria-label="Close cancellation flow">
+        ×
+      </button>
     </div>
   );
 }
@@ -685,8 +710,8 @@ function CancellationRescuePage({ reason, onBack, onAction, onContinue }) {
       </div>
       <div className="cancel-step-head cancel-stacked-head">
         <span className="cancel-kicker">Account options</span>
-        <h2>Choose what you’d like to do next</h2>
-        <p>Here’s the option that best matches what you selected.</p>
+        <h2>Choose what you'd like to do next</h2>
+        <p>Here's the option that best matches what you selected.</p>
       </div>
 
       <article className={`cancel-rescue-card cancel-treatment-${reason.treatment}`}>
@@ -789,7 +814,7 @@ function CancellationFinalConfirm({ reason, onBack, onConfirm }) {
         </div>
         <div className="cancel-step-head cancel-stacked-head">
           <span className="cancel-kicker">Final choice</span>
-          <h2>Choose how you’d like to finish</h2>
+          <h2>Choose how you'd like to finish</h2>
           <p className="cancel-final-subcopy">Your subscription can be cancelled now, or you can adjust the next order instead.</p>
         </div>
 
@@ -824,7 +849,7 @@ function CancellationCompleteScreen({ onDone }) {
     <div className="cancel-step cancel-complete-step cancel-complete-step-cancelled">
       <span className="cancel-kicker">Cancelled</span>
       <h2>Your subscription has been cancelled.</h2>
-      <p>You’ll still have access to your account if you want to restart later.</p>
+      <p>You'll still have access to your account if you want to restart later.</p>
       <Button variant="primary" onClick={onDone}>Done</Button>
     </div>
   );

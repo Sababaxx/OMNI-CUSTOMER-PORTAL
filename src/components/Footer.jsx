@@ -4,7 +4,7 @@ const footerLogoOptions = {
   dark: "/assets/omni-logo-dark.svg",
   white: "/assets/omni-logo-white.svg",
 };
-const footerLogoSrc = footerLogoOptions.dark;
+const footerLogoSrc = footerLogoOptions.white;
 
 export default function Footer() {
   return (

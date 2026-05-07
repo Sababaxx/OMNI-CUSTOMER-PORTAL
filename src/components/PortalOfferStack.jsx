@@ -39,19 +39,52 @@ const offers = [
   },
 ];
 
+const manageOffers = [
+  {
+    id: "manage-quarterly",
+    imageUrl: "/assets/omni-quarterly-upgrade.png",
+    alt: "Upgrade to quarterly OMNI subscription and save",
+    modalTitle: "Upgrade to Quarterly",
+    actionLabel: "Upgrade now",
+    offerCopy: {
+      eyebrow: "Quarterly upgrade",
+      image: "/assets/omni-quarterly-upgrade.png",
+      imageAlt: "OMNI Creatine Gummies quarterly subscription offer",
+      body: "Switch to a quarterly delivery schedule and lock in better per-order value. Fewer billing cycles, the same consistent creatine routine, and full control to skip or pause from the portal anytime.",
+      bullets: ["Save more per pouch on quarterly billing", "Less to manage — fewer order cycles", "Skip, pause, or cancel anytime from the portal"],
+      note: "Prototype only: upgrading would update your next billing cycle after confirmation.",
+    },
+  },
+  {
+    id: "manage-electrolytes",
+    imageUrl: "/assets/omni-product-electrolytes-pear.png",
+    alt: "Add OMNI Creatine and Electrolyte stick packs to your subscription",
+    modalTitle: "Add Electrolytes",
+    actionLabel: "Add to subscription",
+    offerCopy: {
+      eyebrow: "Boost your stack",
+      image: "/assets/omni-product-electrolytes-pear.png",
+      imageAlt: "OMNI Creatine and Electrolytes pear stick packs",
+      body: "Add OMNI Creatine + Electrolytes stick packs to your next shipment. Pairs naturally with your daily gummy routine — creatine support in the morning, hydration support when you train.",
+      bullets: ["Ships with your next subscription order", "Available in pear or peach", "No extra delivery fees — bundled in one box"],
+      note: "Prototype only: final pricing and flavor selection can be wired in later.",
+    },
+  },
+];
+
 const homeOffers = [
   {
     id: "home-upgrade",
-    imageUrl: "/assets/omni-home-upgrade.jpg",
-    alt: "Save 30 percent every month OMNI subscription upgrade offer",
-    modalTitle: "Upgrade order",
-    actionLabel: "Upgrade order",
+    imageUrl: "/assets/omni-quarterly-upgrade.png",
+    alt: "Upgrade to quarterly OMNI subscription offer",
+    modalTitle: "Upgrade to Quarterly",
+    actionLabel: "Upgrade to quarterly",
     offerCopy: {
-      eyebrow: "Member savings",
-      image: "/assets/omni-offer-2.png",
-      imageAlt: "OMNI Creatine Gummies subscription upgrade offer",
-      body: "Move your next delivery into the OMNI subscription upgrade and save on a larger recurring supply. It is the cleanest option if creatine gummies are already part of your daily routine.",
-      bullets: ["Save 30% every month", "Keep gummies stocked on schedule", "Edit, skip, or cancel from the portal"],
+      eyebrow: "Quarterly upgrade",
+      image: "/assets/omni-quarterly-upgrade.png",
+      imageAlt: "OMNI Creatine Gummies quarterly subscription upgrade offer",
+      body: "Move your subscription to quarterly delivery and lock in better value on every order. Ideal for members who have their routine dialed in and want fewer order cycles to manage.",
+      bullets: ["Save more per order on a quarterly plan", "Keep gummies consistently stocked", "Edit, skip, or cancel from the portal anytime"],
       note: "This prototype would update the next order after confirmation.",
     },
     hotspot: { left: "63.7%", top: "60.7%", width: "29.8%", height: "7.0%" },
@@ -78,18 +111,18 @@ const homeOffers = [
     animationDelay: ".12s",
   },
   {
-    id: "home-stack",
-    imageUrl: "/assets/omni-home-stack.jpg",
-    alt: "OMNI Creatine Gummies and Electrolytes stack offer",
-    modalTitle: "Try the stack",
-    actionLabel: "Add stack",
+    id: "home-swap-flavor",
+    imageUrl: "/assets/omni-swap-flavor.png",
+    alt: "Swap your OMNI gummy flavor offer",
+    modalTitle: "Swap Flavor",
+    actionLabel: "Swap my flavor",
     offerCopy: {
-      eyebrow: "New routine stack",
-      image: "/assets/omni-static-1.png",
-      imageAlt: "OMNI Creatine Gummies and Electrolytes stack",
-      body: "Pair OMNI Creatine Gummies with OMNI Creatine + Electrolytes for a next-order stack focused on consistency and hydration. It is a practical add-on for members who want the gummy routine plus stick packs in the same delivery.",
-      bullets: ["Creatine gummies for daily use", "Electrolyte stick packs for hydration support", "Ships together with your next OMNI order"],
-      note: "Final checkout can confirm flavor, quantity, and exact add-on price.",
+      eyebrow: "Swap flavor",
+      image: "/assets/omni-swap-flavor.png",
+      imageAlt: "OMNI Creatine Gummies flavor swap offer",
+      body: "Switch your current gummy flavor to something new. Try Peach or Watermelon and keep the same routine with a fresh taste.",
+      bullets: ["Switch between Peach and Watermelon", "Keeps same quantity and frequency", "Change applies to your next order"],
+      note: "Flavor swap can be wired into the final product-swap flow.",
     },
     hotspot: { left: "67.7%", top: "39.3%", width: "29.7%", height: "7.3%" },
     variant: "campaign",
@@ -107,7 +140,7 @@ export default function PortalOfferStack({
   variant = "manage",
 }) {
   const [activeOffer, setActiveOffer] = useState(null);
-  const activeOffers = variant === "home" ? homeOffers : offers;
+  const activeOffers = variant === "home" ? homeOffers : variant === "manage" ? manageOffers : offers;
 
   const renderOfferCopy = (offer) => (
     <div className="offer-modal-copy">
@@ -126,6 +159,72 @@ export default function PortalOfferStack({
       <p className="modal-note">{offer.offerCopy.note}</p>
     </div>
   );
+
+  // ── Home variant: premium offer cards with image + text label ──────────────
+  if (variant === "home") {
+    return (
+      <section className="home-offers-section" aria-label="Member offers">
+        <div className="home-offers-grid">
+          {homeOffers.map((offer, index) => (
+            <button
+              key={offer.id}
+              type="button"
+              className={`home-offer-card${index === 0 ? " home-offer-card-hero" : " home-offer-card-compact"}`}
+              onClick={() => setActiveOffer(offer)}
+            >
+              <div className="home-offer-card-img">
+                <img src={offer.imageUrl} alt={offer.alt} draggable="false" />
+              </div>
+              <div className="home-offer-card-body">
+                <span className="home-offer-card-eyebrow">{offer.offerCopy.eyebrow}</span>
+                <span className="home-offer-card-title">{offer.modalTitle}</span>
+                <span className="home-offer-card-cta">{offer.actionLabel} →</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {activeOffer && (
+          <ActionModal title={activeOffer.modalTitle} onClose={() => setActiveOffer(null)} actionLabel={activeOffer.actionLabel}>
+            {renderOfferCopy(activeOffer)}
+          </ActionModal>
+        )}
+      </section>
+    );
+  }
+
+  // ── Manage variant: 2-col premium offer cards ─────────────────────────────
+  if (variant === "manage") {
+    return (
+      <section className="manage-offers-grid-section" aria-label="Member offers">
+        <div className="manage-offers-grid">
+          {manageOffers.map((offer) => (
+            <button
+              key={offer.id}
+              type="button"
+              className="manage-offer-card"
+              onClick={() => setActiveOffer(offer)}
+            >
+              <div className="manage-offer-card-img">
+                <img src={offer.imageUrl} alt={offer.alt} draggable="false" />
+              </div>
+              <div className="manage-offer-card-body">
+                <span className="manage-offer-card-eyebrow">{offer.offerCopy.eyebrow}</span>
+                <span className="manage-offer-card-title">{offer.modalTitle}</span>
+                <span className="manage-offer-card-cta">{offer.actionLabel} →</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {activeOffer && (
+          <ActionModal title={activeOffer.modalTitle} onClose={() => setActiveOffer(null)} actionLabel={activeOffer.actionLabel}>
+            {renderOfferCopy(activeOffer)}
+          </ActionModal>
+        )}
+      </section>
+    );
+  }
 
   return (
     <section className={`portal-offer-panel portal-offer-panel-${variant} ${compact ? "portal-offer-panel-compact" : ""}`} aria-label="Member offer blocks">

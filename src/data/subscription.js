@@ -10,6 +10,9 @@ export const subscription = {
   frequency: "Deliver every 4 weeks",
   shippingPerDelivery: 8.0,
   total: 115.0,
+  // Used for offer banner mapping. pouchCount: 1 | 2 | 3. orderCount: total orders placed.
+  pouchCount: 3,
+  orderCount: 2,
   products: [
     {
       id: "p1",

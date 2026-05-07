@@ -1,6 +1,6 @@
 import React from "react";
 
-const headerLogoSrc = "/assets/omni-logo-mark.svg";
+const headerLogoSrc = "/assets/omni-logo-white.svg";
 
 export default function Header() {
   return (

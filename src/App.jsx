@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ActionModal from "./components/ActionModal.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
@@ -12,23 +12,6 @@ import "./styles.css";
 export default function App() {
   const [view, setView] = useState("home");
   const [modal, setModal] = useState(null);
-
-  useEffect(() => {
-    const updateButtonShine = () => {
-      const scrollRange = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-      const progress = Math.min(100, Math.max(0, (window.scrollY / scrollRange) * 100));
-      document.documentElement.style.setProperty("--scroll-shine", progress.toFixed(2));
-    };
-
-    updateButtonShine();
-    window.addEventListener("scroll", updateButtonShine, { passive: true });
-    window.addEventListener("resize", updateButtonShine);
-
-    return () => {
-      window.removeEventListener("scroll", updateButtonShine);
-      window.removeEventListener("resize", updateButtonShine);
-    };
-  }, []);
 
   const pageProps = {
     activeView: view,

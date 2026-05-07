@@ -31,7 +31,7 @@ export default function CancelIntroVideoModal({ open, onClose, onContinue, onSki
   };
 
   useEffect(() => {
-    if (!open || !videoRef.current) return;
+    if (!open || !videoRef.current) return undefined;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const video = videoRef.current;
@@ -56,7 +56,9 @@ export default function CancelIntroVideoModal({ open, onClose, onContinue, onSki
         aria-labelledby="cancel-intro-title"
         onClick={(event) => event.stopPropagation()}
       >
-        <button className="cancel-intro-close" type="button" aria-label="Close" onClick={closeAndStop}>×</button>
+        <button className="cancel-intro-close" type="button" aria-label="Close" onClick={closeAndStop}>
+          ×
+        </button>
 
         <div className="cancel-intro-copy">
           <span>Before you cancel</span>
