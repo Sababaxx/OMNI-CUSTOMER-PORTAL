@@ -825,8 +825,10 @@ function CancellationFinalConfirm({ reason, onBack, onConfirm }) {
         </div>
 
         <div className="cancel-confirm-actions">
-          <Button variant="primary" onClick={onBack}>Adjust next order</Button>
-          <Button variant="outline" onClick={onConfirm}>Cancel subscription</Button>
+          <Button variant="outline" onClick={onBack}>Adjust next order</Button>
+          <button type="button" className="btn btn-primary cancel-confirm-destructive" onClick={onConfirm}>
+            Cancel subscription
+          </button>
         </div>
       </div>
     </div>

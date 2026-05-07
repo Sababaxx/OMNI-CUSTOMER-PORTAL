@@ -295,7 +295,9 @@ button { font-family: inherit; cursor: pointer; }
 .offer-modal,
 .action-modal {
   position: relative;
-  width: min(440px, 100%);
+  width: min(560px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
   background: #ffffff;
   border: 1px solid var(--omni-primary);
   border-radius: 10px;
@@ -303,6 +305,9 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 24px 70px rgba(7, 19, 46, 0.22);
   color: var(--omni-text);
   line-height: 1.4;
+}
+.action-modal-wide {
+  width: min(860px, 100%);
 }
 .offer-modal h3,
 .action-modal h3 {
@@ -411,6 +416,11 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: flex-end;
   gap: 8px;
   margin-top: 16px;
+  flex-wrap: wrap;
+}
+.modal-actions .btn {
+  min-width: 132px;
+  flex: 1 1 132px;
 }
 .modal-option-row {
   display: flex;
@@ -4633,6 +4643,38 @@ button { font-family: inherit; cursor: pointer; }
   .modal-actions-row .btn {
     width: 100%;
   }
+
+  .offer-modal,
+  .action-modal,
+  .action-modal-wide {
+    width: min(100%, 100%);
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .portal-shell-dashboard .offer-modal-image {
+    aspect-ratio: 1.9 / 1;
+  }
+
+  .swap-confirm-card {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .swap-confirm-card img {
+    width: 72px;
+    height: 72px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -5249,6 +5291,18 @@ button { font-family: inherit; cursor: pointer; }
   background: rgba(255, 255, 255, 0.07) !important;
 }
 
+.cancel-flow-panel .cancel-confirm-actions .cancel-confirm-destructive {
+  background: linear-gradient(135deg, #3db35e 0%, #2d8e49 100%) !important;
+  border-color: rgba(61, 179, 94, 0.9) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 24px rgba(45, 142, 73, 0.28) !important;
+}
+
+.cancel-flow-panel .cancel-confirm-actions .cancel-confirm-destructive:hover {
+  background: linear-gradient(135deg, #49c76a 0%, #2f9a4c 100%) !important;
+  border-color: rgba(73, 199, 106, 1) !important;
+}
+
 /* text links on dark bg */
 .cancel-flow-panel .cancel-text-link,
 .cancel-flow-panel .cancel-back-link {
@@ -5596,6 +5650,9 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55) !important;
   color: #ffffff !important;
 }
+.portal-shell-dashboard .action-modal-wide {
+  width: min(860px, 100%) !important;
+}
 
 .portal-shell-dashboard .action-modal h3 {
   color: #ffffff !important;
@@ -5610,8 +5667,13 @@ button { font-family: inherit; cursor: pointer; }
   color: #ffffff !important;
 }
 
-.portal-shell-dashboard .modal-note {
-  color: rgba(255, 255, 255, 0.38) !important;
+.portal-shell-dashboard .action-modal p.modal-note {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: rgba(255, 255, 255, 0.82) !important;
+  margin-top: 14px !important;
 }
 
 .portal-shell-dashboard .modal-close {
@@ -5644,6 +5706,14 @@ button { font-family: inherit; cursor: pointer; }
 .portal-shell-dashboard .modal-actions .btn-primary:hover,
 .portal-shell-dashboard .modal-actions-row .btn-primary:hover {
   background: rgba(55, 110, 235, 1) !important;
+}
+
+.portal-shell-dashboard .action-modal .modal-actions {
+  margin-top: 18px;
+}
+
+.portal-shell-dashboard .action-modal .modal-actions .btn {
+  min-height: 48px;
 }
 
 /* Date input inside modal */
@@ -5691,9 +5761,80 @@ button { font-family: inherit; cursor: pointer; }
 /* Skip modal eyebrow / offer image inside dark modal */
 .portal-shell-dashboard .offer-modal-image img {
   border-radius: 10px;
+  object-position: center 18%;
 }
 .portal-shell-dashboard .modal-eyebrow {
   color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.portal-shell-dashboard .offer-modal-image {
+  aspect-ratio: 2.1 / 1;
+}
+
+.portal-shell-dashboard .offer-modal-copy ul {
+  gap: 10px;
+}
+
+.portal-shell-dashboard .offer-modal-copy li {
+  line-height: 1.45;
+}
+
+.swap-confirm-modal {
+  display: grid;
+  gap: 12px;
+}
+
+.swap-confirm-card {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.swap-confirm-card img {
+  width: 88px;
+  height: 88px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.swap-confirm-card strong {
+  display: block;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  font-size: 18px;
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.swap-confirm-card p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (max-width: 540px) {
+  .portal-shell-dashboard .action-modal p.modal-note {
+    padding: 12px;
+    color: rgba(255, 255, 255, 0.86) !important;
+  }
+
+  .portal-shell-dashboard .offer-modal-image {
+    aspect-ratio: 1.75 / 1;
+  }
+
+  .portal-shell-dashboard .offer-modal-image img {
+    object-position: center center;
+  }
+
+  .portal-shell-dashboard .action-modal .modal-actions .btn {
+    min-height: 46px;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

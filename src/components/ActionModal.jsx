@@ -1,12 +1,21 @@
 import React from "react";
 
-export default function ActionModal({ title, children, onClose, actionLabel = "Continue" }) {
+export default function ActionModal({
+  title,
+  children,
+  onClose,
+  onAction,
+  actionLabel = "Continue",
+  actionVariant = "primary",
+  size = "default",
+  className = "",
+}) {
   if (!title) return null;
 
   return (
     <div className="modal-backdrop" role="presentation" onClick={onClose}>
       <div
-        className="action-modal"
+        className={`action-modal action-modal-${size} ${className}`.trim()}
         role="dialog"
         aria-modal="true"
         aria-labelledby="action-modal-title"
@@ -26,7 +35,9 @@ export default function ActionModal({ title, children, onClose, actionLabel = "C
         </div>
         <div className="modal-actions">
           <button className="btn btn-outline" type="button" onClick={onClose}>Cancel</button>
-          <button className="btn btn-primary" type="button" onClick={onClose}>{actionLabel}</button>
+          <button className={`btn btn-${actionVariant}`} type="button" onClick={onAction || onClose}>
+            {actionLabel}
+          </button>
         </div>
       </div>
     </div>

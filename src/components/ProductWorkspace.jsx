@@ -40,6 +40,7 @@ export default function ProductWorkspace({ compact = false }) {
   const [giftClaimed, setGiftClaimed] = useState(false);
   const [selectedFlavor, setSelectedFlavor] = useState("peach");
   const [flavorSaved, setFlavorSaved] = useState(false);
+  const [swapConfirmOpen, setSwapConfirmOpen] = useState(false);
 
   const subtotal = 115;
   const shipping = 8;
@@ -48,6 +49,15 @@ export default function ProductWorkspace({ compact = false }) {
   const handleClaimGift = () => {
     setGiftClaimed(true);
     setModal("Gift claimed");
+  };
+
+  const openSwapConfirm = () => {
+    setSwapConfirmOpen(true);
+  };
+
+  const confirmSwapFlavor = () => {
+    setFlavorSaved(true);
+    setSwapConfirmOpen(false);
   };
 
   const [backupCards, setBackupCards] = useState([]);
@@ -81,7 +91,7 @@ export default function ProductWorkspace({ compact = false }) {
           <div className="swap-flavor-options">
             <button
               type="button"
-              className={`swap-flavor-btn${selectedFlavor === "peach" ? " selected" : ""}`}
+            className={`swap-flavor-btn${selectedFlavor === "peach" ? " selected" : ""}`}
               onClick={() => { setSelectedFlavor("peach"); setFlavorSaved(false); }}
             >
               <img src="/assets/omni-product-peach.png" alt="Peach gummies" />
@@ -89,7 +99,7 @@ export default function ProductWorkspace({ compact = false }) {
             </button>
             <button
               type="button"
-              className={`swap-flavor-btn${selectedFlavor === "watermelon" ? " selected" : ""}`}
+            className={`swap-flavor-btn${selectedFlavor === "watermelon" ? " selected" : ""}`}
               onClick={() => { setSelectedFlavor("watermelon"); setFlavorSaved(false); }}
             >
               <img src="/assets/omni-product-watermelon.png" alt="Watermelon gummies" />
@@ -100,7 +110,7 @@ export default function ProductWorkspace({ compact = false }) {
             {flavorSaved ? (
               <span className="claim-gift-confirmed">Flavor updated — applies to your next order</span>
             ) : (
-              <button type="button" className="claim-gift-btn" onClick={() => setFlavorSaved(true)}>
+              <button type="button" className="claim-gift-btn" onClick={openSwapConfirm}>
                 Confirm swap to {selectedFlavor === "peach" ? "Peach" : "Watermelon"}
               </button>
             )}
@@ -232,6 +242,34 @@ export default function ProductWorkspace({ compact = false }) {
               </button>
             </div>
           )}
+        </ActionModal>
+      )}
+      {swapConfirmOpen && (
+        <ActionModal
+          title="Confirm swap flavor"
+          onClose={() => setSwapConfirmOpen(false)}
+          onAction={confirmSwapFlavor}
+          actionLabel={`Confirm ${selectedFlavor === "peach" ? "Peach" : "Watermelon"} swap`}
+          actionVariant="primary"
+          size="wide"
+        >
+          <div className="swap-confirm-modal">
+            <p className="modal-note">Review the flavor change before it applies to your next order.</p>
+            <div className="swap-confirm-card">
+              <img
+                src={selectedFlavor === "peach" ? "/assets/omni-product-peach.png" : "/assets/omni-product-watermelon.png"}
+                alt={`${selectedFlavor === "peach" ? "Peach" : "Watermelon"} gummies preview`}
+              />
+              <div>
+                <span className="modal-eyebrow">Selected flavor</span>
+                <strong>{selectedFlavor === "peach" ? "Peach" : "Watermelon"}</strong>
+                <p>
+                  This change keeps your same product and frequency. Only the flavor switches, and it applies to the next
+                  shipment.
+                </p>
+              </div>
+            </div>
+          </div>
         </ActionModal>
       )}
     </section>

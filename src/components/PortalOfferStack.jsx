@@ -185,7 +185,12 @@ export default function PortalOfferStack({
         </div>
 
         {activeOffer && (
-          <ActionModal title={activeOffer.modalTitle} onClose={() => setActiveOffer(null)} actionLabel={activeOffer.actionLabel}>
+          <ActionModal
+            title={activeOffer.modalTitle}
+            onClose={() => setActiveOffer(null)}
+            actionLabel={activeOffer.actionLabel}
+            size="wide"
+          >
             {renderOfferCopy(activeOffer)}
           </ActionModal>
         )}
@@ -218,7 +223,12 @@ export default function PortalOfferStack({
         </div>
 
         {activeOffer && (
-          <ActionModal title={activeOffer.modalTitle} onClose={() => setActiveOffer(null)} actionLabel={activeOffer.actionLabel}>
+          <ActionModal
+            title={activeOffer.modalTitle}
+            onClose={() => setActiveOffer(null)}
+            actionLabel={activeOffer.actionLabel}
+            size="wide"
+          >
             {renderOfferCopy(activeOffer)}
           </ActionModal>
         )}
@@ -250,7 +260,12 @@ export default function PortalOfferStack({
       </div>
 
       {activeOffer && (
-        <ActionModal title={activeOffer.modalTitle} onClose={() => setActiveOffer(null)} actionLabel={activeOffer.actionLabel}>
+        <ActionModal
+          title={activeOffer.modalTitle}
+          onClose={() => setActiveOffer(null)}
+          actionLabel={activeOffer.actionLabel}
+          size="wide"
+        >
           {renderOfferCopy(activeOffer)}
         </ActionModal>
       )}
