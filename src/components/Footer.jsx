@@ -13,8 +13,7 @@ export default function Footer() {
         <div className="footer-newsletter">
           <h4>Sign up for up to 47% Off</h4>
           <input type="email" placeholder="Email address" />
-          <button>JOIN NOW</button>
-          <p>*By joining, you'll receive our wellness insights and can unsubscribe anytime.</p>
+          <p>*By subscribing, you'll receive our wellness insights and can unsubscribe anytime.</p>
         </div>
         <div className="footer-col">
           <h4>SHOP</h4>

@@ -13,8 +13,10 @@ export default function ActionModal({
   useEffect(() => {
     if (!title) return undefined;
     const previousOverflow = document.body.style.overflow;
+    document.body.classList.add("omni-modal-open");
     document.body.style.overflow = "hidden";
     return () => {
+      document.body.classList.remove("omni-modal-open");
       document.body.style.overflow = previousOverflow;
     };
   }, [title]);
@@ -37,8 +39,8 @@ export default function ActionModal({
         <div className="modal-body">
           {children || (
             <p>
-              This prototype action is ready for the next step. Final pricing, inventory, and account rules can be connected
-              when the subscription backend is available.
+              This action is ready for the next step. Final pricing, inventory, and account rules can be connected when
+              the subscription backend is available.
             </p>
           )}
         </div>

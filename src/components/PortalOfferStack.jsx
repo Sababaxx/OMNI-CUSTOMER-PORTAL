@@ -15,7 +15,7 @@ const offers = [
       imageAlt: "OMNI Creatine Gummies with OMNI Creatine and Electrolytes",
       body: "Add OMNI Creatine Gummies and OMNI Creatine + Electrolytes stick packs to your next shipment. This stack is built for a simple daily routine: creatine support from the gummies, hydration support from electrolytes, and one delivery instead of a separate reorder.",
       bullets: ["Includes peach creatine gummies", "Adds pear electrolyte stick packs", "Ships with your next subscription order"],
-      note: "Prototype only: final pricing, flavor selection, and inventory rules can be connected later.",
+      note: "Final pricing, flavor selection, and inventory rules can be connected later.",
     },
     hotspot: { left: "60.5%", top: "50.7%", width: "13.7%", height: "9.8%" },
     variant: "hero",
@@ -42,17 +42,17 @@ const offers = [
 const manageOffers = [
   {
     id: "manage-quarterly",
-    imageUrl: "/assets/omni-quarterly-upgrade.png",
+    imageUrl: "/assets/group-16.png",
     alt: "Upgrade to quarterly OMNI subscription and save",
     modalTitle: "Upgrade to Quarterly",
     actionLabel: "Upgrade now",
     offerCopy: {
       eyebrow: "Quarterly upgrade",
-      image: "/assets/omni-quarterly-upgrade.png",
+      image: "/assets/group-16.png",
       imageAlt: "OMNI Creatine Gummies quarterly subscription offer",
       body: "Switch to a quarterly delivery schedule and lock in better per-order value. Fewer billing cycles, the same consistent creatine routine, and full control to skip or pause from the portal anytime.",
       bullets: ["Save more per pouch on quarterly billing", "Less to manage — fewer order cycles", "Skip, pause, or cancel anytime from the portal"],
-      note: "Prototype only: upgrading would update your next billing cycle after confirmation.",
+      note: "Upgrading would update your next billing cycle after confirmation.",
     },
   },
   {
@@ -67,7 +67,7 @@ const manageOffers = [
       imageAlt: "OMNI Creatine and Electrolytes pear stick packs",
       body: "Add OMNI Creatine + Electrolytes stick packs to your next shipment. Pairs naturally with your daily gummy routine — creatine support in the morning, hydration support when you train.",
       bullets: ["Ships with your next subscription order", "Available in pear or peach", "No extra delivery fees — bundled in one box"],
-      note: "Prototype only: final pricing and flavor selection can be wired in later.",
+      note: "Final pricing and flavor selection can be wired in later.",
     },
   },
 ];
@@ -75,17 +75,17 @@ const manageOffers = [
 const homeOffers = [
   {
     id: "home-upgrade",
-    imageUrl: "/assets/omni-quarterly-upgrade.png",
+    imageUrl: "/assets/group-16.png",
     alt: "Upgrade to quarterly OMNI subscription offer",
     modalTitle: "Upgrade to Quarterly",
     actionLabel: "Upgrade to quarterly",
     offerCopy: {
       eyebrow: "Quarterly upgrade",
-      image: "/assets/omni-quarterly-upgrade.png",
+      image: "/assets/group-16.png",
       imageAlt: "OMNI Creatine Gummies quarterly subscription upgrade offer",
       body: "Move your subscription to quarterly delivery and lock in better value on every order. Ideal for members who have their routine dialed in and want fewer order cycles to manage.",
       bullets: ["Save more per order on a quarterly plan", "Keep gummies consistently stocked", "Edit, skip, or cancel from the portal anytime"],
-      note: "This prototype would update the next order after confirmation.",
+      note: "This would update the next order after confirmation.",
     },
     hotspot: { left: "63.7%", top: "60.7%", width: "29.8%", height: "7.0%" },
     variant: "hero",
@@ -112,13 +112,13 @@ const homeOffers = [
   },
   {
     id: "home-swap-flavor",
-    imageUrl: "/assets/omni-swap-flavor.png",
+    imageUrl: "/assets/swap.png",
     alt: "Swap your OMNI gummy flavor offer",
     modalTitle: "Swap Flavor",
     actionLabel: "Swap my flavor",
     offerCopy: {
       eyebrow: "Swap flavor",
-      image: "/assets/omni-swap-flavor.png",
+      image: "/assets/swap.png",
       imageAlt: "OMNI Creatine Gummies flavor swap offer",
       body: "Switch your current gummy flavor to something new. Try Peach or Watermelon and keep the same routine with a fresh taste.",
       bullets: ["Switch between Peach and Watermelon", "Keeps same quantity and frequency", "Change applies to your next order"],

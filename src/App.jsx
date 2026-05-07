@@ -43,12 +43,12 @@ export default function App() {
       <Footer />
       {modal && (
         <ActionModal title={modal} onClose={() => setModal(null)}>
-          {modal === "Log out" && <p>Confirm that this OMNI portal session should be logged out. No account data changes in this prototype.</p>}
+          {modal === "Log out" && <p>Confirm that this OMNI portal session should be logged out. No account data changes are made here.</p>}
           {modal === "Add new subscription" && <p>Start a new OMNI subscription with gummies, electrolytes, or a combined routine. Product selection can be connected to checkout later.</p>}
           {modal === "Copy referral code" && <p>Your referral code OMNI-SABA-47 is ready to copy and share with a friend.</p>}
           {modal === "Referral eligibility" && <p>We can review this referral submission for eligibility and connect rewards once the final referral workflow is live.</p>}
           {modal === "Referral status" && <p>If you already submitted a referral, this area can show its current eligibility status in the finished flow.</p>}
-          {modal && !["Log out", "Add new subscription", "Copy referral code", "Referral eligibility", "Referral status"].includes(modal) && <p>This OMNI prototype action is ready to connect to the final account flow.</p>}
+          {modal && !["Log out", "Add new subscription", "Copy referral code", "Referral eligibility", "Referral status"].includes(modal) && <p>This OMNI action is ready to connect to the final account flow.</p>}
         </ActionModal>
       )}
     </>

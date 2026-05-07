@@ -33,7 +33,7 @@ const reasonConfig = [
     helper: "Give consistency, dose, and timing enough time to line up.",
     treatment: "education",
     headline: "Give your routine enough time to work",
-    body: "Most members judge results too early. Creatine works best when dose, timing, and consistency line up for several weeks.",
+    body: "Creatine works best when dose, timing, and consistency line up over a few weeks. Try a lighter routine before closing the plan.",
     subReasons: ["Less than 4 weeks", "Taking inconsistently", "Not sure about dose", "Expected faster change"],
     cards: ["4 to 12 week consistency window", "Daily serving matters", "Timing should fit your routine"],
     ctas: [
@@ -55,7 +55,7 @@ const reasonConfig = [
     helper: "Build the habit first, then decide if the subscription fits.",
     treatment: "habit",
     headline: "Make OMNI easier to stick with",
-    body: "Missing days early on is normal. The fix is not cancelling, it is making the routine easier.",
+    body: "Missing days early on is normal. If the routine feels hard, a simpler schedule may help more than cancelling.",
     subReasons: ["Forget most days", "Travel schedule", "No set routine", "Timing feels awkward"],
     cards: ["Pair with an existing habit", "Keep the pouch visible", "Give the habit a few weeks"],
     ctas: [
@@ -109,7 +109,7 @@ const reasonConfig = [
     helper: "Keep control without pressure.",
     treatment: "control",
     headline: "Keep control without losing the better price",
-    body: "The subscription only keeps your member pricing active. You can skip, pause, or slow deliveries whenever you need.",
+    body: "Your subscription keeps member pricing active. You can pause, skip, or slow deliveries without closing the account.",
     subReasons: ["Only wanted one order", "Prefer manual orders", "Subscription anxiety", "Need more control"],
     cards: ["Skip anytime", "Pause anytime", "Change delivery date", "Cancel from portal"],
     ctas: [
@@ -217,7 +217,7 @@ const reasonConfig = [
     helper: "Share details so support can resolve it.",
     treatment: "issue",
     headline: "Let support fix the product issue",
-    body: "Choose what you are seeing so the team can route it correctly.",
+    body: "Choose what you are seeing so the team can route it correctly and keep your options open.",
     issueFields: true,
     issueOptions: [
       "Melted or sticky gummies",
@@ -239,7 +239,7 @@ const reasonConfig = [
     helper: "Tell us what happened so support can fix it.",
     treatment: "issue",
     headline: "Let support fix the packaging issue",
-    body: "Choose what happened so support can route this correctly.",
+    body: "Tell us what happened so support can route it correctly and avoid closing your account unnecessarily.",
     issueFields: true,
     issueOptions: [
       "Pouch arrived damaged",
@@ -261,7 +261,7 @@ const reasonConfig = [
     helper: "Compare quality and convenience before making the final call.",
     treatment: "comparison",
     headline: "Check the difference before you switch",
-    body: "OMNI is built for daily consistency, convenience, and tested quality. Compare the basics before you leave.",
+    body: "OMNI is built for daily consistency, convenience, and tested quality. Compare your options before you leave.",
     subReasons: ["Different brand", "Different format", "Friend recommended another", "Comparing value"],
     cards: ["Third party quality testing", "Daily format made for consistency", "Portal control for timing and skips"],
     ctas: [
@@ -283,7 +283,7 @@ const reasonConfig = [
     helper: "Get help with the portal controls.",
     treatment: "portal-help",
     headline: "Your controls are still here",
-    body: "Skipping, pausing, rescheduling, and changing frequency can all happen from the portal.",
+    body: "Skipping, pausing, rescheduling, and changing frequency are all available from the portal.",
     subReasons: ["Cannot find controls", "Need date change", "Need product change", "Need billing help"],
     cards: ["Change delivery frequency", "Skip next order", "Pause subscription", "Contact support"],
     ctas: [
@@ -757,54 +757,32 @@ function getFinalConfirmConfig(reason) {
   const noLongerUsingIds = ["no-longer-need", "trial-only"];
 
   if (productIssueIds.includes(reason.id)) {
-    return {
-      pill: "Product issue",
-      title: "You can still let support review this first.",
-      body: "If you continue, your subscription will be cancelled. If you want the team to review the issue before you decide, go back to the fix options.",
-    };
+    return { pill: "Product issue" };
   }
 
   if (overstockIds.includes(reason.id)) {
-    return {
-      pill: "Too much product",
-      title: "You can still slow deliveries instead of cancelling.",
-      body: "If you continue, your subscription will be cancelled. If timing is the issue, go back to switch cadence or skip your next order.",
-    };
+    return { pill: "Too much product" };
   }
 
   if (priceIds.includes(reason.id)) {
-    return {
-      pill: "Price concern",
-      title: "You can still pause instead of cancelling.",
-      body: "If you continue, your subscription will be cancelled. If now is not the right time, go back to pause or skip your next order.",
-    };
+    return { pill: "Price concern" };
   }
 
   if (alternativeIds.includes(reason.id)) {
-    return {
-      pill: "Considering another product",
-      title: "You can still keep your OMNI subscription active.",
-      body: "If you continue, your subscription will be cancelled. If you want to compare options first, go back to the fix options.",
-    };
+    return { pill: "Considering another product" };
   }
 
   if (noLongerUsingIds.includes(reason.id)) {
-    return {
-      pill: "Not using it right now",
-      title: "You can still keep control without another delivery.",
-      body: "If you continue, your subscription will be cancelled. If you may come back later, go back to pause instead.",
-    };
+    return { pill: "Not using it right now" };
   }
 
-  return {
-    pill: "Other reason",
-    title: "You can still choose a lighter option.",
-    body: "If you continue, your subscription will be cancelled. If you want to pause, skip, or contact support first, go back to the fix options.",
-  };
+  return { pill: "Other reason" };
 }
 
 function CancellationFinalConfirm({ reason, onBack, onConfirm }) {
   const finalCopy = getFinalConfirmConfig(reason);
+  const title = "You can still let support review this first.";
+  const body = "Continuing will cancel your subscription. To keep the option open while support reviews this issue, contact support first.";
 
   return (
     <div className="cancel-step cancel-confirm-step">
@@ -815,17 +793,24 @@ function CancellationFinalConfirm({ reason, onBack, onConfirm }) {
         <div className="cancel-step-head cancel-stacked-head">
           <span className="cancel-kicker">Final choice</span>
           <h2>Choose how you'd like to finish</h2>
-          <p className="cancel-final-subcopy">Your subscription can be cancelled now, or you can adjust the next order instead.</p>
+          <p className="cancel-final-subcopy">Your subscription can be cancelled now, or you can contact support first.</p>
         </div>
 
         <div className="cancel-confirm-card">
-          <span className="cancel-selected-label">{finalCopy.pill}</span>
-          <h3>{finalCopy.title}</h3>
-          <p>{finalCopy.body}</p>
+          <span className="cancel-selected-label cancel-final-selected-label">{finalCopy.pill}</span>
+          <h3>{title}</h3>
+          <p>{body}</p>
         </div>
 
         <div className="cancel-confirm-actions">
-          <Button variant="outline" onClick={onBack}>Adjust next order</Button>
+          <a
+            href={SUPPORT_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-outline cancel-support-link"
+          >
+            Contact support
+          </a>
           <button type="button" className="btn btn-primary cancel-confirm-destructive" onClick={onConfirm}>
             Cancel subscription
           </button>
@@ -838,6 +823,11 @@ function CancellationFinalConfirm({ reason, onBack, onConfirm }) {
 function CancellationSavedScreen({ message, onDone }) {
   return (
     <div className="cancel-step cancel-complete-step cancel-complete-step-saved">
+      <div className="cancel-saved-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <path d="M9.2 16.1 5.7 12.6l-1.8 1.8 5.3 5.3L20 9l-1.8-1.8z" />
+        </svg>
+      </div>
       <span className="cancel-kicker">Saved</span>
       <h2>{message}</h2>
       <p>Your subscription stays active. You can return to the overview and keep managing your order.</p>
@@ -849,6 +839,11 @@ function CancellationSavedScreen({ message, onDone }) {
 function CancellationCompleteScreen({ onDone }) {
   return (
     <div className="cancel-step cancel-complete-step cancel-complete-step-cancelled">
+      <div className="cancel-complete-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+          <path d="M9.2 16.1 5.7 12.6l-1.8 1.8 5.3 5.3L20 9l-1.8-1.8z" />
+        </svg>
+      </div>
       <span className="cancel-kicker">Cancelled</span>
       <h2>Your subscription has been cancelled.</h2>
       <p>You'll still have access to your account if you want to restart later.</p>

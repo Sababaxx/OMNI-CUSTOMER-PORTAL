@@ -178,7 +178,7 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
             </>
           )}
           {modal === "Manage payment" && (
-            <p>Update the saved payment method for future OMNI orders. No card changes are made in this prototype.</p>
+            <p>Update the saved payment method for future OMNI orders. No card changes are made here.</p>
           )}
           {modal === "Update shipping" && (
             <p>Update the shipping address for future OMNI deliveries. Address changes can be connected to the final account flow.</p>
@@ -191,7 +191,7 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
         onContinue={continueToCancellationFlow}
         onSkipNextOrder={(choice) => {
           setIsCancelIntroOpen(false);
-          showToast(`${choice} selected. The portal option is saved in this prototype.`);
+          showToast(`${choice} selected. The portal option is saved.`);
         }}
       />
       <CancellationFlow
