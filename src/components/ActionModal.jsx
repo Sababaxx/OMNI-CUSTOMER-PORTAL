@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function ActionModal({
   title,
@@ -10,6 +10,15 @@ export default function ActionModal({
   size = "default",
   className = "",
 }) {
+  useEffect(() => {
+    if (!title) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [title]);
+
   if (!title) return null;
 
   return (

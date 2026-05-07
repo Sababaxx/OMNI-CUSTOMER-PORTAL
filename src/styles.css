@@ -370,26 +370,35 @@ button { font-family: inherit; cursor: pointer; }
   display: grid;
   gap: 8px;
   margin: 12px 0;
-  padding: 0;
+  padding: 14px 16px 14px 18px;
   list-style: none;
+  border: 1px solid rgba(7, 58, 122, 0.14);
+  border-radius: 14px;
+  background: rgba(7, 58, 122, 0.04);
 }
 .offer-modal-copy li {
   position: relative;
-  padding-left: 18px;
+  padding-left: 22px;
   color: var(--omni-text);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.35;
-  font-weight: 750;
+  font-weight: 700;
 }
 .offer-modal-copy li::before {
   content: "";
   position: absolute;
-  left: 0;
-  top: .55em;
-  width: 7px;
-  height: 7px;
+  left: 6px;
+  top: .9em;
+  width: 8px;
+  height: 8px;
   border-radius: 999px;
   background: var(--omni-primary);
+}
+.offer-modal-copy > p:first-of-type {
+  margin-bottom: 12px;
+  color: var(--omni-text);
+  font-size: 15px;
+  line-height: 1.5;
 }
 .action-modal p.modal-note {
   margin: 12px 0 0;
@@ -5663,6 +5672,10 @@ button { font-family: inherit; cursor: pointer; }
   color: rgba(255, 255, 255, 0.7) !important;
 }
 
+.portal-shell-dashboard .offer-modal-copy > p:first-of-type {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
 .portal-shell-dashboard .modal-body strong {
   color: #ffffff !important;
 }
@@ -5761,22 +5774,28 @@ button { font-family: inherit; cursor: pointer; }
 /* Skip modal eyebrow / offer image inside dark modal */
 .portal-shell-dashboard .offer-modal-image img {
   border-radius: 10px;
-  object-position: center 18%;
+  object-position: center 10%;
 }
 .portal-shell-dashboard .modal-eyebrow {
   color: rgba(255, 255, 255, 0.45) !important;
 }
 
 .portal-shell-dashboard .offer-modal-image {
-  aspect-ratio: 2.1 / 1;
+  aspect-ratio: 1.86 / 1;
 }
 
 .portal-shell-dashboard .offer-modal-copy ul {
   gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .portal-shell-dashboard .offer-modal-copy li {
   line-height: 1.45;
+}
+
+.portal-shell-dashboard .offer-modal-copy li::before {
+  background: rgba(55, 110, 235, 0.95);
 }
 
 .swap-confirm-modal {
@@ -6511,13 +6530,20 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .cancel-flow-panel .cancel-flow-actions-sticky {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) auto;
   align-items: center;
+  gap: 14px;
 }
 
 .cancel-flow-panel .cancel-flow-actions-sticky .cancel-text-link {
-  margin-left: auto;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.cancel-flow-panel .cancel-flow-actions-sticky .btn {
+  width: 100%;
+  max-width: 520px;
 }
 
 .cancel-flow-panel .cancel-issue-type,
@@ -6554,6 +6580,10 @@ button { font-family: inherit; cursor: pointer; }
   text-align: left;
 }
 
+.cancel-flow-panel .cancel-rescue-footer-single .cancel-text-link {
+  white-space: nowrap;
+}
+
 @media (max-width: 1040px) {
   .cancel-flow-panel {
     width: min(100vw - 24px, 980px);
@@ -6584,5 +6614,18 @@ button { font-family: inherit; cursor: pointer; }
   .cancel-flow-panel .cancel-flow-actions {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .cancel-flow-panel .cancel-flow-actions-sticky {
+    grid-template-columns: 1fr;
+  }
+
+  .cancel-flow-panel .cancel-flow-actions-sticky .cancel-text-link {
+    justify-self: start;
+    white-space: normal;
+  }
+
+  .cancel-flow-panel .cancel-flow-actions-sticky .btn {
+    max-width: none;
   }
 }

@@ -4,14 +4,14 @@ export default function ReferFriendPage({ onOpenModal }) {
   return (
     <section className="referral-program-page" aria-label="Refer a friend">
       <div className="referral-program-head">
-        <h1>Join the OMNI referral program!</h1>
+        <h1>Check your referral eligibility</h1>
         <p>
-          Earn product rewards and account credit for every qualified referral.
-          Share your personal link and let friends start with OMNI.
+          Submit your details to check whether the referral can qualify for rewards.
+          Share your personal link with friends and let OMNI review the submission.
         </p>
       </div>
 
-      <form className="referral-program-form" onSubmit={(event) => { event.preventDefault(); onOpenModal("Invite a friend"); }}>
+      <form className="referral-program-form" onSubmit={(event) => { event.preventDefault(); onOpenModal("Referral eligibility"); }}>
         <label>
           <span>First Name:<sup>*</sup></span>
           <input type="text" aria-label="First name" />
@@ -32,9 +32,9 @@ export default function ReferFriendPage({ onOpenModal }) {
           </div>
         </label>
 
-        <button type="submit">Sign Up</button>
-        <button className="referral-login-link" type="button" onClick={() => onOpenModal("Account login")}>
-          Already have an account? Sign in here.
+        <button type="submit">Check eligibility</button>
+        <button className="referral-login-link" type="button" onClick={() => onOpenModal("Referral status")}>
+          Already submitted a referral? Review status.
         </button>
       </form>
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import Button from "./Button.jsx";
 
 const SUPPORT_URL = "https://contact.gorgias.help/en-US/forms/0c4rzba9";
@@ -864,10 +864,15 @@ export default function CancellationFlow({ open, onClose, onKept, onSupportStart
   const [branchPreselect, setBranchPreselect] = useState("");
   const [savedMessage, setSavedMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const backdropRef = useRef(null);
   const selectedReason = useMemo(
     () => reasonConfig.find((reason) => reason.id === selectedReasonId),
     [selectedReasonId]
   );
+
+  useEffect(() => {
+    backdropRef.current?.scrollTo({ top: 0, behavior: "auto" });
+  }, [step, selectedReasonId]);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -946,7 +951,7 @@ export default function CancellationFlow({ open, onClose, onKept, onSupportStart
   };
 
   return (
-    <div className="cancel-flow-backdrop" role="presentation" onClick={handleBackdrop}>
+    <div className="cancel-flow-backdrop" ref={backdropRef} role="presentation" onClick={handleBackdrop}>
       <section
         className="cancel-flow-panel"
         role="dialog"
