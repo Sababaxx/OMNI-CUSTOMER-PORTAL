@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ActionModal from "./ActionModal.jsx";
 
+const GIFT_LOCK_KEY = "omni-free-gift-lock";
 
 const recs = [
   {
@@ -38,6 +39,19 @@ export default function ProductWorkspace({ compact = false }) {
   const [recSelections, setRecSelections] = useState(() => Object.fromEntries(recs.map((item) => [item.name, item.options[0].label])));
   const [modal, setModal] = useState(null);
   const [giftClaimed, setGiftClaimed] = useState(false);
+  const [giftClaimMode, setGiftClaimMode] = useState(null);
+  const [giftClaimLockedUntil, setGiftClaimLockedUntil] = useState(0);
+  const [giftFlowStep, setGiftFlowStep] = useState("choice");
+  const [giftFlowBusy, setGiftFlowBusy] = useState(false);
+  const [giftFriend, setGiftFriend] = useState({
+    name: "",
+    address1: "",
+    address2: "",
+    city: "",
+    state: "",
+    zip: "",
+    contact: "",
+  });
   const [selectedFlavor, setSelectedFlavor] = useState("peach");
   const [flavorSaved, setFlavorSaved] = useState(false);
   const [swapConfirmOpen, setSwapConfirmOpen] = useState(false);
@@ -47,8 +61,10 @@ export default function ProductWorkspace({ compact = false }) {
   const total = subtotal + shipping;
 
   const handleClaimGift = () => {
-    setGiftClaimed(true);
-    setModal("Gift claimed");
+    if (giftClaimed) return;
+    setGiftFlowStep("choice");
+    setGiftFlowBusy(false);
+    setModal("Claim Free Gift");
   };
 
   const openSwapConfirm = () => {
@@ -62,6 +78,84 @@ export default function ProductWorkspace({ compact = false }) {
 
   const [backupCards, setBackupCards] = useState([]);
   const [newCard, setNewCard] = useState({ number: "", expiry: "", name: "" });
+
+  const persistGiftClaim = (mode) => {
+    const until = Date.now() + 60000;
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem(GIFT_LOCK_KEY, String(until));
+      window.localStorage.setItem(`${GIFT_LOCK_KEY}:mode`, mode);
+    }
+    setGiftClaimed(true);
+    setGiftClaimMode(mode);
+    setGiftClaimLockedUntil(until);
+  };
+
+  React.useEffect(() => {
+    if (typeof window === "undefined") return undefined;
+    const storedUntil = Number(window.localStorage.getItem(GIFT_LOCK_KEY) || 0);
+    const storedMode = window.localStorage.getItem(`${GIFT_LOCK_KEY}:mode`);
+    if (storedUntil > Date.now()) {
+      setGiftClaimed(true);
+      setGiftClaimMode(storedMode === "friend" ? "friend" : "self");
+      setGiftClaimLockedUntil(storedUntil);
+    } else {
+      window.localStorage.removeItem(GIFT_LOCK_KEY);
+      window.localStorage.removeItem(`${GIFT_LOCK_KEY}:mode`);
+      setGiftClaimed(false);
+      setGiftClaimMode(null);
+      setGiftClaimLockedUntil(0);
+    }
+    return undefined;
+  }, []);
+
+  React.useEffect(() => {
+    if (!giftClaimLockedUntil || giftClaimLockedUntil <= Date.now()) return undefined;
+    const timeout = window.setTimeout(() => {
+      if (typeof window !== "undefined") {
+        window.localStorage.removeItem(GIFT_LOCK_KEY);
+        window.localStorage.removeItem(`${GIFT_LOCK_KEY}:mode`);
+      }
+      setGiftClaimed(false);
+      setGiftClaimMode(null);
+      setGiftClaimLockedUntil(0);
+    }, giftClaimLockedUntil - Date.now());
+    return () => window.clearTimeout(timeout);
+  }, [giftClaimLockedUntil]);
+
+  React.useEffect(() => {
+    if (!modal) {
+      setGiftFlowStep("choice");
+      setGiftFlowBusy(false);
+    }
+  }, [modal]);
+
+  const handleGiftSelfConfirm = () => {
+    if (giftFlowBusy || giftClaimed) return;
+    setGiftFlowBusy(true);
+    window.setTimeout(() => {
+      persistGiftClaim("self");
+      setGiftFlowBusy(false);
+      setGiftFlowStep("self-success");
+    }, 700);
+  };
+
+  const handleGiftFriendSubmit = (event) => {
+    event.preventDefault();
+    if (giftFlowBusy || giftClaimed) return;
+    setGiftFlowBusy(true);
+    window.setTimeout(() => {
+      persistGiftClaim("friend");
+      setGiftFlowBusy(false);
+      setGiftFlowStep("friend-success");
+    }, 900);
+  };
+
+  const giftModalTitle =
+    giftFlowStep === "friend-success"
+      ? "Gift claimed for your friend"
+      : giftFlowStep === "self-success"
+        ? "Gift added to your next order"
+        : "Claim Free Gift";
 
   return (
     <section className={`workspace-grid ${compact ? "workspace-grid-compact" : ""}`} aria-label="Subscription product workspace">
@@ -78,7 +172,9 @@ export default function ProductWorkspace({ compact = false }) {
           <img src="/assets/omni-claim-free-gift.png" alt="Claim your free gift with your next OMNI order" />
           <div className="claim-free-gift-overlay">
             {giftClaimed ? (
-              <span className="claim-gift-confirmed">✓ Gift added to your next order</span>
+              <span className="claim-gift-confirmed">
+                ✓ {giftClaimMode === "friend" ? "Gift claimed for your friend" : "Gift added to your next order"}
+              </span>
             ) : (
               <span className="claim-gift-cta-label">Claim Free Gift →</span>
             )}
@@ -185,13 +281,188 @@ export default function ProductWorkspace({ compact = false }) {
         </div>
       </aside>
       {modal && (
-        <ActionModal title={modal} onClose={() => setModal(null)}>
-          {modal === "Gift claimed" && (
-            <div className="gift-claimed-modal">
-              <div className="gift-claimed-img-wrap">
-                <img src="/assets/omni-product-watermelon.png" alt="OMNI Creatine Monohydrate Gummies — your free gift" />
+        <ActionModal
+          title={modal === "Claim Free Gift" ? giftModalTitle : modal}
+          onClose={() => setModal(null)}
+          hideFooter={modal === "Claim Free Gift"}
+          className={modal === "Claim Free Gift" ? "gift-flow-modal" : ""}
+          size={modal === "Claim Free Gift" ? "wide" : "default"}
+        >
+          {modal === "Claim Free Gift" && giftFlowStep === "choice" && (
+            <div className="gift-flow-modal-body">
+              <p className="gift-flow-kicker">Nice choice. Want this added to your next order, or sent to someone else?</p>
+              <div className="gift-flow-choice-grid">
+                <button type="button" className="gift-flow-choice-card" onClick={() => setGiftFlowStep("self-confirm")}>
+                  <span className="gift-flow-choice-title">Add to my next order</span>
+                  <span className="gift-flow-choice-copy">
+                    Keeps your free gift attached to your next scheduled OMNI shipment.
+                  </span>
+                </button>
+                <button type="button" className="gift-flow-choice-card" onClick={() => setGiftFlowStep("friend-form")}>
+                  <span className="gift-flow-choice-title">Send to a friend</span>
+                  <span className="gift-flow-choice-copy">
+                    Add a shipping address and we’ll send the free gift their way.
+                  </span>
+                </button>
               </div>
-              <p>Your free gift has been added to your next OMNI order. It will ship with your scheduled delivery.</p>
+            </div>
+          )}
+          {modal === "Claim Free Gift" && giftFlowStep === "self-confirm" && (
+            <div className="gift-flow-modal-body">
+              <p className="gift-flow-kicker">Great pick. We’ll add the free gift to your next scheduled OMNI order.</p>
+              <div className="gift-flow-summary-card">
+                <img src="/assets/omni-product-watermelon.png" alt="OMNI Creatine Monohydrate Gummies — your free gift" />
+                <div>
+                  <span className="modal-eyebrow">Next order</span>
+                  <strong>Free gift ships with your OMNI delivery</strong>
+                  <p>Your account will stay on the same schedule and the gift will be included automatically.</p>
+                </div>
+              </div>
+              <div className="gift-flow-actions">
+                <button
+                  type="button"
+                  className="btn btn-primary btn-block"
+                  disabled={giftFlowBusy}
+                  aria-busy={giftFlowBusy}
+                  onClick={handleGiftSelfConfirm}
+                >
+                  {giftFlowBusy ? "Adding..." : "Continue"}
+                </button>
+                <button type="button" className="gift-flow-back" onClick={() => setGiftFlowStep("choice")} disabled={giftFlowBusy}>
+                  Back
+                </button>
+              </div>
+            </div>
+          )}
+          {modal === "Claim Free Gift" && giftFlowStep === "friend-form" && (
+            <form className="gift-friend-form" onSubmit={handleGiftFriendSubmit}>
+              <p className="gift-flow-kicker">Good call. Add your friend's address and we’ll send the gift their way.</p>
+              <div className="gift-flow-form-grid">
+                <label>
+                  <span>Name</span>
+                  <input
+                    value={giftFriend.name}
+                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, name: event.target.value }))}
+                    placeholder="Friend's name"
+                    required
+                  />
+                </label>
+                <label>
+                  <span>Address line 1</span>
+                  <input
+                    value={giftFriend.address1}
+                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, address1: event.target.value }))}
+                    placeholder="Street address"
+                    required
+                  />
+                </label>
+                <label>
+                  <span>Address line 2 optional</span>
+                  <input
+                    value={giftFriend.address2}
+                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, address2: event.target.value }))}
+                    placeholder="Apartment, suite, etc."
+                  />
+                </label>
+                <div className="gift-flow-form-row">
+                  <label>
+                    <span>City</span>
+                    <input
+                      value={giftFriend.city}
+                      onChange={(event) => setGiftFriend((prev) => ({ ...prev, city: event.target.value }))}
+                      placeholder="City"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>State</span>
+                    <input
+                      value={giftFriend.state}
+                      onChange={(event) => setGiftFriend((prev) => ({ ...prev, state: event.target.value }))}
+                      placeholder="State"
+                      required
+                    />
+                  </label>
+                  <label>
+                    <span>Zip code</span>
+                    <input
+                      value={giftFriend.zip}
+                      onChange={(event) => setGiftFriend((prev) => ({ ...prev, zip: event.target.value }))}
+                      placeholder="ZIP"
+                      required
+                    />
+                  </label>
+                </div>
+                <label>
+                  <span>Phone or email</span>
+                  <input
+                    value={giftFriend.contact}
+                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, contact: event.target.value }))}
+                    placeholder="For delivery updates"
+                  />
+                </label>
+              </div>
+              <div className="gift-flow-actions">
+                <button type="submit" className="btn btn-primary btn-block" disabled={giftFlowBusy} aria-busy={giftFlowBusy}>
+                  {giftFlowBusy ? "Sending..." : "Send gift"}
+                </button>
+                <button type="button" className="gift-flow-back" onClick={() => setGiftFlowStep("choice")} disabled={giftFlowBusy}>
+                  Back
+                </button>
+              </div>
+            </form>
+          )}
+          {modal === "Claim Free Gift" && giftFlowStep === "self-success" && (
+            <div className="gift-flow-modal-body">
+              <div className="gift-flow-confirm">
+                <div className="gift-flow-check" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4.5 11.5L9 16L17.5 7" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <span className="cancel-kicker">Saved</span>
+                <h4>Gift added to your next order</h4>
+                <p>Your free gift has been added and will ship with your next scheduled OMNI order.</p>
+              </div>
+              <div className="gift-flow-actions">
+                <button type="button" className="btn btn-primary btn-block" onClick={() => setModal(null)}>
+                  Done
+                </button>
+              </div>
+            </div>
+          )}
+          {modal === "Claim Free Gift" && giftFlowStep === "friend-success" && (
+            <div className="gift-flow-modal-body">
+              <div className="gift-flow-confirm">
+                <div className="gift-flow-check" aria-hidden="true">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M4.5 11.5L9 16L17.5 7" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+                <span className="cancel-kicker">Saved</span>
+                <h4>Gift claimed for your friend</h4>
+                <p>Your free gift has been added and will be sent to the address you entered.</p>
+              </div>
+              {giftFriend.name && (
+                <div className="gift-flow-summary-card gift-flow-summary-card-success">
+                  <div>
+                    <span className="modal-eyebrow">Shipping to</span>
+                    <strong>{giftFriend.name}</strong>
+                    <p>
+                      {giftFriend.address1}
+                      {giftFriend.address2 ? <><br />{giftFriend.address2}</> : null}
+                      <br />
+                      {giftFriend.city}, {giftFriend.state} {giftFriend.zip}
+                      {giftFriend.contact ? <><br />{giftFriend.contact}</> : null}
+                    </p>
+                  </div>
+                </div>
+              )}
+              <div className="gift-flow-actions">
+                <button type="button" className="btn btn-primary btn-block" onClick={() => setModal(null)}>
+                  Done
+                </button>
+              </div>
             </div>
           )}
           {modal === "Add to next order" && (

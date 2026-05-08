@@ -47,7 +47,7 @@ const manageOffers = [
     modalTitle: "Upgrade to Quarterly",
     actionLabel: "Upgrade now",
     offerCopy: {
-      eyebrow: "Quarterly upgrade",
+      eyebrow: "Delicious Choice",
       image: "/assets/group-16.png",
       imageAlt: "OMNI Creatine Gummies quarterly subscription offer",
       body: "Switch to a quarterly delivery schedule and lock in better per-order value. Fewer billing cycles, the same consistent creatine routine, and full control to skip or pause from the portal anytime.",
@@ -62,7 +62,7 @@ const manageOffers = [
     modalTitle: "Add Electrolytes",
     actionLabel: "Add to subscription",
     offerCopy: {
-      eyebrow: "Boost your stack",
+      eyebrow: "Daily Hydration",
       image: "/assets/omni-product-electrolytes-pear.png",
       imageAlt: "OMNI Creatine and Electrolytes pear stick packs",
       body: "Add OMNI Creatine + Electrolytes stick packs to your next shipment. Pairs naturally with your daily gummy routine — creatine support in the morning, hydration support when you train.",
@@ -73,24 +73,6 @@ const manageOffers = [
 ];
 
 const homeOffers = [
-  {
-    id: "home-upgrade",
-    imageUrl: "/assets/group-16.png",
-    alt: "Upgrade to quarterly OMNI subscription offer",
-    modalTitle: "Upgrade to Quarterly",
-    actionLabel: "Upgrade to quarterly",
-    offerCopy: {
-      eyebrow: "Quarterly upgrade",
-      image: "/assets/group-16.png",
-      imageAlt: "OMNI Creatine Gummies quarterly subscription upgrade offer",
-      body: "Move your subscription to quarterly delivery and lock in better value on every order. Ideal for members who have their routine dialed in and want fewer order cycles to manage.",
-      bullets: ["Save more per order on a quarterly plan", "Keep gummies consistently stocked", "Edit, skip, or cancel from the portal anytime"],
-      note: "This would update the next order after confirmation.",
-    },
-    hotspot: { left: "63.7%", top: "60.7%", width: "29.8%", height: "7.0%" },
-    variant: "hero",
-    isAnimated: false,
-  },
   {
     id: "home-body-needs",
     imageUrl: "/assets/omni-home-body-needs.jpg",
@@ -117,7 +99,7 @@ const homeOffers = [
     modalTitle: "Swap Flavor",
     actionLabel: "Swap my flavor",
     offerCopy: {
-      eyebrow: "Swap flavor",
+      eyebrow: "Try New Flavor",
       image: "/assets/swap.png",
       imageAlt: "OMNI Creatine Gummies flavor swap offer",
       body: "Switch your current gummy flavor to something new. Try Peach or Watermelon and keep the same routine with a fresh taste.",
@@ -128,6 +110,25 @@ const homeOffers = [
     variant: "campaign",
     isAnimated: true,
     animationDelay: ".28s",
+    cardClassName: "home-offer-card-swap",
+  },
+  {
+    id: "home-upgrade",
+    imageUrl: "/assets/group-16.png",
+    alt: "Upgrade to quarterly OMNI subscription offer",
+    modalTitle: "Upgrade to Quarterly",
+    actionLabel: "Upgrade to quarterly",
+    offerCopy: {
+      eyebrow: "Delicious Choice",
+      image: "/assets/group-16.png",
+      imageAlt: "OMNI Creatine Gummies quarterly subscription upgrade offer",
+      body: "Move your subscription to quarterly delivery and lock in better value on every order. Ideal for members who have their routine dialed in and want fewer order cycles to manage.",
+      bullets: ["Save more per order on a quarterly plan", "Keep gummies consistently stocked", "Edit, skip, or cancel from the portal anytime"],
+      note: "This would update the next order after confirmation.",
+    },
+    hotspot: { left: "63.7%", top: "60.7%", width: "29.8%", height: "7.0%" },
+    variant: "hero",
+    isAnimated: false,
   },
 ];
 
@@ -169,7 +170,7 @@ export default function PortalOfferStack({
             <button
               key={offer.id}
               type="button"
-              className={`home-offer-card${index === 0 ? " home-offer-card-hero" : " home-offer-card-compact"}`}
+              className={`home-offer-card${index === 0 ? " home-offer-card-hero" : " home-offer-card-compact"}${offer.id === "home-upgrade" ? " home-offer-card-square" : ""}${offer.cardClassName ? ` ${offer.cardClassName}` : ""}`}
               onClick={() => setActiveOffer(offer)}
             >
               <div className="home-offer-card-img">
@@ -207,7 +208,7 @@ export default function PortalOfferStack({
             <button
               key={offer.id}
               type="button"
-              className="manage-offer-card"
+              className={`manage-offer-card${offer.id === "manage-quarterly" ? " manage-offer-card-square" : ""}${offer.id === "manage-electrolytes" ? " manage-offer-card-electrolytes" : ""}`}
               onClick={() => setActiveOffer(offer)}
             >
               <div className="manage-offer-card-img">

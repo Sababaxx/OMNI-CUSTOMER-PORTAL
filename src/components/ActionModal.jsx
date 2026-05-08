@@ -9,6 +9,7 @@ export default function ActionModal({
   actionVariant = "primary",
   size = "default",
   className = "",
+  hideFooter = false,
 }) {
   useEffect(() => {
     if (!title) return undefined;
@@ -44,12 +45,14 @@ export default function ActionModal({
             </p>
           )}
         </div>
-        <div className="modal-actions">
-          <button className="btn btn-outline" type="button" onClick={onClose}>Cancel</button>
-          <button className={`btn btn-${actionVariant}`} type="button" onClick={onAction || onClose}>
-            {actionLabel}
-          </button>
-        </div>
+        {!hideFooter && (
+          <div className="modal-actions">
+            <button className="btn btn-outline" type="button" onClick={onClose}>Cancel</button>
+            <button className={`btn btn-${actionVariant}`} type="button" onClick={onAction || onClose}>
+              {actionLabel}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
