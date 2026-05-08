@@ -40,6 +40,11 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
     window.setTimeout(() => setToastMessage(""), 2600);
   };
 
+  const saveNextOrderDate = () => {
+    showToast("Next order date updated.");
+    setModal(null);
+  };
+
   const handleSkip = () => {
     setMoreOpen(false);
     setSkipConfirm(true);
@@ -144,12 +149,18 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
       </div>
 
       {modal && (
-        <ActionModal title={modal} onClose={() => setModal(null)}>
+        <ActionModal
+          title={modal}
+          onClose={() => setModal(null)}
+          onAction={modal === "Change next order date" ? saveNextOrderDate : undefined}
+          actionLabel={modal === "Change next order date" ? "Save date" : undefined}
+          actionVariant="primary"
+        >
           {modal === "Order now" && (
             <p>Your next OMNI order is ready to process today. This would charge the saved payment method and move the queued gummies into fulfillment.</p>
           )}
           {modal === "Change next order date" && (
-            <>
+            <div className="edit-form modal-date-form">
               <p>Choose a new delivery date for the next OMNI shipment. Your products and subscription frequency stay the same.</p>
               <div className="modal-calendar-wrap">
                 <input
@@ -160,12 +171,7 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
                   onChange={(e) => setNextOrderDate(e.target.value)}
                 />
               </div>
-              <div className="modal-actions">
-                <Button variant="primary" onClick={() => { showToast("Next order date updated."); setModal(null); }}>
-                  Save date
-                </Button>
-              </div>
-            </>
+            </div>
           )}
           {modal === "Pause subscription" && (
             <>
@@ -181,7 +187,7 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
             <p>Update the saved payment method for future OMNI orders. No card changes are made here.</p>
           )}
           {modal === "Update shipping" && (
-            <p>Update the shipping address for future OMNI deliveries. Address changes can be connected to the final account flow.</p>
+            <p>Update the shipping address for future OMNI deliveries. The portal keeps these changes tied to your account.</p>
           )}
         </ActionModal>
       )}
@@ -200,7 +206,7 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
         onKept={() => showToast("Subscription kept active.")}
       />
       {skipConfirm && (
-        <ActionModal title="Skip this order?" onClose={() => setSkipConfirm(false)}>
+        <ActionModal title="Skip this order?" onClose={() => setSkipConfirm(false)} hideFooter>
           <p>Your next order scheduled for <strong>{displayDate}</strong> will be skipped. Your subscription stays active — the order after that will ship on the usual schedule.</p>
           <div className="modal-actions modal-actions-row">
             <Button variant="primary" onClick={confirmSkip}>Yes, skip it</Button>

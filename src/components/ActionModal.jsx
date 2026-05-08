@@ -40,8 +40,8 @@ export default function ActionModal({
         <div className="modal-body">
           {children || (
             <p>
-              This action is ready for the next step. Final pricing, inventory, and account rules can be connected when
-              the subscription backend is available.
+              Review the details below before you continue. Pricing and account changes will be confirmed in the
+              final step.
             </p>
           )}
         </div>

@@ -12,7 +12,7 @@ export default function OrderHistoryPage({ onOpenModal }) {
     <section className="portal-page-panel" aria-label="Order history">
       <div className="portal-page-head">
         <h1>Order History</h1>
-        <p>Review recent OMNI orders and placeholder fulfillment details.</p>
+        <p>Review recent OMNI orders and fulfillment details.</p>
       </div>
 
       <div className="order-history-list">

@@ -6,15 +6,17 @@ const footerLogoOptions = {
 };
 const footerLogoSrc = footerLogoOptions.white;
 
-export default function Footer() {
+export default function Footer({ hideNewsletter = false }) {
   return (
     <footer className="omni-footer">
       <div className="footer-grid">
-        <div className="footer-newsletter">
-          <h4>Sign up for up to 47% Off</h4>
-          <input type="email" placeholder="Email address" />
-          <p>*By subscribing, you'll receive our wellness insights and can unsubscribe anytime.</p>
-        </div>
+        {!hideNewsletter && (
+          <div className="footer-newsletter">
+            <h4>Sign up for up to 47% Off</h4>
+            <input type="email" placeholder="Email address" />
+            <p>*By subscribing, you'll receive our wellness insights and can unsubscribe anytime.</p>
+          </div>
+        )}
         <div className="footer-col">
           <h4>SHOP</h4>
           <a href="#">SHOP NOW</a>

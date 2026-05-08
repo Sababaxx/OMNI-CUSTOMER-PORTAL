@@ -254,7 +254,9 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
   width: min(560px, 100%);
   max-height: calc(100vh - 40px);
-  overflow: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   border: 1px solid rgba(15, 37, 77, 0.12);
   border-radius: 14px;
@@ -293,7 +295,15 @@ button { font-family: inherit; cursor: pointer; }
   line-height: 1;
 }
 .offer-modal-action { margin-top: 8px; }
-.modal-body { margin-top: 4px; }
+.modal-body {
+  margin-top: 4px;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+}
+.modal-actions {
+  margin-top: auto;
+}
 .offer-modal-image,
 .product-modal-preview img {
   overflow: hidden;
@@ -4599,6 +4609,10 @@ button { font-family: inherit; cursor: pointer; }
     flex: 1 1 auto;
   }
 
+  .edit-form-row {
+    grid-template-columns: 1fr;
+  }
+
   .portal-shell-dashboard .offer-modal-image {
     aspect-ratio: 1.9 / 1;
   }
@@ -5263,6 +5277,150 @@ button { font-family: inherit; cursor: pointer; }
   color: #ffffff !important;
 }
 
+/* Final portal cleanup overrides */
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop {
+  background: rgba(5, 14, 35, 0.82) !important;
+}
+
+.portal-shell-dashboard .action-modal {
+  background: #132952 !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55) !important;
+  color: #ffffff !important;
+}
+
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .action-modal strong {
+  color: #ffffff !important;
+}
+
+.portal-shell-dashboard .action-modal .modal-body {
+  padding-right: 4px;
+}
+
+.portal-shell-dashboard .action-modal .modal-actions {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.portal-shell-dashboard .action-modal .modal-actions .btn {
+  min-width: 0;
+  flex: 1 1 180px;
+}
+
+.portal-shell-dashboard .action-modal .edit-form,
+.portal-shell-dashboard .action-modal .gift-flow-modal-body {
+  width: 100%;
+}
+
+.cancel-flow-panel .cancel-selected-label,
+.cancel-flow-panel .cancel-final-selected-label,
+.cancel-flow-panel .cancel-action-pill {
+  background: rgba(8, 35, 75, 0.42) !important;
+  border-color: rgba(85, 147, 255, 0.55) !important;
+  color: #f7fbff !important;
+}
+
+.cancel-flow-panel .cancel-reason-row.selected,
+.cancel-flow-panel .cancel-issue-type.selected,
+.cancel-flow-panel .cancel-option-pill.selected {
+  background: rgba(10, 34, 70, 0.72) !important;
+  border-color: rgba(78, 138, 255, 0.82) !important;
+  box-shadow: 0 0 0 3px rgba(78, 138, 255, 0.16) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual {
+  background: linear-gradient(180deg, rgba(10, 26, 53, 0.94), rgba(23, 49, 97, 0.96)) !important;
+  border-color: rgba(103, 148, 214, 0.26) !important;
+  color: #ffffff !important;
+}
+
+.cancel-flow-panel .cancel-product-visual .cancel-product-copy h3,
+.cancel-flow-panel .cancel-product-visual .cancel-product-copy p,
+.cancel-flow-panel .cancel-product-visual .cancel-kicker {
+  color: #ffffff !important;
+}
+
+.cancel-flow-panel .cancel-product-visual .cancel-product-thumb {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.cancel-flow-panel .cancel-save-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.cancel-flow-panel .cancel-flow-actions-sticky {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 10px !important;
+}
+
+.cancel-flow-panel .cancel-flow-secondary-link {
+  white-space: nowrap;
+}
+
+.cancel-flow-panel .cancel-complete-step {
+  width: min(100%, 760px) !important;
+  margin-inline: auto !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.cancel-flow-panel .cancel-complete-step h2 {
+  max-width: 100% !important;
+}
+
+.cancel-flow-panel .cancel-complete-step .btn {
+  margin-inline: auto !important;
+}
+
+@media (max-width: 760px) {
+  .portal-shell-dashboard .action-modal {
+    width: min(100%, 100%) !important;
+  }
+
+  .portal-shell-dashboard .action-modal .modal-actions {
+    flex-direction: column !important;
+  }
+
+  .portal-shell-dashboard .action-modal .modal-actions .btn {
+    width: 100% !important;
+    flex: 1 1 auto !important;
+  }
+
+  .cancel-flow-panel .cancel-save-footer {
+    justify-content: flex-start;
+  }
+
+  .cancel-flow-panel .cancel-flow-actions-sticky {
+    align-items: stretch !important;
+  }
+
+  .cancel-flow-panel .cancel-flow-secondary-link {
+    white-space: normal !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step {
+    width: 100% !important;
+    padding-inline: 4px !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step h2 {
+    font-size: clamp(26px, 7vw, 34px) !important;
+    line-height: 1.02 !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step p {
+    max-width: 34rem !important;
+  }
+}
+
 /* PRIMARY button on dark cancel flow → cobalt blue */
 .cancel-flow-panel .cancel-save-primary,
 .cancel-flow-panel .cancel-confirm-actions .btn-primary {
@@ -5559,7 +5717,7 @@ button { font-family: inherit; cursor: pointer; }
 }
 .edit-form-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 10px;
 }
 .edit-form input {
@@ -6611,7 +6769,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .gift-flow-form-row {
   display: grid;
-  grid-template-columns: 1.1fr 0.8fr 0.9fr;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.8fr) minmax(0, 0.9fr);
   gap: 10px;
 }
 

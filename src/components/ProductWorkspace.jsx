@@ -43,6 +43,7 @@ export default function ProductWorkspace({ compact = false }) {
   const [giftClaimLockedUntil, setGiftClaimLockedUntil] = useState(0);
   const [giftFlowStep, setGiftFlowStep] = useState("choice");
   const [giftFlowBusy, setGiftFlowBusy] = useState(false);
+  const [giftFlowBusyMode, setGiftFlowBusyMode] = useState(null);
   const [giftFriend, setGiftFriend] = useState({
     name: "",
     address1: "",
@@ -64,6 +65,7 @@ export default function ProductWorkspace({ compact = false }) {
     if (giftClaimed) return;
     setGiftFlowStep("choice");
     setGiftFlowBusy(false);
+    setGiftFlowBusyMode(null);
     setModal("Claim Free Gift");
   };
 
@@ -104,6 +106,7 @@ export default function ProductWorkspace({ compact = false }) {
       setGiftClaimed(false);
       setGiftClaimMode(null);
       setGiftClaimLockedUntil(0);
+      setGiftFlowBusyMode(null);
     }
     return undefined;
   }, []);
@@ -126,15 +129,18 @@ export default function ProductWorkspace({ compact = false }) {
     if (!modal) {
       setGiftFlowStep("choice");
       setGiftFlowBusy(false);
+      setGiftFlowBusyMode(null);
     }
   }, [modal]);
 
   const handleGiftSelfConfirm = () => {
     if (giftFlowBusy || giftClaimed) return;
     setGiftFlowBusy(true);
+    setGiftFlowBusyMode("self");
     window.setTimeout(() => {
       persistGiftClaim("self");
       setGiftFlowBusy(false);
+      setGiftFlowBusyMode(null);
       setGiftFlowStep("self-success");
     }, 700);
   };
@@ -143,9 +149,11 @@ export default function ProductWorkspace({ compact = false }) {
     event.preventDefault();
     if (giftFlowBusy || giftClaimed) return;
     setGiftFlowBusy(true);
+    setGiftFlowBusyMode("friend");
     window.setTimeout(() => {
       persistGiftClaim("friend");
       setGiftFlowBusy(false);
+      setGiftFlowBusyMode(null);
       setGiftFlowStep("friend-success");
     }, 900);
   };
@@ -284,16 +292,30 @@ export default function ProductWorkspace({ compact = false }) {
         <ActionModal
           title={modal === "Claim Free Gift" ? giftModalTitle : modal}
           onClose={() => setModal(null)}
+          onAction={
+            modal === "Add backup card"
+              ? () => {
+                  const last4 = newCard.number.replace(/\s/g, "").slice(-4) || "0000";
+                  setBackupCards((cards) => [...cards, { last4, expiry: newCard.expiry || "—" }]);
+                  setNewCard({ number: "", expiry: "", name: "" });
+                  setModal(null);
+                }
+              : undefined
+          }
+          actionLabel={modal === "Add backup card" ? "Add card" : undefined}
+          actionVariant="primary"
           hideFooter={modal === "Claim Free Gift"}
           className={modal === "Claim Free Gift" ? "gift-flow-modal" : ""}
-          size={modal === "Claim Free Gift" ? "wide" : "default"}
+          size={modal === "Claim Free Gift" || modal === "Add backup card" ? "wide" : "default"}
         >
           {modal === "Claim Free Gift" && giftFlowStep === "choice" && (
             <div className="gift-flow-modal-body">
               <p className="gift-flow-kicker">Nice choice. Want this added to your next order, or sent to someone else?</p>
               <div className="gift-flow-choice-grid">
-                <button type="button" className="gift-flow-choice-card" onClick={() => setGiftFlowStep("self-confirm")}>
-                  <span className="gift-flow-choice-title">Add to my next order</span>
+                <button type="button" className="gift-flow-choice-card" onClick={handleGiftSelfConfirm} disabled={giftFlowBusy}>
+                  <span className="gift-flow-choice-title">
+                    {giftFlowBusy && giftFlowBusyMode === "self" ? "Adding..." : "Ship with my next order"}
+                  </span>
                   <span className="gift-flow-choice-copy">
                     Keeps your free gift attached to your next scheduled OMNI shipment.
                   </span>
@@ -307,36 +329,9 @@ export default function ProductWorkspace({ compact = false }) {
               </div>
             </div>
           )}
-          {modal === "Claim Free Gift" && giftFlowStep === "self-confirm" && (
-            <div className="gift-flow-modal-body">
-              <p className="gift-flow-kicker">Great pick. We’ll add the free gift to your next scheduled OMNI order.</p>
-              <div className="gift-flow-summary-card">
-                <img src="/assets/omni-product-watermelon.png" alt="OMNI Creatine Monohydrate Gummies — your free gift" />
-                <div>
-                  <span className="modal-eyebrow">Next order</span>
-                  <strong>Free gift ships with your OMNI delivery</strong>
-                  <p>Your account will stay on the same schedule and the gift will be included automatically.</p>
-                </div>
-              </div>
-              <div className="gift-flow-actions">
-                <button
-                  type="button"
-                  className="btn btn-primary btn-block"
-                  disabled={giftFlowBusy}
-                  aria-busy={giftFlowBusy}
-                  onClick={handleGiftSelfConfirm}
-                >
-                  {giftFlowBusy ? "Adding..." : "Continue"}
-                </button>
-                <button type="button" className="gift-flow-back" onClick={() => setGiftFlowStep("choice")} disabled={giftFlowBusy}>
-                  Back
-                </button>
-              </div>
-            </div>
-          )}
           {modal === "Claim Free Gift" && giftFlowStep === "friend-form" && (
             <form className="gift-friend-form" onSubmit={handleGiftFriendSubmit}>
-              <p className="gift-flow-kicker">Good call. Add your friend's address and we’ll send the gift their way.</p>
+              <p className="gift-flow-kicker">Nice choice. Add your friend’s address and we’ll send the gift their way.</p>
               <div className="gift-flow-form-grid">
                 <label>
                   <span>Name</span>
@@ -404,8 +399,11 @@ export default function ProductWorkspace({ compact = false }) {
               </div>
               <div className="gift-flow-actions">
                 <button type="submit" className="btn btn-primary btn-block" disabled={giftFlowBusy} aria-busy={giftFlowBusy}>
-                  {giftFlowBusy ? "Sending..." : "Send gift"}
+                  {giftFlowBusy && giftFlowBusyMode === "friend" ? "Sending..." : "Send gift"}
                 </button>
+                {giftFlowBusy && giftFlowBusyMode === "friend" && (
+                  <span className="gift-flow-submitted" role="status">Submitted. We’re preparing the gift for your friend.</span>
+                )}
                 <button type="button" className="gift-flow-back" onClick={() => setGiftFlowStep("choice")} disabled={giftFlowBusy}>
                   Back
                 </button>
@@ -499,18 +497,6 @@ export default function ProductWorkspace({ compact = false }) {
                 <label>Expiry<input value={newCard.expiry} onChange={e => setNewCard(c => ({...c, expiry: e.target.value}))} placeholder="MM/YY" maxLength={5} /></label>
                 <label>CVV<input placeholder="•••" maxLength={4} /></label>
               </div>
-              <button
-                type="button"
-                className="edit-form-save"
-                onClick={() => {
-                  const last4 = newCard.number.replace(/\s/g, "").slice(-4) || "0000";
-                  setBackupCards(cards => [...cards, { last4, expiry: newCard.expiry || "—" }]);
-                  setNewCard({ number: "", expiry: "", name: "" });
-                  setModal(null);
-                }}
-              >
-                Add card
-              </button>
             </div>
           )}
         </ActionModal>

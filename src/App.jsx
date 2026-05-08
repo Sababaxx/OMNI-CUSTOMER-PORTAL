@@ -40,7 +40,7 @@ export default function App() {
       ) : (
         renderPage()
       )}
-      <Footer />
+      <Footer hideNewsletter={true} />
       {modal && (
         <ActionModal title={modal} onClose={() => setModal(null)}>
           {modal === "Log out" && <p>Confirm that this OMNI portal session should be logged out. No account data changes are made here.</p>}

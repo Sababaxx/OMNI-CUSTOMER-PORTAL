@@ -33,7 +33,7 @@ const reasonConfig = [
     helper: "Give consistency, dose, and timing enough time to line up.",
     treatment: "education",
     headline: "Give your routine enough time to work",
-    body: "Creatine works best when dose, timing, and consistency line up over a few weeks. Try a lighter routine before closing the plan.",
+    body: "Creatine works best when dose, timing, and consistency line up over a few weeks. Try a steadier routine before closing the plan.",
     subReasons: ["Less than 4 weeks", "Taking inconsistently", "Not sure about dose", "Expected faster change"],
     cards: ["4 to 12 week consistency window", "Daily serving matters", "Timing should fit your routine"],
     ctas: [
@@ -77,7 +77,7 @@ const reasonConfig = [
     helper: "Skip or slow down delivery without losing your subscription.",
     treatment: "overstock",
     headline: "You do not need to cancel to slow things down",
-    body: "If you have enough product, keep member access and move the next order out.",
+    body: "If you have enough product, keep member access and move the next order out instead of closing the account.",
     subReasons: ["One extra pouch", "Multiple pouches left", "Using it slower", "Travel or schedule change"],
     cards: ["Unopened pouches keep well sealed", "Skip once without cancelling", "Move cadence to 8 or 12 weeks"],
     ctas: [
@@ -93,7 +93,7 @@ const reasonConfig = [
     helper: "Review a stronger member offer before cancelling.",
     treatment: "savings",
     headline: "Lower the next orders before giving up member pricing",
-    body: "Keep portal control, member pricing, and your routine while reducing the next few orders.",
+    body: "Keep portal control, member pricing, and your routine while lowering the next few orders.",
     subReasons: ["Monthly cost", "Shipping cost", "Budget changed", "Want fewer orders"],
     offer: "50% off next 3 orders",
     cards: ["Best if you still want OMNI", "Keeps member pricing active", "Can pair with a skipped order"],
@@ -111,7 +111,7 @@ const reasonConfig = [
     headline: "Keep control without losing the better price",
     body: "Your subscription keeps member pricing active. You can pause, skip, or slow deliveries without closing the account.",
     subReasons: ["Only wanted one order", "Prefer manual orders", "Subscription anxiety", "Need more control"],
-    cards: ["Skip anytime", "Pause anytime", "Change delivery date", "Cancel from portal"],
+    cards: ["Skip anytime", "Pause anytime", "Change delivery date", "Keep portal control"],
     ctas: [
       { label: "Skip next order", branch: "skip" },
       { label: "Pause subscription", branch: "pause" },
@@ -129,7 +129,7 @@ const reasonConfig = [
     imageKey: "product-swap",
     cards: ["Switch to electrolyte stick packs", "Try Peach gummies", "Try Watermelon gummies", "Build a product plan"],
     ctas: [
-      { label: "Swap product", branch: "product" },
+      { label: "Swap to a better fit", branch: "product" },
       { label: "Get my product plan", branch: "plan" },
     ],
     plan: {
@@ -145,13 +145,13 @@ const reasonConfig = [
     title: "Too much sugar or too sweet",
     helper: "Try sugar free stick packs instead.",
     treatment: "product-fit",
-    headline: "Switch to a cleaner format",
+    headline: "Switch to a sugar free format",
     body: "Electrolyte stick packs are sugar free and keep the daily habit simple with added hydration support.",
     subReasons: ["Too sweet", "Avoiding sugar", "Prefer sugar free", "Want stick packs"],
     imageKey: "electrolytes",
     cards: ["Zero sugar format", "Added hydration support", "Keeps the daily routine"],
     ctas: [
-      { label: "Switch to stick packs", branch: "product", preselect: "Electrolyte stick packs" },
+      { label: "Switch to electrolyte stick packs", branch: "product", preselect: "Electrolyte stick packs" },
       { label: "Skip next order", branch: "skip" },
       { label: "Contact support", action: "support" },
     ],
@@ -351,7 +351,7 @@ const branchConfig = {
   },
   education: {
     title: "Why members stay",
-    body: "This placeholder is ready for deeper website-style content.",
+    body: "See why members stay with OMNI before you decide. The portal keeps your routine, timing, and support options in one place.",
     options: ["Quality testing", "How to take OMNI", "Routine tips"],
     cta: "Save and keep subscription",
     saved: "Your member setup was kept active.",
@@ -360,6 +360,27 @@ const branchConfig = {
 
 function getBranchConfig(branch, reason) {
   if (branch === "plan" && reason.plan) return reason.plan;
+  if (branch === "product") {
+    if (reason.id === "sugar") {
+      return {
+        title: "Switch to sugar free stick packs",
+        body: "Electrolyte stick packs keep the routine intact while removing the sugar concern.",
+        options: ["Electrolyte stick packs", "Peach gummies", "Watermelon gummies"],
+        cta: "Save product swap",
+        saved: "Your sugar-free format was saved.",
+      };
+    }
+
+    if (reason.id === "flavor-texture" || reason.id === "digestion") {
+      return {
+        title: "Choose a better-fitting format",
+        body: "Pick the product direction that feels better for taste, texture, or digestion.",
+        options: ["Electrolyte stick packs", "Peach gummies", "Watermelon gummies"],
+        cta: "Save product swap",
+        saved: "Your product swap was saved.",
+      };
+    }
+  }
   return branchConfig[branch] || branchConfig.skip;
 }
 
@@ -530,14 +551,16 @@ function CancellationSavePage({ reason, onBack, onAction, onCancel }) {
         </div>
       </div>
 
-      <button
-        type="button"
-        className="cancel-text-link"
-        onClick={handleCancel}
-        disabled={!canContinue}
-      >
-        {FINAL_STEP_LABEL}
-      </button>
+      <div className="cancel-save-footer">
+        <button
+          type="button"
+          className="cancel-text-link"
+          onClick={handleCancel}
+          disabled={!canContinue}
+        >
+          {FINAL_STEP_LABEL}
+        </button>
+      </div>
     </div>
   );
 }
@@ -580,7 +603,7 @@ function CancellationBranchScreen({ branch, reason, preselect, onBack, onDone, o
         <Button variant="primary" onClick={() => onDone(config.saved, choice)}>
           {choice ? `${config.cta}: ${choice}` : config.cta}
         </Button>
-        <button type="button" className="cancel-text-link" onClick={onCancel}>{FINAL_STEP_LABEL}</button>
+        <button type="button" className="cancel-text-link cancel-flow-secondary-link" onClick={onCancel}>{FINAL_STEP_LABEL}</button>
       </div>
     </div>
   );
@@ -633,14 +656,53 @@ function getRescueConfig(reason) {
   }
 
   if (tasteIds.includes(reason.id)) {
+    if (reason.id === "sugar") {
+      return {
+        eyebrow: "Sugar free option",
+        title: "Switch to electrolyte stick packs instead of canceling",
+        body: "Electrolyte stick packs are sugar free and keep the daily routine going with hydration support.",
+        trust: "A format change solves the sugar concern without ending the routine.",
+        actions: [
+          { label: "Switch to electrolyte stick packs", branch: "product", preselect: "Electrolyte stick packs" },
+          { label: "Skip next order", branch: "skip" },
+        ],
+      };
+    }
+
+    if (reason.id === "flavor-texture") {
+      return {
+        eyebrow: "Taste fit",
+        title: "Swap flavor or format before you cancel",
+        body: "If taste, texture, or aftertaste are the issue, try a better flavor or a different format first.",
+        trust: "You can change the experience without losing your routine.",
+        actions: [
+          { label: "Swap flavor", branch: "product", preselect: "Peach gummies" },
+          { label: "Switch format", branch: "product", preselect: "Electrolyte stick packs" },
+        ],
+      };
+    }
+
+    if (reason.id === "digestion") {
+      return {
+        eyebrow: "Gentler fit",
+        title: "Try a gentler format before you cancel",
+        body: "A smaller routine or a different format can help you keep going without losing control.",
+        trust: "You can adjust the format and keep the account active.",
+        actions: [
+          { label: "Switch to electrolyte stick packs", branch: "product", preselect: "Electrolyte stick packs" },
+          { label: "Build gentler routine", branch: "plan" },
+        ],
+      };
+    }
+
     return {
       eyebrow: "Better fit option",
       title: "Fix the fit first, then decide",
-      body: "Flavor and format issues are fixable. Route the fit issue to support or pause the next delivery while you choose the better direction.",
+      body: "Flavor and format issues are fixable before you close the account.",
       trust: "Your subscription stays fully in your control.",
       actions: [
-        { label: "Contact support", action: "support" },
-        { label: "Pause subscription", branch: "pause" },
+        { label: "Swap flavor", branch: "product", preselect: "Peach gummies" },
+        { label: "Switch format", branch: "product", preselect: "Electrolyte stick packs" },
       ],
     };
   }
@@ -867,7 +929,7 @@ export default function CancellationFlow({ open, onClose, onKept, onSupportStart
 
   useEffect(() => {
     backdropRef.current?.scrollTo({ top: 0, behavior: "auto" });
-  }, [step, selectedReasonId]);
+  }, [step]);
 
   useEffect(() => {
     if (!open) return undefined;
