@@ -44,22 +44,21 @@ export default function ProductWorkspace({ compact = false }) {
   const [giftFlowStep, setGiftFlowStep] = useState("choice");
   const [giftFlowBusy, setGiftFlowBusy] = useState(false);
   const [giftFlowBusyMode, setGiftFlowBusyMode] = useState(null);
-  const [giftFriend, setGiftFriend] = useState({
-    name: "",
-    address1: "",
-    address2: "",
-    city: "",
-    state: "",
-    zip: "",
-    contact: "",
-  });
+  const [giftFriend, setGiftFriend] = useState({ name: "", address1: "", address2: "", city: "", state: "", zip: "", contact: "" });
   const [selectedFlavor, setSelectedFlavor] = useState("peach");
   const [flavorSaved, setFlavorSaved] = useState(false);
   const [swapConfirmOpen, setSwapConfirmOpen] = useState(false);
+  const [toast, setToast] = useState(null);
+  const [friendOverlay, setFriendOverlay] = useState(null);
 
   const subtotal = 115;
   const shipping = 8;
   const total = subtotal + shipping;
+
+  const showToast = (message) => {
+    setToast(message);
+    window.setTimeout(() => setToast(null), 5000);
+  };
 
   const handleClaimGift = () => {
     if (giftClaimed) return;
@@ -69,9 +68,7 @@ export default function ProductWorkspace({ compact = false }) {
     setModal("Claim Free Gift");
   };
 
-  const openSwapConfirm = () => {
-    setSwapConfirmOpen(true);
-  };
+  const openSwapConfirm = () => setSwapConfirmOpen(true);
 
   const confirmSwapFlavor = () => {
     setFlavorSaved(true);
@@ -141,7 +138,8 @@ export default function ProductWorkspace({ compact = false }) {
       persistGiftClaim("self");
       setGiftFlowBusy(false);
       setGiftFlowBusyMode(null);
-      setGiftFlowStep("self-success");
+      setModal(null);
+      showToast("Your free gift is locked in — it'll ship with your next OMNI order.");
     }, 700);
   };
 
@@ -151,43 +149,61 @@ export default function ProductWorkspace({ compact = false }) {
     setGiftFlowBusy(true);
     setGiftFlowBusyMode("friend");
     window.setTimeout(() => {
+      const friendName = giftFriend.name || "your friend";
       persistGiftClaim("friend");
       setGiftFlowBusy(false);
       setGiftFlowBusyMode(null);
-      setGiftFlowStep("friend-success");
+      setModal(null);
+      setFriendOverlay(friendName);
+      window.setTimeout(() => setFriendOverlay(null), 5000);
     }, 900);
   };
 
-  const giftModalTitle =
-    giftFlowStep === "friend-success"
-      ? "Gift claimed for your friend"
-      : giftFlowStep === "self-success"
-        ? "Gift added to your next order"
-        : "Claim Free Gift";
-
   return (
     <section className={`workspace-grid ${compact ? "workspace-grid-compact" : ""}`} aria-label="Subscription product workspace">
-      <div className="workspace-left">
-        <h2 className="workspace-title">Claim Free Gift</h2>
-        <div
-          className={`claim-free-gift-card${giftClaimed ? " gift-claimed" : ""}`}
-          role={!giftClaimed ? "button" : undefined}
-          tabIndex={!giftClaimed ? 0 : undefined}
-          onClick={!giftClaimed ? handleClaimGift : undefined}
-          onKeyDown={!giftClaimed ? (e) => e.key === "Enter" && handleClaimGift() : undefined}
-          aria-label={!giftClaimed ? "Claim your free gift" : undefined}
-        >
-          <img src="/assets/omni-claim-free-gift.png" alt="Claim your free gift with your next OMNI order" />
-          <div className="claim-free-gift-overlay">
-            {giftClaimed ? (
-              <span className="claim-gift-confirmed">
-                ✓ {giftClaimMode === "friend" ? "Gift claimed for your friend" : "Gift added to your next order"}
-              </span>
-            ) : (
-              <span className="claim-gift-cta-label">Claim Free Gift →</span>
-            )}
+      {toast && (
+        <div className="workspace-toast" role="status" aria-live="polite">
+          <svg width="16" height="16" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M4.5 11.5L9 16L17.5 7" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          {toast}
+        </div>
+      )}
+
+      {friendOverlay && (
+        <div className="friend-gift-overlay" role="dialog" aria-modal="true">
+          <div className="friend-gift-card">
+            <span className="friend-gift-icon">🎁❤️</span>
+            <h3>That's a kind move.</h3>
+            <p>
+              Gift confirmed, and we'll take care of getting it to {friendOverlay}.
+            </p>
+            <button type="button" className="friend-gift-dismiss" onClick={() => setFriendOverlay(null)}>
+              Got it
+            </button>
           </div>
         </div>
+      )}
+
+      <div className="workspace-left">
+        {!giftClaimed && (
+          <>
+            <h2 className="workspace-title">Claim Free Gift</h2>
+            <div
+              className="claim-free-gift-card"
+              role="button"
+              tabIndex={0}
+              onClick={handleClaimGift}
+              onKeyDown={(e) => e.key === "Enter" && handleClaimGift()}
+              aria-label="Claim your free gift"
+            >
+              <img src="/assets/omni-claim-free-gift.png" alt="Claim your free gift with your next OMNI order" />
+              <div className="claim-free-gift-overlay">
+                <span className="claim-gift-cta-label">Claim Free Gift →</span>
+              </div>
+            </div>
+          </>
+        )}
 
         <h2 className="workspace-title">Swap Flavor</h2>
         <div className="workspace-card swap-flavor-card">
@@ -195,7 +211,7 @@ export default function ProductWorkspace({ compact = false }) {
           <div className="swap-flavor-options">
             <button
               type="button"
-            className={`swap-flavor-btn${selectedFlavor === "peach" ? " selected" : ""}`}
+              className={`swap-flavor-btn${selectedFlavor === "peach" ? " selected" : ""}`}
               onClick={() => { setSelectedFlavor("peach"); setFlavorSaved(false); }}
             >
               <img src="/assets/omni-product-peach.png" alt="Peach gummies" />
@@ -203,7 +219,7 @@ export default function ProductWorkspace({ compact = false }) {
             </button>
             <button
               type="button"
-            className={`swap-flavor-btn${selectedFlavor === "watermelon" ? " selected" : ""}`}
+              className={`swap-flavor-btn${selectedFlavor === "watermelon" ? " selected" : ""}`}
               onClick={() => { setSelectedFlavor("watermelon"); setFlavorSaved(false); }}
             >
               <img src="/assets/omni-product-watermelon.png" alt="Watermelon gummies" />
@@ -265,32 +281,33 @@ export default function ProductWorkspace({ compact = false }) {
         <div className="workspace-card rec-card-list">
           {recs.map((item) => {
             const selected = item.options.find((option) => option.label === recSelections[item.name]) || item.options[0];
-
             return (
-            <div className="rec-product" key={item.name}>
-              <div className={`rec-image ${item.tone}`}>
-                {selected.image ? <img src={selected.image} alt={`${item.name} ${selected.label}`} /> : <span>{selected.tile}</span>}
+              <div className="rec-product" key={item.name}>
+                <div className={`rec-image ${item.tone}`}>
+                  {selected.image ? <img src={selected.image} alt={`${item.name} ${selected.label}`} /> : <span>{selected.tile}</span>}
+                </div>
+                <div className="rec-copy">
+                  <h3>{item.name}</h3>
+                  <p>{item.desc}</p>
+                  <select
+                    value={recSelections[item.name]}
+                    onChange={(event) => setRecSelections((plans) => ({ ...plans, [item.name]: event.target.value }))}
+                  >
+                    {item.options.map((option) => (
+                      <option key={option.label}>{option.label}</option>
+                    ))}
+                  </select>
+                  <div className="rec-bottom"><strong>${selected.price.toFixed(2)}</strong><button type="button" className="rec-add-btn" onClick={() => setModal("Add to next order")}>Add</button></div>
+                </div>
               </div>
-              <div className="rec-copy">
-                <h3>{item.name}</h3>
-                <p>{item.desc}</p>
-                <select
-                  value={recSelections[item.name]}
-                  onChange={(event) => setRecSelections((plans) => ({ ...plans, [item.name]: event.target.value }))}
-                >
-                  {item.options.map((option) => (
-                    <option key={option.label}>{option.label}</option>
-                  ))}
-                </select>
-                <div className="rec-bottom"><strong>${selected.price.toFixed(2)}</strong><button type="button" onClick={() => setModal("Add to next order")}>Add</button></div>
-              </div>
-            </div>
-          )})}
+            );
+          })}
         </div>
       </aside>
+
       {modal && (
         <ActionModal
-          title={modal === "Claim Free Gift" ? giftModalTitle : modal}
+          title={modal === "Claim Free Gift" ? "Claim Free Gift" : modal}
           onClose={() => setModal(null)}
           onAction={
             modal === "Add backup card"
@@ -323,7 +340,7 @@ export default function ProductWorkspace({ compact = false }) {
                 <button type="button" className="gift-flow-choice-card" onClick={() => setGiftFlowStep("friend-form")}>
                   <span className="gift-flow-choice-title">Send to a friend</span>
                   <span className="gift-flow-choice-copy">
-                    Add a shipping address and we’ll send the free gift their way.
+                    Add a shipping address and we'll send the free gift their way.
                   </span>
                 </button>
               </div>
@@ -331,137 +348,48 @@ export default function ProductWorkspace({ compact = false }) {
           )}
           {modal === "Claim Free Gift" && giftFlowStep === "friend-form" && (
             <form className="gift-friend-form" onSubmit={handleGiftFriendSubmit}>
-              <p className="gift-flow-kicker">Nice choice. Add your friend’s address and we’ll send the gift their way.</p>
+              <p className="gift-flow-kicker">Nice choice. Add your friend's address and we'll send the gift their way.</p>
               <div className="gift-flow-form-grid">
                 <label>
                   <span>Name</span>
-                  <input
-                    value={giftFriend.name}
-                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, name: event.target.value }))}
-                    placeholder="Friend's name"
-                    required
-                  />
+                  <input value={giftFriend.name} onChange={(e) => setGiftFriend((p) => ({ ...p, name: e.target.value }))} placeholder="Friend's name" required />
                 </label>
                 <label>
                   <span>Address line 1</span>
-                  <input
-                    value={giftFriend.address1}
-                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, address1: event.target.value }))}
-                    placeholder="Street address"
-                    required
-                  />
+                  <input value={giftFriend.address1} onChange={(e) => setGiftFriend((p) => ({ ...p, address1: e.target.value }))} placeholder="Street address" required />
                 </label>
                 <label>
                   <span>Address line 2 optional</span>
-                  <input
-                    value={giftFriend.address2}
-                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, address2: event.target.value }))}
-                    placeholder="Apartment, suite, etc."
-                  />
+                  <input value={giftFriend.address2} onChange={(e) => setGiftFriend((p) => ({ ...p, address2: e.target.value }))} placeholder="Apartment, suite, etc." />
                 </label>
                 <div className="gift-flow-form-row">
                   <label>
                     <span>City</span>
-                    <input
-                      value={giftFriend.city}
-                      onChange={(event) => setGiftFriend((prev) => ({ ...prev, city: event.target.value }))}
-                      placeholder="City"
-                      required
-                    />
+                    <input value={giftFriend.city} onChange={(e) => setGiftFriend((p) => ({ ...p, city: e.target.value }))} placeholder="City" required />
                   </label>
                   <label>
                     <span>State</span>
-                    <input
-                      value={giftFriend.state}
-                      onChange={(event) => setGiftFriend((prev) => ({ ...prev, state: event.target.value }))}
-                      placeholder="State"
-                      required
-                    />
+                    <input value={giftFriend.state} onChange={(e) => setGiftFriend((p) => ({ ...p, state: e.target.value }))} placeholder="State" required />
                   </label>
                   <label>
                     <span>Zip code</span>
-                    <input
-                      value={giftFriend.zip}
-                      onChange={(event) => setGiftFriend((prev) => ({ ...prev, zip: event.target.value }))}
-                      placeholder="ZIP"
-                      required
-                    />
+                    <input value={giftFriend.zip} onChange={(e) => setGiftFriend((p) => ({ ...p, zip: e.target.value }))} placeholder="ZIP" required />
                   </label>
                 </div>
                 <label>
                   <span>Phone or email</span>
-                  <input
-                    value={giftFriend.contact}
-                    onChange={(event) => setGiftFriend((prev) => ({ ...prev, contact: event.target.value }))}
-                    placeholder="For delivery updates"
-                  />
+                  <input value={giftFriend.contact} onChange={(e) => setGiftFriend((p) => ({ ...p, contact: e.target.value }))} placeholder="For delivery updates" />
                 </label>
               </div>
               <div className="gift-flow-actions">
                 <button type="submit" className="btn btn-primary btn-block" disabled={giftFlowBusy} aria-busy={giftFlowBusy}>
                   {giftFlowBusy && giftFlowBusyMode === "friend" ? "Sending..." : "Send gift"}
                 </button>
-                {giftFlowBusy && giftFlowBusyMode === "friend" && (
-                  <span className="gift-flow-submitted" role="status">Submitted. We’re preparing the gift for your friend.</span>
-                )}
                 <button type="button" className="gift-flow-back" onClick={() => setGiftFlowStep("choice")} disabled={giftFlowBusy}>
                   Back
                 </button>
               </div>
             </form>
-          )}
-          {modal === "Claim Free Gift" && giftFlowStep === "self-success" && (
-            <div className="gift-flow-modal-body">
-              <div className="gift-flow-confirm">
-                <div className="gift-flow-check" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                    <path d="M4.5 11.5L9 16L17.5 7" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <span className="cancel-kicker">Saved</span>
-                <h4>Gift added to your next order</h4>
-                <p>Your free gift has been added and will ship with your next scheduled OMNI order.</p>
-              </div>
-              <div className="gift-flow-actions">
-                <button type="button" className="btn btn-primary btn-block" onClick={() => setModal(null)}>
-                  Done
-                </button>
-              </div>
-            </div>
-          )}
-          {modal === "Claim Free Gift" && giftFlowStep === "friend-success" && (
-            <div className="gift-flow-modal-body">
-              <div className="gift-flow-confirm">
-                <div className="gift-flow-check" aria-hidden="true">
-                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                    <path d="M4.5 11.5L9 16L17.5 7" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-                <span className="cancel-kicker">Saved</span>
-                <h4>Gift claimed for your friend</h4>
-                <p>Your free gift has been added and will be sent to the address you entered.</p>
-              </div>
-              {giftFriend.name && (
-                <div className="gift-flow-summary-card gift-flow-summary-card-success">
-                  <div>
-                    <span className="modal-eyebrow">Shipping to</span>
-                    <strong>{giftFriend.name}</strong>
-                    <p>
-                      {giftFriend.address1}
-                      {giftFriend.address2 ? <><br />{giftFriend.address2}</> : null}
-                      <br />
-                      {giftFriend.city}, {giftFriend.state} {giftFriend.zip}
-                      {giftFriend.contact ? <><br />{giftFriend.contact}</> : null}
-                    </p>
-                  </div>
-                </div>
-              )}
-              <div className="gift-flow-actions">
-                <button type="button" className="btn btn-primary btn-block" onClick={() => setModal(null)}>
-                  Done
-                </button>
-              </div>
-            </div>
           )}
           {modal === "Add to next order" && (
             <p>Add the selected recommended OMNI product to the upcoming shipment. Pricing and flavor are confirmed before final checkout.</p>
@@ -520,10 +448,7 @@ export default function ProductWorkspace({ compact = false }) {
               <div>
                 <span className="modal-eyebrow">Selected flavor</span>
                 <strong>{selectedFlavor === "peach" ? "Peach" : "Watermelon"}</strong>
-                <p>
-                  This change keeps your same product and frequency. Only the flavor switches, and it applies to the next
-                  shipment.
-                </p>
+                <p>This change keeps your same product and frequency. Only the flavor switches, and it applies to the next shipment.</p>
               </div>
             </div>
           </div>
