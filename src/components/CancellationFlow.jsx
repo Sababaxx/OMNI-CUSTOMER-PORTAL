@@ -408,92 +408,34 @@ function getBranchConfig(branch, reason) {
   return branchConfig[branch] || branchConfig.skip;
 }
 
-function getProductVisualConfig(reason) {
-  switch (reason?.id) {
-    case "sugar":
-      return {
-        eyebrow: "Sugar free fit",
-        title: "Electrolyte stick packs",
-        body: "Switch format without losing the routine. A sugar free option with hydration support.",
-      };
-    case "digestion":
-      return {
-        eyebrow: "Gentler format",
-        title: "Electrolyte stick packs",
-        body: "A gentler format can be easier to take while you keep the habit active.",
-      };
-    case "fast":
-    case "stocked":
-      return {
-        eyebrow: "Delivery cadence",
-        title: "Move the next order",
-        body: "Slow the next shipment down instead of closing the account or overstocking.",
-      };
-    case "no-results":
-    case "habit":
-      return {
-        eyebrow: "Consistency plan",
-        title: "Give the routine a few weeks",
-        body: "Creatine works best when dose, timing, and consistency line up together.",
-      };
-    case "trial-only":
-    case "no-longer-need":
-      return {
-        eyebrow: "Keep control",
-        title: "Skip or pause from the portal",
-        body: "Stay in control without losing member access or your setup.",
-      };
-    case "flavor-texture":
-      return {
-        eyebrow: "Flavor fit",
-        title: "Swap flavor or format",
-        body: "Try Peach, Watermelon, or a stick pack format before you leave.",
-      };
-    case "expensive":
-      return {
-        eyebrow: "Better value",
-        title: "Quarterly delivery savings",
-        body: "A lower cadence can improve per-order value while keeping your routine active.",
-      };
-    case "alternative":
-      return {
-        eyebrow: "Compare options",
-        title: "See why members stay",
-        body: "Keep OMNI in the mix while you compare quality, convenience, and daily fit.",
-      };
-    case "editing":
-      return {
-        eyebrow: "Portal controls",
-        title: "Your controls are still here",
-        body: "Skipping, pausing, rescheduling, and changing frequency are all available in the portal.",
-      };
-    case "product-issue":
-    case "packaging-issue":
-      return {
-        eyebrow: "Support first",
-        title: "Let support review this issue",
-        body: "Share what happened so support can help before you decide to cancel.",
-      };
-    default:
-      return {
-        eyebrow: "Product option",
-        title: "A better fit",
-        body: "Adjust flavor, format, or timing without ending the routine.",
-      };
-  }
-}
+const PRODUCT_VISUAL_MAP = {
+  electrolytes: {
+    src: "/assets/omni-product-electrolytes-pear.png",
+    alt: "OMNI Electrolyte stick packs – Pear",
+    title: "Electrolyte stick packs",
+    copy: "A sugar free stick pack for customers who want creatine with added hydration support.",
+  },
+  "product-swap": {
+    src: "/assets/omni-product-watermelon.png",
+    alt: "OMNI Creatine Gummy – Watermelon",
+    title: "Better product fit",
+    copy: "Swap flavor or format without ending your subscription.",
+  },
+};
 
-function ProductVisual({ reason }) {
-  if (!reason) return null;
-  const visual = getProductVisualConfig(reason);
+function ProductVisual({ imageKey }) {
+  if (!imageKey) return null;
+  const info = PRODUCT_VISUAL_MAP[imageKey] || PRODUCT_VISUAL_MAP["product-swap"];
 
   return (
-    <article className={`cancel-product-visual cancel-product-visual-${reason.imageKey || "general"}`}>
-      <div className={`cancel-product-thumb cancel-product-thumb-${reason.imageKey || "general"}`} aria-hidden="true" />
+    <article className={`cancel-product-visual cancel-product-visual-${imageKey}`}>
+      <div className="cancel-product-thumb">
+        <img src={info.src} alt={info.alt} />
+      </div>
       <div className="cancel-product-copy">
-        <span className="cancel-kicker">{visual.eyebrow}</span>
-        <h3>{visual.title}</h3>
-        <p>{visual.body}</p>
+        <span className="cancel-kicker">Product option</span>
+        <h3>{info.title}</h3>
+        <p>{info.copy}</p>
       </div>
     </article>
   );
@@ -908,7 +850,7 @@ function CancellationModalHeader({ onClose }) {
   return (
     <div className="cancel-modal-header">
       <div className="cancel-modal-logo" aria-label="OMNI">
-        <img src="/assets/omni-logo-white.svg" alt="OMNI" />
+        <img src="/assets/omni-logo-dark.svg" alt="OMNI" />
       </div>
       <button className="cancel-flow-close" type="button" onClick={onClose} aria-label="Close cancellation flow">
         ×
