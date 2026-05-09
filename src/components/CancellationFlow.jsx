@@ -384,21 +384,34 @@ function getBranchConfig(branch, reason) {
   return branchConfig[branch] || branchConfig.skip;
 }
 
+const PRODUCT_VISUAL_MAP = {
+  electrolytes: {
+    src: "/assets/omni-product-electrolytes-pear.png",
+    alt: "OMNI Electrolyte stick packs – Pear",
+    title: "Electrolyte stick packs",
+    copy: "A sugar free stick pack for customers who want creatine with added hydration support.",
+  },
+  "product-swap": {
+    src: "/assets/omni-product-watermelon.png",
+    alt: "OMNI Creatine Gummy – Watermelon",
+    title: "Better product fit",
+    copy: "Swap flavor or format without ending your subscription.",
+  },
+};
+
 function ProductVisual({ imageKey }) {
   if (!imageKey) return null;
-  const productTitle = imageKey === "electrolytes" ? "Electrolyte stick packs" : "Better product fit";
-  const productCopy =
-    imageKey === "electrolytes"
-      ? "A sugar free stick pack direction for customers who want creatine with added hydration support."
-      : "A cleaner product fit area for swapping format or flavor without ending the subscription.";
+  const info = PRODUCT_VISUAL_MAP[imageKey] || PRODUCT_VISUAL_MAP["product-swap"];
 
   return (
     <article className={`cancel-product-visual cancel-product-visual-${imageKey}`}>
-      <div className="cancel-product-thumb" aria-hidden="true" />
+      <div className="cancel-product-thumb">
+        <img src={info.src} alt={info.alt} />
+      </div>
       <div className="cancel-product-copy">
         <span className="cancel-kicker">Product option</span>
-        <h3>{productTitle}</h3>
-        <p>{productCopy}</p>
+        <h3>{info.title}</h3>
+        <p>{info.copy}</p>
       </div>
     </article>
   );
@@ -748,7 +761,7 @@ function CancellationModalHeader({ onClose }) {
   return (
     <div className="cancel-modal-header">
       <div className="cancel-modal-logo" aria-label="OMNI">
-        <img src="/assets/omni-logo-white.svg" alt="OMNI" />
+        <img src="/assets/omni-logo-dark.svg" alt="OMNI" />
       </div>
       <button className="cancel-flow-close" type="button" onClick={onClose} aria-label="Close cancellation flow">
         ×

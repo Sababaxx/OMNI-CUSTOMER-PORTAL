@@ -2659,17 +2659,6 @@ button { font-family: inherit; cursor: pointer; }
     border-radius: 999px;
   }
 
-  .portal-shell-dashboard .portal-side-nav a {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
-    color: rgba(255, 255, 255, 0.82) !important;
-  }
-
-  .portal-shell-dashboard .portal-side-nav a.active {
-    background: rgba(255, 255, 255, 0.96) !important;
-    border-color: rgba(255, 255, 255, 0.96) !important;
-    color: #102347 !important;
-  }
 
   .detail-layout .portal-main {
     max-width: none;
@@ -4904,602 +4893,12 @@ button { font-family: inherit; cursor: pointer; }
   }
 }
 
-/* Dark shell: product card and offer cards on dark bg */
-.portal-shell-dashboard .manage-current-product-card,
-.portal-shell-dashboard .manage-offer-card {
-  background: #1a335f !important;
-  background-image: none !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  box-shadow: none !important;
-}
-
-.portal-shell-dashboard .manage-product-name {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .manage-product-detail,
-.portal-shell-dashboard .manage-next-label,
-.portal-shell-dashboard .manage-price-per {
-  color: rgba(255, 255, 255, 0.55) !important;
-}
-
-.portal-shell-dashboard .manage-product-price strong {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .manage-offer-card-title {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .manage-offer-card-eyebrow {
-  color: rgba(255, 255, 255, 0.5) !important;
-  opacity: 1 !important;
-}
-
-.portal-shell-dashboard .manage-offer-card-cta {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.portal-shell-dashboard .manage-offer-card:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.22) !important;
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   DARK PORTAL THEME — header, shell, nav, manage-hero, cancel flow
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-/* ── Header: dark navy, full-brightness text ─────────────────────────────── */
-.omni-header {
-  background: #102347 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-}
-.header-shop {
-  color: rgba(255, 255, 255, 0.92) !important;
-}
-.header-icons {
-  color: #ffffff !important;
-}
-
-/* ── Footer: dark to match portal shell ─────────────────────────────────── */
-.omni-footer {
-  background: #102347 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-.footer-newsletter h4,
-.footer-col h4 {
-  color: #ffffff !important;
-}
-.footer-newsletter p {
-  color: rgba(255, 255, 255, 0.55) !important;
-}
-.footer-newsletter input {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: #fff !important;
-}
-.footer-newsletter input::placeholder {
-  color: rgba(255, 255, 255, 0.38) !important;
-}
-.footer-newsletter button {
-  background: #ffffff !important;
-  color: #102347 !important;
-}
-.footer-col a,
-.footer-bottom .right-links a {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-.footer-col a:hover,
-.footer-bottom .right-links a:hover {
-  color: #ffffff !important;
-}
-.footer-col h4::after {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-.footer-mega {
-  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
-}
-.footer-bottom {
-  border-top-color: rgba(255, 255, 255, 0.08) !important;
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-.footer-socials a {
-  color: rgba(255, 255, 255, 0.65) !important;
-}
-.footer-socials a:hover {
-  color: #ffffff !important;
-}
-.footer-disclaimer {
-  color: rgba(255, 255, 255, 0.3) !important;
-  border-top-color: rgba(255, 255, 255, 0.06) !important;
-}
-
-/* ── Portal shell: deep navy background ─────────────────────────────────── */
-.portal-shell-dashboard {
-  background: #102347 !important;
-  background-image: none !important;
-  position: relative !important;
-  isolation: isolate !important;
-}
-
-.portal-shell-dashboard .portal-layout,
-.portal-shell-dashboard .portal-main,
-.portal-shell-dashboard .detail-layout {
-  background: #102347 !important;
-  background-image: none !important;
-}
-
-/* ── Side nav on dark shell ─────────────────────────────────────────────── */
-.portal-side-nav a {
-  color: rgba(255, 255, 255, 0.78) !important;
-  text-decoration: none !important;
-}
-.portal-side-nav a:hover {
-  color: #ffffff !important;
-}
-.portal-side-nav a.active {
-  color: #ffffff !important;
-  font-weight: 800 !important;
-}
-
-/* ── Manage-hero: dark glass card on navy shell ──────────────────────────── */
-.manage-hero {
-  background: #14294f !important;
-  background-image: none !important;
-  border: 1px solid rgba(255, 255, 255, 0.09) !important;
-  border-radius: 14px !important;
-  padding: 20px 22px 18px !important;
-  margin-bottom: 24px !important;
-  box-shadow: none !important;
-}
-
-/* title + subtitle text on dark hero */
-.manage-hero h1,
-.manage-title-area h1 {
-  color: #ffffff !important;
-}
-.manage-title-area p,
-.manage-title-area p strong,
-.manage-title-area p span {
-  color: rgba(255, 255, 255, 0.72) !important;
-}
-
-/* "Next on …" link styling on dark */
-.manage-title-area p a,
-.manage-title-area p strong a {
-  color: #ffffff !important;
-  text-decoration: underline !important;
-  text-decoration-color: rgba(255, 255, 255, 0.35) !important;
-}
-
-/* primary action button — cobalt blue, stands out without harsh white */
-.manage-action-row .btn-primary {
-  background: rgba(55, 110, 235, 0.85) !important;
-  color: #ffffff !important;
-  border-color: rgba(55, 110, 235, 0.6) !important;
-}
-.manage-action-row .btn-primary:hover {
-  background: rgba(55, 110, 235, 1) !important;
-  border-color: rgba(55, 110, 235, 0.9) !important;
-}
-
-/* outline buttons go ghost on dark bg */
-.manage-action-row .btn-outline {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-}
-.manage-action-row .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.13) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  color: #ffffff !important;
-}
-
-/* back button on dark hero */
-.manage-title-area .btn-outline.back-btn {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-
-/* more-menu dropdown on dark bg */
-.manage-action-row .more-menu {
-  background: #1a3360 !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
-}
-.manage-action-row .more-menu button {
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.manage-action-row .more-menu button:hover {
-  background: rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
-}
-
-/* ── workspace-title headings sit on dark shell → white ────────────────── */
-.portal-shell-dashboard .workspace-title {
-  color: #ffffff !important;
-}
-
-/* ── Skip-success screen on dark shell ──────────────────────────────────── */
-.skip-success-screen h2,
-.portal-shell-dashboard .skip-success-screen p {
-  color: #ffffff !important;
-}
-
-/* ── Cancel flow: dark navy modal ───────────────────────────────────────── */
-.cancel-flow-panel {
-  background: linear-gradient(160deg, #14294f 0%, #102347 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  color: #ffffff !important;
-}
-
-/* cancel headings on dark flow */
-.cancel-flow-panel h2,
-.cancel-flow-panel h3,
-.cancel-flow-panel .cancel-step h2,
-.cancel-flow-panel .cancel-save-card h3,
-.cancel-flow-panel .cancel-confirm-card h3 {
-  color: #ffffff !important;
-}
-
-.cancel-flow-panel p,
-.cancel-flow-panel .cancel-step p,
-.cancel-flow-panel .cancel-save-card p,
-.cancel-flow-panel .cancel-final-subcopy {
-  color: rgba(255, 255, 255, 0.72) !important;
-}
-
-.cancel-flow-panel .cancel-kicker,
-.cancel-flow-panel .cancel-step-head .cancel-kicker,
-.cancel-flow-panel .cancel-step-meta .cancel-kicker {
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-
-/* reason select rows on dark bg (class is cancel-reason-row in JSX) */
-.cancel-flow-panel .cancel-reason-btn,
-.cancel-flow-panel .cancel-reason-row {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.cancel-flow-panel .cancel-reason-btn:hover,
-.cancel-flow-panel .cancel-reason-row:hover {
-  background: rgba(255, 255, 255, 0.09) !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-reason-btn.selected,
-.cancel-flow-panel .cancel-reason-row.selected {
-  background: rgba(55, 110, 235, 0.18) !important;
-  border-color: rgba(55, 110, 235, 0.6) !important;
-  color: #ffffff !important;
-}
-/* radio dot on dark */
-.cancel-flow-panel .cancel-reason-row .cancel-radio {
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  background: transparent !important;
-}
-.cancel-flow-panel .cancel-reason-row.selected .cancel-radio {
-  border-color: rgba(55, 110, 235, 0.9) !important;
-  background: rgba(55, 110, 235, 0.9) !important;
-}
-/* reason row text */
-.cancel-flow-panel .cancel-reason-row strong {
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-reason-row small {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-/* flow-level btn-primary / btn-outline (Back, Continue, etc.) */
-.cancel-flow-panel .cancel-flow-actions .btn-primary,
-.cancel-flow-panel .cancel-step .btn-primary {
-  background: rgba(55, 110, 235, 0.9) !important;
-  color: #ffffff !important;
-  border-color: transparent !important;
-}
-.cancel-flow-panel .cancel-flow-actions .btn-primary:hover,
-.cancel-flow-panel .cancel-step .btn-primary:hover {
-  background: rgba(55, 110, 235, 1) !important;
-}
-.cancel-flow-panel .cancel-flow-actions .btn-outline,
-.cancel-flow-panel .cancel-step .btn-outline {
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.cancel-flow-panel .cancel-flow-actions .btn-outline:hover,
-.cancel-flow-panel .cancel-step .btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.55) !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-.cancel-flow-panel .cancel-flow-actions .btn-outline:disabled,
-.cancel-flow-panel .cancel-step .btn-outline:disabled {
-  opacity: 0.3 !important;
-  cursor: not-allowed !important;
-}
-
-/* issue type / option pill chips on dark */
-.cancel-flow-panel .cancel-issue-type,
-.cancel-flow-panel .cancel-option-pill {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-.cancel-flow-panel .cancel-issue-type:hover,
-.cancel-flow-panel .cancel-option-pill:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-issue-type.selected,
-.cancel-flow-panel .cancel-option-pill.selected {
-  background: rgba(55, 110, 235, 0.18) !important;
-  border-color: rgba(55, 110, 235, 0.6) !important;
-  color: #ffffff !important;
-}
-
-/* note textarea on dark */
-.cancel-flow-panel .cancel-note-field textarea {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-note-field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-.cancel-flow-panel .cancel-note-field {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-/* save/rescue cards on dark bg */
-.cancel-flow-panel .cancel-save-card,
-.cancel-flow-panel .cancel-rescue-card,
-.cancel-flow-panel .cancel-confirm-card,
-.cancel-flow-panel .cancel-branch-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-  box-shadow: none !important;
-}
-
-/* insight cards on dark bg */
-.cancel-flow-panel .cancel-insight-card {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgba(255, 255, 255, 0.82) !important;
-}
-.cancel-flow-panel .cancel-insight-card strong,
-.cancel-flow-panel .cancel-insight-card span {
-  color: #ffffff !important;
-}
-
-/* Final portal cleanup overrides */
-.portal-shell-dashboard .modal-backdrop,
-.portal-shell-dashboard .offer-modal-backdrop {
-  background: rgba(5, 14, 35, 0.82) !important;
-}
-
-.portal-shell-dashboard .action-modal {
-  background: #132952 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55) !important;
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .action-modal h3,
-.portal-shell-dashboard .action-modal p,
-.portal-shell-dashboard .action-modal li,
-.portal-shell-dashboard .action-modal strong {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .action-modal .modal-body {
-  padding-right: 4px;
-}
-
-.portal-shell-dashboard .action-modal .modal-actions {
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.portal-shell-dashboard .action-modal .modal-actions .btn {
-  min-width: 0;
-  flex: 1 1 180px;
-}
-
-.portal-shell-dashboard .action-modal .edit-form,
-.portal-shell-dashboard .action-modal .gift-flow-modal-body {
-  width: 100%;
-}
-
-.cancel-flow-panel .cancel-selected-label,
-.cancel-flow-panel .cancel-final-selected-label,
-.cancel-flow-panel .cancel-action-pill {
-  background: rgba(8, 35, 75, 0.42) !important;
-  border-color: rgba(85, 147, 255, 0.55) !important;
-  color: #f7fbff !important;
-}
-
-.cancel-flow-panel .cancel-reason-row.selected,
-.cancel-flow-panel .cancel-issue-type.selected,
-.cancel-flow-panel .cancel-option-pill.selected {
-  background: rgba(10, 34, 70, 0.72) !important;
-  border-color: rgba(78, 138, 255, 0.82) !important;
-  box-shadow: 0 0 0 3px rgba(78, 138, 255, 0.16) !important;
-}
-
-.cancel-flow-panel .cancel-product-visual {
-  background: linear-gradient(180deg, rgba(10, 26, 53, 0.94), rgba(23, 49, 97, 0.96)) !important;
-  border-color: rgba(103, 148, 214, 0.26) !important;
-  color: #ffffff !important;
-}
-
-.cancel-flow-panel .cancel-product-visual .cancel-product-copy h3,
-.cancel-flow-panel .cancel-product-visual .cancel-product-copy p,
-.cancel-flow-panel .cancel-product-visual .cancel-kicker {
-  color: #ffffff !important;
-}
-
-.cancel-flow-panel .cancel-product-visual .cancel-product-thumb {
-  border-color: rgba(255, 255, 255, 0.18) !important;
-}
-
-.cancel-flow-panel .cancel-save-footer {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 12px;
-}
-
-.cancel-flow-panel .cancel-flow-actions-sticky {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-end !important;
-  gap: 10px !important;
-}
-
-.cancel-flow-panel .cancel-flow-secondary-link {
-  white-space: nowrap;
-}
-
-.cancel-flow-panel .cancel-complete-step {
-  width: min(100%, 760px) !important;
-  margin-inline: auto !important;
-  align-items: center !important;
-  text-align: center !important;
-}
-
-.cancel-flow-panel .cancel-complete-step h2 {
-  max-width: 100% !important;
-}
-
-.cancel-flow-panel .cancel-complete-step .btn {
-  margin-inline: auto !important;
-}
-
-@media (max-width: 760px) {
-  .portal-shell-dashboard .action-modal {
-    width: min(100%, 100%) !important;
-  }
-
-  .portal-shell-dashboard .action-modal .modal-actions {
-    flex-direction: column !important;
-  }
-
-  .portal-shell-dashboard .action-modal .modal-actions .btn {
-    width: 100% !important;
-    flex: 1 1 auto !important;
-  }
-
-  .cancel-flow-panel .cancel-save-footer {
-    justify-content: flex-start;
-  }
-
-  .cancel-flow-panel .cancel-flow-actions-sticky {
-    align-items: stretch !important;
-  }
-
-  .cancel-flow-panel .cancel-flow-secondary-link {
-    white-space: normal !important;
-  }
-
-  .cancel-flow-panel .cancel-complete-step {
-    width: 100% !important;
-    padding-inline: 4px !important;
-  }
-
-  .cancel-flow-panel .cancel-complete-step h2 {
-    font-size: clamp(26px, 7vw, 34px) !important;
-    line-height: 1.02 !important;
-  }
-
-  .cancel-flow-panel .cancel-complete-step p {
-    max-width: 34rem !important;
-  }
-}
-
-/* PRIMARY button on dark cancel flow → cobalt blue */
-.cancel-flow-panel .cancel-save-primary,
-.cancel-flow-panel .cancel-confirm-actions .btn-primary {
-  background: rgba(55, 110, 235, 0.9) !important;
-  color: #ffffff !important;
-  border-color: transparent !important;
-  box-shadow: 0 4px 18px rgba(55, 110, 235, 0.25) !important;
-}
-.cancel-flow-panel .cancel-save-primary:hover,
-.cancel-flow-panel .cancel-confirm-actions .btn-primary:hover {
-  background: rgba(55, 110, 235, 1) !important;
-  transform: translateY(-1px) !important;
-}
-
-/* SECONDARY button on dark cancel flow → outlined white */
-.cancel-flow-panel .cancel-save-secondary,
-.cancel-flow-panel .cancel-confirm-actions .btn-outline {
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.32) !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-}
-.cancel-flow-panel .cancel-save-secondary:hover,
-.cancel-flow-panel .cancel-confirm-actions .btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  background: rgba(255, 255, 255, 0.07) !important;
-}
-
-.cancel-flow-panel .cancel-confirm-actions .cancel-confirm-destructive {
-  background: linear-gradient(135deg, #3db35e 0%, #2d8e49 100%) !important;
-  border-color: rgba(61, 179, 94, 0.9) !important;
-  color: #ffffff !important;
-  box-shadow: 0 10px 24px rgba(45, 142, 73, 0.28) !important;
-}
-
-.cancel-flow-panel .cancel-confirm-actions .cancel-confirm-destructive:hover {
-  background: linear-gradient(135deg, #49c76a 0%, #2f9a4c 100%) !important;
-  border-color: rgba(73, 199, 106, 1) !important;
-}
-
-/* text links on dark bg */
-.cancel-flow-panel .cancel-text-link,
-.cancel-flow-panel .cancel-back-link {
-  color: rgba(255, 255, 255, 0.42) !important;
-}
-.cancel-flow-panel .cancel-text-link:hover,
-.cancel-flow-panel .cancel-back-link:hover {
-  color: rgba(255, 255, 255, 0.78) !important;
-}
-
-/* sub-reason grid pills on dark bg */
-.cancel-flow-panel .cancel-sub-reason-grid button {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-.cancel-flow-panel .cancel-sub-reason-grid button:hover,
-.cancel-flow-panel .cancel-sub-reason-grid button.selected {
-  background: rgba(255, 255, 255, 0.14) !important;
-  border-color: rgba(255, 255, 255, 0.48) !important;
-  color: #fff !important;
-}
-
-/* close button on dark bg */
-.cancel-flow-panel .cancel-flow-close {
-  color: rgba(255, 255, 255, 0.55) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-.cancel-flow-panel .cancel-flow-close:hover {
-  color: #fff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-}
-
 /* ── Claim Free Gift: image-first card with overlay CTA ─────────────────── */
 .claim-free-gift-card {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(7, 19, 46, 0.14) !important;
+  border: 1px solid var(--omni-card-border);
   cursor: pointer;
   display: block;
   margin-bottom: 22px;
@@ -5554,105 +4953,9 @@ button { font-family: inherit; cursor: pointer; }
 
 @media (max-width: 540px) {
   .manage-hero {
-    padding: 14px !important;
-    border-radius: 10px !important;
+    padding: 14px;
+    border-radius: 10px;
   }
-  .portal-side-nav a {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .portal-side-nav a.active {
-    background: rgba(255, 255, 255, 0.12);
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   DARK PORTAL THEME — workspace cards (ProductWorkspace)
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-/* ── Base workspace card ─────────────────────────────────────────────────── */
-.portal-shell-dashboard .workspace-card {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  color: #ffffff !important;
-}
-
-/* ── Text inside workspace cards ─────────────────────────────────────────── */
-.portal-shell-dashboard .workspace-card h3 {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .workspace-card p,
-.portal-shell-dashboard .workspace-card span {
-  color: rgba(255, 255, 255, 0.65) !important;
-}
-.portal-shell-dashboard .workspace-card strong {
-  color: #ffffff !important;
-}
-
-/* ── Swap Flavor card ────────────────────────────────────────────────────── */
-.portal-shell-dashboard .swap-flavor-desc {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-.portal-shell-dashboard .swap-flavor-btn {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-.portal-shell-dashboard .swap-flavor-btn span {
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-.portal-shell-dashboard .swap-flavor-btn.selected {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .swap-flavor-btn.selected span {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .claim-gift-btn {
-  background: #ffffff !important;
-  color: #102347 !important;
-}
-.portal-shell-dashboard .claim-gift-btn:hover {
-  background: rgba(255, 255, 255, 0.9) !important;
-}
-.portal-shell-dashboard .claim-gift-confirmed {
-  color: #4ade80 !important;
-}
-
-/* ── Shipping / Billing cards ────────────────────────────────────────────── */
-.portal-shell-dashboard .billing-workspace-card .add-product-wide {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-.portal-shell-dashboard .mastercard-dot {
-  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
-}
-.portal-shell-dashboard .billing-meta span {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-/* ── Summary card ────────────────────────────────────────────────────────── */
-.portal-shell-dashboard .summary-workspace-card div span {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-.portal-shell-dashboard .summary-total span,
-.portal-shell-dashboard .summary-total strong {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .promo-row input {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .promo-row input::placeholder {
-  color: rgba(255, 255, 255, 0.32) !important;
-}
-.portal-shell-dashboard .promo-row button {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* ── Card Edit button — clean text link ─────────────────────────────────── */
@@ -5674,13 +4977,6 @@ button { font-family: inherit; cursor: pointer; }
 .card-edit-btn:hover {
   opacity: 1;
 }
-.portal-shell-dashboard .card-edit-btn {
-  color: #ffffff !important;
-  opacity: 0.45 !important;
-}
-.portal-shell-dashboard .card-edit-btn:hover {
-  opacity: 0.9 !important;
-}
 
 /* ── Backup card row ──────────────────────────────────────────────────────── */
 .backup-card-row {
@@ -5688,11 +4984,8 @@ button { font-family: inherit; cursor: pointer; }
   padding-top: 10px;
   margin-top: 2px;
 }
-.portal-shell-dashboard .backup-card-row {
-  border-top-color: rgba(255, 255, 255, 0.07) !important;
-}
 .backup-card-label {
-  font-size: 10.5px !important;
+  font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -5713,7 +5006,7 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  color: var(--omni-muted, #8a8278);
+  color: var(--omni-text-3);
 }
 .edit-form-row {
   display: grid;
@@ -5726,8 +5019,8 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 500;
   padding: 9px 12px;
   border-radius: 10px;
-  border: 1.5px solid var(--omni-card-border, rgba(0,34,102,0.14));
-  background: var(--omni-card-bg, #faf9f7);
+  border: 1.5px solid var(--omni-card-border);
+  background: var(--omni-surface);
   color: var(--omni-text);
   outline: none;
   transition: border-color 0.15s;
@@ -5759,193 +5052,7 @@ button { font-family: inherit; cursor: pointer; }
   transform: translateY(-1px);
 }
 
-/* ── "You might also like" rec cards ─────────────────────────────────────── */
-.portal-shell-dashboard .rec-card-list {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-.portal-shell-dashboard .rec-product {
-  border-color: rgba(255, 255, 255, 0.08) !important;
-}
-.portal-shell-dashboard .rec-copy h3 {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .rec-copy p {
-  color: rgba(255, 255, 255, 0.55) !important;
-}
-.portal-shell-dashboard .rec-copy strong {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .rec-copy select {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.portal-shell-dashboard .rec-bottom button {
-  background: rgba(55, 110, 235, 0.18) !important;
-  color: rgba(120, 165, 255, 1) !important;
-  border: none !important;
-  overflow: visible !important;
-}
-.portal-shell-dashboard .rec-bottom button:hover {
-  background: rgba(55, 110, 235, 0.3) !important;
-  color: #ffffff !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   DARK PORTAL THEME — modals (ActionModal)
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.portal-shell-dashboard .modal-backdrop {
-  background: rgba(5, 14, 35, 0.86) !important;
-  backdrop-filter: blur(5px) !important;
-}
-
-.portal-shell-dashboard .action-modal {
-  background: #132952 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55) !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .action-modal-wide {
-  width: min(860px, 100%) !important;
-}
-
-.portal-shell-dashboard .action-modal h3 {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .modal-body p,
-.portal-shell-dashboard .modal-body li {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.portal-shell-dashboard .offer-modal-copy > p:first-of-type {
-  color: rgba(255, 255, 255, 0.88) !important;
-}
-
-.portal-shell-dashboard .modal-body strong {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .action-modal p.modal-note {
-  background: rgba(255, 255, 255, 0.09) !important;
-  border: 1px solid rgba(255, 255, 255, 0.16) !important;
-  border-radius: 10px;
-  padding: 10px 12px;
-  color: rgba(255, 255, 255, 0.82) !important;
-  margin-top: 14px !important;
-}
-
-.portal-shell-dashboard .modal-close {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-.portal-shell-dashboard .modal-close:hover {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* Modal action buttons on dark */
-.portal-shell-dashboard .modal-actions .btn-outline,
-.portal-shell-dashboard .modal-actions-row .btn-outline {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: rgba(255, 255, 255, 0.82) !important;
-}
-.portal-shell-dashboard .modal-actions .btn-outline:hover,
-.portal-shell-dashboard .modal-actions-row .btn-outline:hover {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.36) !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .modal-actions .btn-primary,
-.portal-shell-dashboard .modal-actions-row .btn-primary {
-  background: rgba(55, 110, 235, 0.9) !important;
-  border-color: transparent !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .modal-actions .btn-primary:hover,
-.portal-shell-dashboard .modal-actions-row .btn-primary:hover {
-  background: rgba(55, 110, 235, 1) !important;
-}
-
-.portal-shell-dashboard .action-modal .modal-actions {
-  margin-top: 18px;
-}
-
-.portal-shell-dashboard .action-modal .modal-actions .btn {
-  min-height: 48px;
-}
-
-/* Date input inside modal */
-.portal-shell-dashboard .modal-date-input {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-  color: #ffffff !important;
-  color-scheme: dark;
-}
-
-/* Pause option buttons */
-.portal-shell-dashboard .modal-option-row button {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.portal-shell-dashboard .modal-option-row button:hover {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.35) !important;
-  color: #ffffff !important;
-}
-
-/* Edit form inside dark modal */
-.portal-shell-dashboard .edit-form label {
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-.portal-shell-dashboard .edit-form input {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .edit-form input::placeholder {
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-.portal-shell-dashboard .edit-form input:focus {
-  border-color: rgba(55, 110, 235, 0.7) !important;
-}
-.portal-shell-dashboard .edit-form-save {
-  background: rgba(55, 110, 235, 0.9) !important;
-}
-.portal-shell-dashboard .edit-form-save:hover {
-  background: rgba(55, 110, 235, 1) !important;
-}
-
-/* Skip modal eyebrow / offer image inside dark modal */
-.portal-shell-dashboard .offer-modal-image img {
-  border-radius: 10px;
-  object-position: center 14%;
-}
-.portal-shell-dashboard .modal-eyebrow {
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-
-.portal-shell-dashboard .offer-modal-image {
-  aspect-ratio: 1.86 / 1;
-}
-
-.portal-shell-dashboard .offer-modal-copy ul {
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.12);
-}
-
-.portal-shell-dashboard .offer-modal-copy li {
-  line-height: 1.45;
-}
-
-.portal-shell-dashboard .offer-modal-copy li::before {
-  background: rgba(55, 110, 235, 0.95);
-}
-
+/* ── Swap confirm modal ───────────────────────────────────────────────────── */
 .swap-confirm-modal {
   display: grid;
   gap: 12px;
@@ -5957,9 +5064,9 @@ button { font-family: inherit; cursor: pointer; }
   gap: 14px;
   align-items: center;
   padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid var(--omni-card-border);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--omni-surface);
 }
 
 .swap-confirm-card img {
@@ -5975,358 +5082,14 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 6px;
   font-size: 18px;
   line-height: 1.1;
-  color: #ffffff;
+  color: var(--omni-text);
 }
 
 .swap-confirm-card p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.68);
+  color: var(--omni-text-2);
   font-size: 13px;
   line-height: 1.45;
-}
-
-@media (max-width: 540px) {
-  .portal-shell-dashboard .action-modal p.modal-note {
-    padding: 12px;
-    color: rgba(255, 255, 255, 0.86) !important;
-  }
-
-  .portal-shell-dashboard .offer-modal-image {
-    aspect-ratio: 1.75 / 1;
-  }
-
-  .portal-shell-dashboard .offer-modal-image img {
-    object-position: center center;
-  }
-
-  .portal-shell-dashboard .action-modal .modal-actions .btn {
-    min-height: 46px;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   DARK PORTAL THEME — CancelIntroVideoModal
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.portal-shell-dashboard .cancel-intro-backdrop {
-  background: rgba(5, 14, 35, 0.75) !important;
-  backdrop-filter: blur(5px) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-modal {
-  background: #132952 !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.6) !important;
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .cancel-intro-copy span {
-  color: rgba(255, 255, 255, 0.45) !important;
-  text-transform: uppercase;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-}
-
-.portal-shell-dashboard .cancel-intro-copy h2 {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .cancel-intro-copy p {
-  color: rgba(255, 255, 255, 0.65) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-plan {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-plan strong {
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .cancel-intro-plan span {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-option {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-option.selected {
-  background: rgba(55, 110, 235, 0.18) !important;
-  border-color: rgba(55, 110, 235, 0.6) !important;
-  color: #ffffff !important;
-}
-
-.portal-shell-dashboard .cancel-intro-actions .btn-outline {
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  color: rgba(255, 255, 255, 0.82) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-actions .btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.55) !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-actions .btn-primary {
-  background: #ffffff !important;
-  color: #102347 !important;
-  border-color: #ffffff !important;
-}
-
-.portal-shell-dashboard .cancel-intro-close {
-  color: rgba(255, 255, 255, 0.5) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-.portal-shell-dashboard .cancel-intro-close:hover {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   DARK CANCEL FLOW — inner step elements (save page, branch, confirm, etc.)
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-/* Steps are transparent so panel gradient shows through */
-.cancel-flow-panel .cancel-step,
-.cancel-flow-panel .cancel-save-step,
-.cancel-flow-panel .cancel-confirm-step,
-.cancel-flow-panel .cancel-rescue-step,
-.cancel-flow-panel .cancel-complete-step {
-  background: transparent !important;
-  color: #ffffff !important;
-}
-
-.cancel-flow-panel .cancel-step h2,
-.cancel-flow-panel .cancel-step h3 {
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-step p {
-  color: rgba(255, 255, 255, 0.68) !important;
-}
-.cancel-flow-panel .cancel-step strong {
-  color: #ffffff !important;
-}
-
-/* Diagnostic block container */
-.cancel-flow-panel .cancel-diagnostic-block {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 14px;
-}
-.cancel-flow-panel .cancel-diagnostic-block .cancel-kicker {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-
-/* Sub-reason / issue-type pill chips */
-.cancel-flow-panel .cancel-issue-type-grid button,
-.cancel-flow-panel .cancel-issue-type {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgba(255, 255, 255, 0.78) !important;
-}
-.cancel-flow-panel .cancel-issue-type-grid button:hover,
-.cancel-flow-panel .cancel-issue-type:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-issue-type-grid button.selected,
-.cancel-flow-panel .cancel-issue-type.selected {
-  background: rgba(55, 110, 235, 0.2) !important;
-  border-color: rgba(55, 110, 235, 0.65) !important;
-  color: #ffffff !important;
-}
-
-/* Save card (recommended action block) */
-.cancel-flow-panel .cancel-save-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-.cancel-flow-panel .cancel-save-card .cancel-kicker {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-.cancel-flow-panel .cancel-save-card h3,
-.cancel-flow-panel .cancel-save-card strong {
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-unlock-note,
-.cancel-flow-panel .cancel-selected-choice,
-.cancel-flow-panel .cancel-selected-label {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.cancel-flow-panel .cancel-save-card .cancel-selected-choice {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
-}
-
-.cancel-flow-panel .cancel-save-card .cancel-product-visual {
-  background: linear-gradient(135deg, #f8fbff 0%, #e9f0ff 100%) !important;
-  border-color: rgba(184, 205, 234, 0.9) !important;
-  color: #102347 !important;
-}
-
-.cancel-flow-panel .cancel-save-card .cancel-product-copy .cancel-kicker {
-  color: #536278 !important;
-}
-
-.cancel-flow-panel .cancel-save-card .cancel-product-copy h3 {
-  color: #102347 !important;
-}
-
-.cancel-flow-panel .cancel-save-card .cancel-product-copy p {
-  color: #536278 !important;
-}
-
-/* Insight cards */
-.cancel-flow-panel .cancel-insight-card {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.82) !important;
-}
-.cancel-flow-panel .cancel-insight-card span,
-.cancel-flow-panel .cancel-insight-card strong {
-  color: #ffffff !important;
-}
-
-/* Branch + confirm cards */
-.cancel-flow-panel .cancel-branch-card {
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-.cancel-flow-panel .cancel-confirm-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-.cancel-flow-panel .cancel-confirm-card h3 {
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-confirm-card p {
-  color: rgba(255, 255, 255, 0.65) !important;
-}
-
-/* Option pills (branch screen) */
-.cancel-flow-panel .cancel-option-pill {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-.cancel-flow-panel .cancel-option-pill:hover {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-option-pill.selected {
-  background: rgba(55, 110, 235, 0.2) !important;
-  border-color: rgba(55, 110, 235, 0.65) !important;
-  color: #ffffff !important;
-}
-
-/* Save grid CTA buttons */
-.cancel-flow-panel .cancel-save-grid .cancel-save-primary,
-.cancel-flow-panel .cancel-offer-cta-stack .cancel-save-primary {
-  background: rgba(55, 110, 235, 0.9) !important;
-  color: #ffffff !important;
-  border: none !important;
-}
-.cancel-flow-panel .cancel-save-grid .cancel-save-primary:hover,
-.cancel-flow-panel .cancel-offer-cta-stack .cancel-save-primary:hover {
-  background: rgba(55, 110, 235, 1) !important;
-}
-.cancel-flow-panel .cancel-save-grid .cancel-save-secondary,
-.cancel-flow-panel .cancel-offer-cta-stack .cancel-save-secondary {
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.cancel-flow-panel .cancel-save-grid .cancel-save-secondary:hover,
-.cancel-flow-panel .cancel-offer-cta-stack .cancel-save-secondary:hover {
-  border-color: rgba(255, 255, 255, 0.55) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-
-/* Swap flavor grid */
-.cancel-flow-panel .cancel-swap-flavor-option {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  color: rgba(255, 255, 255, 0.82) !important;
-}
-.cancel-flow-panel .cancel-swap-flavor-option.selected {
-  background: rgba(55, 110, 235, 0.2) !important;
-  border-color: rgba(55, 110, 235, 0.65) !important;
-  color: #ffffff !important;
-}
-
-/* Action cards inside rescue (Recommended / Optional) */
-.cancel-flow-panel .cancel-action-card {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-}
-.cancel-flow-panel .cancel-action-card-recommended {
-  background: rgba(55, 110, 235, 0.15) !important;
-  border-color: rgba(55, 110, 235, 0.45) !important;
-}
-.cancel-flow-panel .cancel-action-card strong {
-  color: #ffffff !important;
-}
-.cancel-flow-panel .cancel-action-card p {
-  color: rgba(255, 255, 255, 0.65) !important;
-}
-
-/* Action pill badges (Recommended / Optional labels) */
-.cancel-flow-panel .cancel-action-pill {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: rgba(255, 255, 255, 0.75) !important;
-}
-.cancel-flow-panel .cancel-action-card-recommended .cancel-action-pill {
-  background: rgba(55, 110, 235, 0.3) !important;
-  border-color: rgba(55, 110, 235, 0.6) !important;
-  color: #ffffff !important;
-}
-
-/* Action card CTA buttons */
-.cancel-flow-panel .cancel-action-card .cancel-save-primary {
-  background: rgba(55, 110, 235, 0.85) !important;
-  color: #ffffff !important;
-  border: none !important;
-}
-.cancel-flow-panel .cancel-action-card .cancel-save-secondary {
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.cancel-flow-panel .cancel-action-card-recommended .cancel-save-primary {
-  background: #376eeb !important;
-  color: #ffffff !important;
-}
-
-/* "Continue to final cancellation" link on rescue page */
-.cancel-flow-panel .cancel-continue-link,
-.cancel-flow-panel a.cancel-continue-link {
-  color: rgba(255, 255, 255, 0.45) !important;
-}
-.cancel-flow-panel .cancel-continue-link:hover {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-/* ── More menu button: remove browser focus outline, use custom ─────────── */
-.manage-action-row .btn:focus-visible {
-  outline: 2px solid rgba(55, 110, 235, 0.7) !important;
-  outline-offset: 2px !important;
-}
-.manage-action-row .btn:focus:not(:focus-visible) {
-  outline: none !important;
-  box-shadow: none !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -6371,10 +5134,9 @@ button { font-family: inherit; cursor: pointer; }
   min-height: 48px;
   padding: 0 32px;
   border-radius: 999px;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  color: #ffffff;
+  border: 1.5px solid var(--omni-card-border);
+  background: var(--omni-card);
+  color: var(--omni-text);
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -6383,207 +5145,12 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: 8px;
 }
 .cancel-done-btn:hover {
-  background: rgba(255, 255, 255, 0.18);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: var(--omni-surface);
+  border-color: var(--omni-primary);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HOME PAGE DARK THEME (portal-shell-dashboard context)
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.portal-shell-dashboard .home-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.2) !important;
-}
-
-/* Greeting */
-.portal-shell-dashboard .member-greeting h1 {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .member-greeting span,
-.portal-shell-dashboard .member-greeting p {
-  color: rgba(255, 255, 255, 0.55) !important;
-}
-
-/* Account summary strip */
-.portal-shell-dashboard .account-summary-strip {
-  background: transparent !important;
-}
-.portal-shell-dashboard .account-summary-strip > div {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.09) !important;
-}
-.portal-shell-dashboard .account-summary-strip .mini-label {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-.portal-shell-dashboard .account-summary-strip strong {
-  color: #ffffff !important;
-}
-
-/* Next order command card */
-.portal-shell-dashboard .home-command-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.09) !important;
-}
-.portal-shell-dashboard .home-command-card .mini-label {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-.portal-shell-dashboard .home-command-card h2 {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .home-command-card p {
-  color: rgba(255, 255, 255, 0.55) !important;
-}
-.portal-shell-dashboard .home-command-card .btn-outline {
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  background: transparent !important;
-}
-.portal-shell-dashboard .home-command-card .btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-
-/* Member offers heading */
-.portal-shell-dashboard .home-offer-heading .mini-label {
-  color: rgba(255, 255, 255, 0.4) !important;
-}
-.portal-shell-dashboard .home-offer-heading h2 {
-  color: #ffffff !important;
-}
-
-/* Quick action buttons */
-.portal-shell-dashboard .home-quick-actions .btn-primary {
-  background: rgba(55, 110, 235, 0.85) !important;
-  border-color: transparent !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .home-quick-actions .btn-outline {
-  border-color: rgba(255, 255, 255, 0.3) !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  background: transparent !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   HOME OFFER CARDS — dark theme
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.portal-shell-dashboard .home-offer-card {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.1) !important;
-}
-.portal-shell-dashboard .home-offer-card:hover {
-  background: rgba(255, 255, 255, 0.09) !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-}
-.portal-shell-dashboard .home-offer-card-body {
-  background: transparent !important;
-}
-.portal-shell-dashboard .home-offer-card-eyebrow {
-  color: rgba(55, 110, 235, 0.9) !important;
-}
-.portal-shell-dashboard .home-offer-card-title {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .home-offer-card-cta {
-  color: rgba(55, 110, 235, 0.85) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   ORDER HISTORY + ACCOUNT PAGES — dark theme (portal-page-panel)
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.portal-shell-dashboard .portal-page-panel {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-.portal-shell-dashboard .portal-page-head h1 {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .portal-page-head p {
-  color: rgba(255, 255, 255, 0.55) !important;
-}
-
-/* Info cards (order rows + account detail cards) */
-.portal-shell-dashboard .portal-info-card {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.09) !important;
-}
-.portal-shell-dashboard .portal-info-card h2,
-.portal-shell-dashboard .portal-info-card strong {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .portal-info-card p,
-.portal-shell-dashboard .portal-info-card a {
-  color: rgba(255, 255, 255, 0.65) !important;
-}
-.portal-shell-dashboard .portal-info-card .mini-label {
-  color: rgba(255, 255, 255, 0.38) !important;
-}
-.portal-shell-dashboard .portal-info-card .btn-outline {
-  border-color: rgba(255, 255, 255, 0.28) !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-  background: transparent !important;
-}
-.portal-shell-dashboard .portal-info-card .btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.55) !important;
-  color: #ffffff !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   REFER A FRIEND PAGE — dark theme
-   ═══════════════════════════════════════════════════════════════════════════ */
-
-.portal-shell-dashboard .referral-program-head h1 {
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .referral-program-head p {
-  color: rgba(255, 255, 255, 0.65) !important;
-}
-.portal-shell-dashboard .referral-program-form label {
-  color: rgba(255, 255, 255, 0.85) !important;
-}
-.portal-shell-dashboard .referral-program-form input {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .referral-program-form input::placeholder {
-  color: rgba(255, 255, 255, 0.3) !important;
-}
-.portal-shell-dashboard .referral-program-form input:focus {
-  border-color: rgba(55, 110, 235, 0.7) !important;
-  box-shadow: 0 0 0 3px rgba(55, 110, 235, 0.2) !important;
-}
-.portal-shell-dashboard .referral-phone-field {
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.15) !important;
-}
-.portal-shell-dashboard .referral-phone-field input {
-  background: transparent !important;
-  border: 0 !important;
-  color: #ffffff !important;
-}
-.portal-shell-dashboard .referral-program-form > button[type="submit"] {
-  background: rgba(55, 110, 235, 0.85) !important;
-}
-.portal-shell-dashboard .referral-program-form > button[type="submit"]:hover {
-  background: rgba(55, 110, 235, 1) !important;
-}
-.portal-shell-dashboard .referral-login-link {
-  color: rgba(255, 255, 255, 0.5) !important;
-}
-.portal-shell-dashboard .referral-login-link:hover {
-  color: rgba(255, 255, 255, 0.8) !important;
-}
-.portal-shell-dashboard .referral-policy-note {
-  color: rgba(255, 255, 255, 0.35) !important;
-}
-
-/* ═══════════════════════════════════════════════════════════════════════════
-   GIFT CLAIMED MODAL — product image
+   GIFT CLAIMED MODAL
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .gift-claimed-modal {
@@ -6596,7 +5163,7 @@ button { font-family: inherit; cursor: pointer; }
   width: 100%;
   border-radius: 12px;
   overflow: hidden;
-  background: #0d1e39;
+  background: var(--omni-surface);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6611,6 +5178,7 @@ button { font-family: inherit; cursor: pointer; }
   padding: 12px 0;
 }
 
+/* ── Gift flow modal ─────────────────────────────────────────────────────── */
 .gift-flow-modal-body {
   display: flex;
   flex-direction: column;
@@ -6619,7 +5187,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .gift-flow-kicker {
   margin: 0;
-  color: rgba(255, 255, 255, 0.9) !important;
+  color: var(--omni-text);
   font-size: 20px;
   line-height: 1.45;
   font-weight: 750;
@@ -6636,20 +5204,21 @@ button { font-family: inherit; cursor: pointer; }
   min-height: 150px;
   padding: 16px;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.07);
-  color: #ffffff;
+  border: 1.5px solid var(--omni-card-border);
+  background: var(--omni-surface);
+  color: var(--omni-text);
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  cursor: pointer;
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
 .gift-flow-choice-card:hover {
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.26);
+  background: #e8eef8;
+  border-color: rgba(0, 34, 102, 0.3);
 }
 
 .gift-flow-choice-title {
@@ -6657,12 +5226,13 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 850;
   letter-spacing: -0.02em;
   line-height: 1.2;
+  color: var(--omni-text);
 }
 
 .gift-flow-choice-copy {
   font-size: 13px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--omni-text-2);
 }
 
 .gift-flow-summary-card {
@@ -6671,8 +5241,8 @@ button { font-family: inherit; cursor: pointer; }
   gap: 14px;
   align-items: center;
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--omni-card-border);
+  background: var(--omni-surface);
   padding: 12px;
 }
 
@@ -6689,12 +5259,12 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: 4px;
   font-size: 14px;
   line-height: 1.25;
-  color: #ffffff;
+  color: var(--omni-text);
 }
 
 .gift-flow-summary-card p {
   margin: 6px 0 0;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--omni-text-2);
   font-size: 13px;
   line-height: 1.5;
 }
@@ -6714,9 +5284,10 @@ button { font-family: inherit; cursor: pointer; }
   padding: 0;
   border: 0;
   background: transparent;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--omni-text-3);
   font-size: 13px;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .gift-flow-back:disabled {
@@ -6740,7 +5311,7 @@ button { font-family: inherit; cursor: pointer; }
   display: flex;
   flex-direction: column;
   gap: 6px;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--omni-text-3);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -6750,21 +5321,22 @@ button { font-family: inherit; cursor: pointer; }
 .gift-flow-form-grid input {
   height: 48px;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(255, 255, 255, 0.06);
-  color: #ffffff;
+  border: 1.5px solid var(--omni-card-border);
+  background: var(--omni-surface);
+  color: var(--omni-text);
   padding: 0 14px;
   font-size: 14px;
   outline: none;
+  font-family: inherit;
 }
 
 .gift-flow-form-grid input::placeholder {
-  color: rgba(255, 255, 255, 0.35);
+  color: var(--omni-muted);
 }
 
 .gift-flow-form-grid input:focus {
-  border-color: rgba(55, 110, 235, 0.68);
-  box-shadow: 0 0 0 3px rgba(55, 110, 235, 0.16);
+  border-color: var(--omni-primary);
+  box-shadow: 0 0 0 3px rgba(0, 34, 102, 0.10);
 }
 
 .gift-flow-form-row {
@@ -6786,7 +5358,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .gift-flow-confirm h4 {
   margin: 0;
-  color: #ffffff;
+  color: var(--omni-text);
   font-size: 22px;
   line-height: 1.15;
   font-weight: 850;
@@ -6795,7 +5367,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .gift-flow-confirm p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.74);
+  color: var(--omni-text-2);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -6811,8 +5383,14 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 0 0 5px rgba(31, 157, 85, 0.16);
 }
 
+@media (max-width: 540px) {
+  .gift-flow-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
-   CANCELLATION FLOW CLEANUP — final responsive override
+   CANCELLATION FLOW LAYOUT — responsive overrides (layout only, no colors)
    ═══════════════════════════════════════════════════════════════════════════ */
 
 .cancel-flow-panel .cancel-step,
@@ -6820,18 +5398,18 @@ button { font-family: inherit; cursor: pointer; }
 .cancel-flow-panel .cancel-rescue-step,
 .cancel-flow-panel .cancel-confirm-step,
 .cancel-flow-panel .cancel-complete-step {
-  width: min(100%, 1120px) !important;
-  max-width: 1120px !important;
+  width: min(100%, 1120px);
+  max-width: 1120px;
 }
 
 .cancel-flow-panel .cancel-step-head {
-  width: min(100%, 760px) !important;
-  max-width: 760px !important;
+  width: min(100%, 760px);
+  max-width: 760px;
 }
 
 .cancel-flow-panel .cancel-stacked-head {
-  width: min(100%, 920px) !important;
-  max-width: 920px !important;
+  width: min(100%, 920px);
+  max-width: 920px;
 }
 
 .cancel-flow-panel .cancel-step-head,
@@ -6844,17 +5422,17 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .cancel-flow-panel .cancel-selected-label {
-  display: inline-flex !important;
-  width: fit-content !important;
-  max-width: 100% !important;
-  white-space: normal !important;
-  overflow-wrap: anywhere !important;
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
   word-break: break-word;
   align-items: center;
-  padding: 8px 12px !important;
-  line-height: 1.2 !important;
-  font-size: 10px !important;
-  letter-spacing: .06em !important;
+  padding: 8px 12px;
+  line-height: 1.2;
+  font-size: 10px;
+  letter-spacing: .06em;
 }
 
 .cancel-flow-panel .cancel-reason-list,
@@ -6864,18 +5442,18 @@ button { font-family: inherit; cursor: pointer; }
 .cancel-flow-panel .cancel-branch-card,
 .cancel-flow-panel .cancel-insight-grid,
 .cancel-flow-panel .cancel-confirm-actions {
-  gap: 12px !important;
+  gap: 12px;
 }
 
 .cancel-flow-panel .cancel-save-grid,
 .cancel-flow-panel .cancel-rescue-action-grid,
 .cancel-flow-panel .cancel-branch-card,
 .cancel-flow-panel .cancel-confirm-actions {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .cancel-flow-panel .cancel-confirm-actions {
-  display: grid !important;
+  display: grid;
 }
 
 .cancel-flow-panel .cancel-flow-actions,
@@ -6951,6 +5529,12 @@ button { font-family: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 
+.cancel-flow-panel .cancel-flow-actions,
+.cancel-flow-panel .cancel-rescue-footer,
+.cancel-flow-panel .cancel-confirm-actions {
+  gap: 14px;
+}
+
 @media (max-width: 1040px) {
   .cancel-flow-panel {
     width: min(100vw - 24px, 980px);
@@ -6962,13 +5546,13 @@ button { font-family: inherit; cursor: pointer; }
   .cancel-flow-panel .cancel-branch-card,
   .cancel-flow-panel .cancel-confirm-actions,
   .cancel-flow-panel .cancel-insight-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr;
   }
 
   .cancel-flow-panel .cancel-step-head,
   .cancel-flow-panel .cancel-stacked-head {
-    width: 100% !important;
-    max-width: none !important;
+    width: 100%;
+    max-width: none;
   }
 
   .cancel-flow-panel .cancel-save-grid button,
@@ -6995,170 +5579,4 @@ button { font-family: inherit; cursor: pointer; }
   .cancel-flow-panel .cancel-flow-actions-sticky .btn {
     max-width: none;
   }
-}
-
-/* Pass 4 cancellation flow polish overrides */
-.cancel-flow-panel {
-  background: radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.06), transparent 24%),
-    linear-gradient(160deg, #102347 0%, #0b1a38 100%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.10) !important;
-  color: #f7fbff !important;
-}
-
-.cancel-flow-panel h2,
-.cancel-flow-panel h3,
-.cancel-flow-panel .cancel-step h2,
-.cancel-flow-panel .cancel-save-card h3,
-.cancel-flow-panel .cancel-confirm-card h3 {
-  color: #f7fbff !important;
-}
-
-.cancel-flow-panel p,
-.cancel-flow-panel .cancel-step p,
-.cancel-flow-panel .cancel-save-card p,
-.cancel-flow-panel .cancel-final-subcopy {
-  color: rgba(247, 251, 255, 0.84) !important;
-}
-
-.cancel-flow-panel .cancel-kicker,
-.cancel-flow-panel .cancel-step-head .cancel-kicker,
-.cancel-flow-panel .cancel-step-meta .cancel-kicker {
-  color: rgba(247, 251, 255, 0.58) !important;
-}
-
-.cancel-flow-panel .cancel-reason-row,
-.cancel-flow-panel .cancel-issue-type,
-.cancel-flow-panel .cancel-option-pill,
-.cancel-flow-panel .cancel-branch-card,
-.cancel-flow-panel .cancel-save-card,
-.cancel-flow-panel .cancel-rescue-card,
-.cancel-flow-panel .cancel-confirm-card,
-.cancel-flow-panel .cancel-action-card {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: rgba(255, 255, 255, 0.14) !important;
-}
-
-.cancel-flow-panel .cancel-action-card {
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.18) !important;
-  border-radius: 18px !important;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-}
-
-.cancel-flow-panel .cancel-action-card:hover {
-  transform: translateY(-1px) !important;
-}
-
-.cancel-flow-panel .cancel-save-primary,
-.cancel-flow-panel .cancel-flow-actions .btn-primary,
-.cancel-flow-panel .cancel-step .btn-primary,
-.cancel-flow-panel .cancel-action-card .cancel-save-primary,
-.cancel-flow-panel .cancel-save-grid .cancel-save-primary,
-.cancel-flow-panel .cancel-offer-cta-stack .cancel-save-primary {
-  background: #2f5cdf !important;
-  color: #ffffff !important;
-  border-color: transparent !important;
-  box-shadow: 0 14px 30px rgba(47, 92, 223, 0.24) !important;
-}
-
-.cancel-flow-panel .cancel-save-primary:hover,
-.cancel-flow-panel .cancel-flow-actions .btn-primary:hover,
-.cancel-flow-panel .cancel-step .btn-primary:hover,
-.cancel-flow-panel .cancel-action-card .cancel-save-primary:hover {
-  background: #1f48bb !important;
-}
-
-.cancel-flow-panel .cancel-save-secondary,
-.cancel-flow-panel .cancel-flow-actions .btn-outline,
-.cancel-flow-panel .cancel-confirm-actions .btn-outline,
-.cancel-flow-panel .cancel-action-card .cancel-save-secondary {
-  background: transparent !important;
-  border-color: rgba(255, 255, 255, 0.32) !important;
-  color: rgba(255, 255, 255, 0.88) !important;
-}
-
-.cancel-flow-panel .cancel-save-secondary:hover,
-.cancel-flow-panel .cancel-flow-actions .btn-outline:hover,
-.cancel-flow-panel .cancel-confirm-actions .btn-outline:hover,
-.cancel-flow-panel .cancel-action-card .cancel-save-secondary:hover {
-  border-color: rgba(255, 255, 255, 0.58) !important;
-  background: rgba(255, 255, 255, 0.08) !important;
-}
-
-.cancel-flow-panel .cancel-confirm-actions .cancel-confirm-destructive {
-  background: #0d234c !important;
-  border-color: rgba(255, 255, 255, 0.18) !important;
-  color: #ffffff !important;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.32) !important;
-}
-
-.cancel-flow-panel .cancel-confirm-actions .cancel-confirm-destructive:hover {
-  background: #12315f !important;
-}
-
-.cancel-flow-panel .cancel-flow-close {
-  color: rgba(255, 255, 255, 0.76) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-  background: rgba(255, 255, 255, 0.06) !important;
-}
-
-.cancel-flow-panel .cancel-flow-close:hover {
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-}
-
-.cancel-flow-panel .cancel-issue-fields label,
-.cancel-flow-panel .cancel-note-field {
-  color: rgba(255, 255, 255, 0.82) !important;
-}
-
-.cancel-flow-panel .cancel-issue-fields input,
-.cancel-flow-panel .cancel-issue-fields textarea,
-.cancel-flow-panel .cancel-note-field textarea {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
-  color: #ffffff !important;
-}
-
-.cancel-flow-panel .cancel-issue-fields input::placeholder,
-.cancel-flow-panel .cancel-issue-fields textarea::placeholder,
-.cancel-flow-panel .cancel-note-field textarea::placeholder {
-  color: rgba(255, 255, 255, 0.42) !important;
-}
-
-.cancel-flow-panel .cancel-issue-fields input:focus,
-.cancel-flow-panel .cancel-issue-fields textarea:focus,
-.cancel-flow-panel .cancel-note-field textarea:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 3px rgba(47, 92, 223, 0.25) !important;
-}
-
-.cancel-flow-panel .cancel-flow-actions,
-.cancel-flow-panel .cancel-rescue-footer,
-.cancel-flow-panel .cancel-confirm-actions {
-  gap: 14px !important;
-}
-
-.cancel-flow-panel .cancel-flow-actions .btn:disabled,
-.cancel-flow-panel .cancel-save-secondary:disabled,
-.cancel-flow-panel .cancel-flow-actions .btn-outline:disabled {
-  opacity: 0.42 !important;
-  cursor: not-allowed !important;
-}
-
-.cancel-flow-panel .cancel-action-card strong {
-  color: #f7fbff !important;
-}
-
-.cancel-flow-panel .cancel-action-card p {
-  color: rgba(255, 255, 255, 0.72) !important;
-}
-
-.cancel-flow-panel .cancel-insight-card {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-}
-
-.cancel-flow-panel .cancel-insight-card strong,
-.cancel-flow-panel .cancel-insight-card span {
-  color: #ffffff !important;
 }
