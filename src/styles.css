@@ -1390,41 +1390,56 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .portal-layout {
-  max-width: 1100px;
+  max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 138px minmax(0, 860px);
-  gap: 28px;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 24px;
   align-items: start;
 }
 
+.portal-layout.detail-layout {
+  max-width: 1360px;
+  grid-template-columns: 220px minmax(0, 1fr);
+}
+
 .portal-side-nav {
-  padding-top: 18px;
+  position: sticky;
+  top: 18px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
+  border: 1px solid rgba(15, 37, 77, 0.10);
+  border-radius: 20px;
+  background: rgba(251, 251, 253, 0.94);
+  box-shadow: 0 14px 32px rgba(7, 19, 46, 0.06);
   font-size: 12px;
-  font-weight: 650;
+  font-weight: 700;
 }
 
 .portal-side-nav a {
   color: var(--omni-text-2);
   text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 12px;
-  display: inline-flex;
-  transition: background .15s ease, color .15s ease;
+  padding: 11px 14px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  min-height: 42px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 
 .portal-side-nav a:hover {
-  background: rgba(7, 58, 122, .06);
+  background: rgba(7, 58, 122, .05);
+  color: var(--omni-text);
 }
 
 .portal-side-nav a.active {
-  color: var(--omni-primary);
-  background: rgba(7, 58, 122, .12);
-  border-radius: 12px;
-  margin-left: 0;
+  color: var(--omni-text);
+  background: #e6f0ff;
+  border-color: rgba(55, 110, 235, 0.20);
+  box-shadow: 0 8px 20px rgba(55, 110, 235, 0.12);
 }
 
 .portal-page-panel {
@@ -5276,6 +5291,3144 @@ button { font-family: inherit; cursor: pointer; }
 .cancel-flow-panel .cancel-insight-card span {
   color: #ffffff !important;
 }
+/* True EOF light portal override */
+body {
+  background: #f7f8fa !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard,
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: linear-gradient(180deg, #f7f8fa 0%, #f4f6fb 100%) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-container,
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal,
+.portal-shell-dashboard .cancel-flow-panel,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card {
+  background: #fbfbfd !important;
+  color: #0d1e39 !important;
+  border-color: rgba(15, 37, 77, 0.12) !important;
+  box-shadow: 0 14px 36px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(15, 37, 77, 0.10) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a {
+  color: #334155 !important;
+  background: #ffffff !important;
+  border-color: rgba(15, 37, 77, 0.10) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a.active {
+  background: #e8efff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(47, 92, 223, 0.25) !important;
+}
+
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .member-greeting span,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-title-area p span,
+.portal-shell-dashboard .manage-current-product-card .manage-product-name,
+.portal-shell-dashboard .manage-current-product-card .manage-product-detail,
+.portal-shell-dashboard .manage-current-product-card .manage-next-label,
+.portal-shell-dashboard .manage-current-product-card .manage-price-per,
+.portal-shell-dashboard .manage-current-product-card .manage-product-price strong,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .referral-program-head h1,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .offer-modal-copy .modal-eyebrow,
+.portal-shell-dashboard .offer-modal-copy p,
+.portal-shell-dashboard .offer-modal-copy li,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-choice,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h2,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card h3 {
+  color: #0d1e39 !important;
+  opacity: 1 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-eyebrow,
+.portal-shell-dashboard .manage-offer-card-eyebrow,
+.portal-shell-dashboard .manage-current-product-card .manage-status-badge,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-head .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-meta .cancel-kicker,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .portal-info-card .mini-label,
+.portal-shell-dashboard .referral-program-head .mini-label,
+.portal-shell-dashboard .workspace-card .mini-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard .home-offer-card-title,
+.portal-shell-dashboard .manage-offer-card-title,
+.portal-shell-dashboard .manage-product-name,
+.portal-shell-dashboard .manage-product-price strong,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .cancel-flow-panel strong {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .btn-outline,
+.portal-shell-dashboard .btn-secondary,
+.portal-shell-dashboard .gift-flow-actions .btn-outline,
+.portal-shell-dashboard .modal-actions .btn-outline,
+.portal-shell-dashboard .modal-actions-row .btn-outline,
+.portal-shell-dashboard .cancel-save-secondary,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline,
+.portal-shell-dashboard .claim-gift-btn,
+.portal-shell-dashboard .swap-flavor-btn,
+.portal-shell-dashboard .manage-action-row .btn-outline {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border: 1px solid rgba(15, 37, 77, 0.18) !important;
+}
+
+.portal-shell-dashboard .btn-primary,
+.portal-shell-dashboard .gift-flow-actions .btn-primary,
+.portal-shell-dashboard .modal-actions .btn-primary,
+.portal-shell-dashboard .modal-actions-row .btn-primary,
+.portal-shell-dashboard .cancel-save-primary,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive {
+  background: #2f5cdf !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop,
+.portal-shell-dashboard .cancel-intro-backdrop {
+  background: rgba(247, 248, 250, 0.84) !important;
+}
+
+.portal-shell-dashboard .footer-newsletter {
+  display: none !important;
+}
+
+/* Final portal light-shell cleanup and mobile/nav hardening */
+.portal-shell-dashboard {
+  background: linear-gradient(180deg, #f7f8fa 0%, #f3f6fb 100%) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: transparent !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-layout {
+  max-width: 1440px !important;
+  grid-template-columns: 232px minmax(0, 1fr) !important;
+  gap: 28px !important;
+}
+
+.portal-shell-dashboard .portal-layout.detail-layout {
+  max-width: 1500px !important;
+  grid-template-columns: 232px minmax(0, 1fr) !important;
+}
+
+.portal-shell-dashboard .portal-main {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.portal-shell-dashboard .portal-side-nav {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(13, 30, 57, 0.10) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 14px 36px rgba(15, 37, 77, 0.08) !important;
+  padding: 16px !important;
+  gap: 8px !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a {
+  min-height: 44px !important;
+  padding: 10px 14px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(13, 30, 57, 0.08) !important;
+  background: #ffffff !important;
+  color: #334155 !important;
+  box-shadow: none !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a.active {
+  background: #e6efff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(47, 92, 223, 0.24) !important;
+  box-shadow: 0 8px 20px rgba(47, 92, 223, 0.08) !important;
+}
+
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal,
+.portal-shell-dashboard .cancel-flow-panel,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+  box-shadow: 0 14px 34px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .home-topline {
+  gap: 18px !important;
+}
+
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .home-card {
+  border-radius: 20px !important;
+}
+
+.portal-shell-dashboard .home-offers-grid,
+.portal-shell-dashboard .manage-offers-grid {
+  gap: 16px !important;
+}
+
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .manage-offer-card {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+  box-shadow: 0 12px 30px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .home-offer-card-eyebrow,
+.portal-shell-dashboard .manage-offer-card-eyebrow,
+.portal-shell-dashboard .mini-label,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .portal-info-card .mini-label,
+.portal-shell-dashboard .workspace-card .mini-label,
+.portal-shell-dashboard .referral-program-head .mini-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard .home-offer-card-title,
+.portal-shell-dashboard .manage-offer-card-title,
+.portal-shell-dashboard .manage-product-name,
+.portal-shell-dashboard .manage-product-price strong,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .cancel-flow-panel h1,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel h4 {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-cta,
+.portal-shell-dashboard .manage-offer-card-cta,
+.portal-shell-dashboard .home-command-card button,
+.portal-shell-dashboard .portal-info-card .btn-outline,
+.portal-shell-dashboard .cancel-flow-panel .cancel-continue-link,
+.portal-shell-dashboard .referral-login-link {
+  color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .home-offer-card-body,
+.portal-shell-dashboard .manage-offer-card-body,
+.portal-shell-dashboard .manage-product-detail,
+.portal-shell-dashboard .manage-next-label,
+.portal-shell-dashboard .manage-price-per,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .referral-policy-note,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-choice,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card p {
+  color: #334155 !important;
+}
+
+.portal-shell-dashboard .home-card h1,
+.portal-shell-dashboard .home-card p,
+.portal-shell-dashboard .home-card span,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .account-summary-strip span,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-title-area span,
+.portal-shell-dashboard .workspace-card h3,
+.portal-shell-dashboard .workspace-card p,
+.portal-shell-dashboard .workspace-card span,
+.portal-shell-dashboard .billing-workspace-card h3,
+.portal-shell-dashboard .billing-workspace-card p,
+.portal-shell-dashboard .summary-workspace-card span,
+.portal-shell-dashboard .summary-workspace-card strong,
+.portal-shell-dashboard .referral-program-form label,
+.portal-shell-dashboard .referral-program-form label span,
+.portal-shell-dashboard .referral-program-form input,
+.portal-shell-dashboard .referral-program-form .referral-phone-field,
+.portal-shell-dashboard .referral-program-form .referral-phone-field input,
+.portal-shell-dashboard .referral-program-form .referral-policy-note,
+.portal-shell-dashboard .gift-flow-modal label,
+.portal-shell-dashboard .gift-flow-modal input,
+.portal-shell-dashboard .gift-flow-modal textarea,
+.portal-shell-dashboard .gift-flow-modal select,
+.portal-shell-dashboard .cancel-intro-modal,
+.portal-shell-dashboard .cancel-intro-modal h2,
+.portal-shell-dashboard .cancel-intro-modal p,
+.portal-shell-dashboard .cancel-intro-modal span,
+.portal-shell-dashboard .cancel-flow-panel label,
+.portal-shell-dashboard .cancel-flow-panel input,
+.portal-shell-dashboard .cancel-flow-panel textarea,
+.portal-shell-dashboard .cancel-flow-panel select {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-card input,
+.portal-shell-dashboard .home-card select,
+.portal-shell-dashboard .home-card textarea,
+.portal-shell-dashboard .portal-page-panel input,
+.portal-shell-dashboard .portal-page-panel select,
+.portal-shell-dashboard .portal-page-panel textarea,
+.portal-shell-dashboard .referral-program-form input,
+.portal-shell-dashboard .gift-flow-modal input,
+.portal-shell-dashboard .gift-flow-modal textarea,
+.portal-shell-dashboard .gift-flow-modal select,
+.portal-shell-dashboard .cancel-intro-modal input,
+.portal-shell-dashboard .cancel-intro-modal select,
+.portal-shell-dashboard .cancel-intro-modal textarea,
+.portal-shell-dashboard .cancel-flow-panel input,
+.portal-shell-dashboard .cancel-flow-panel select,
+.portal-shell-dashboard .cancel-flow-panel textarea {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.16) !important;
+}
+
+.portal-shell-dashboard .home-card input::placeholder,
+.portal-shell-dashboard .portal-page-panel input::placeholder,
+.portal-shell-dashboard .referral-program-form input::placeholder,
+.portal-shell-dashboard .gift-flow-modal input::placeholder,
+.portal-shell-dashboard .gift-flow-modal textarea::placeholder,
+.portal-shell-dashboard .cancel-intro-modal input::placeholder,
+.portal-shell-dashboard .cancel-flow-panel input::placeholder,
+.portal-shell-dashboard .cancel-flow-panel textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.portal-shell-dashboard .workspace-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr) !important;
+  gap: 24px !important;
+}
+
+.portal-shell-dashboard .workspace-right .workspace-card,
+.portal-shell-dashboard .workspace-left .workspace-card {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .rec-card-list {
+  gap: 12px !important;
+}
+
+.portal-shell-dashboard .rec-product {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+  border-radius: 16px !important;
+  padding: 12px !important;
+  box-shadow: 0 10px 24px rgba(15, 37, 77, 0.06) !important;
+}
+
+.portal-shell-dashboard .rec-image {
+  border-radius: 14px !important;
+  background: #f4f7fb !important;
+  border: 1px solid rgba(13, 30, 57, 0.08) !important;
+}
+
+.portal-shell-dashboard .rec-copy h3,
+.portal-shell-dashboard .rec-copy p,
+.portal-shell-dashboard .rec-copy strong,
+.portal-shell-dashboard .rec-copy select,
+.portal-shell-dashboard .rec-copy option {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .rec-copy select {
+  background: #ffffff !important;
+  border-color: rgba(13, 30, 57, 0.16) !important;
+}
+
+.portal-shell-dashboard .rec-bottom button {
+  background: #2f5cdf !important;
+  color: #ffffff !important;
+  border-color: #2f5cdf !important;
+  min-width: 96px !important;
+}
+
+.portal-shell-dashboard .more-menu-wrap {
+  z-index: 30 !important;
+}
+
+.portal-shell-dashboard .more-menu {
+  width: 220px !important;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  border-color: rgba(13, 30, 57, 0.10) !important;
+  box-shadow: 0 18px 40px rgba(7, 19, 46, 0.16) !important;
+}
+
+.portal-shell-dashboard .more-menu button {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .more-menu button:hover {
+  background: rgba(47, 92, 223, 0.08) !important;
+  color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop,
+.portal-shell-dashboard .cancel-intro-backdrop {
+  background: rgba(13, 30, 57, 0.18) !important;
+  backdrop-filter: blur(10px) saturate(110%) !important;
+}
+
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .offer-modal h3,
+.portal-shell-dashboard .offer-modal p,
+.portal-shell-dashboard .offer-modal li,
+.portal-shell-dashboard .backup-card-modal h3,
+.portal-shell-dashboard .backup-card-modal p,
+.portal-shell-dashboard .gift-flow-modal h3,
+.portal-shell-dashboard .gift-flow-modal p,
+.portal-shell-dashboard .gift-flow-modal li,
+.portal-shell-dashboard .cancel-intro-modal h2,
+.portal-shell-dashboard .cancel-intro-modal p,
+.portal-shell-dashboard .cancel-intro-modal strong,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .offer-modal-image,
+.portal-shell-dashboard .gift-flow-image,
+.portal-shell-dashboard .gift-flow-hero,
+.portal-shell-dashboard .cancel-save-card .cancel-product-visual,
+.portal-shell-dashboard .cancel-save-card .cancel-product-thumb {
+  background: #f4f7fb !important;
+  border-color: rgba(13, 30, 57, 0.10) !important;
+}
+
+.portal-shell-dashboard .offer-modal-image img,
+.portal-shell-dashboard .gift-flow-image img {
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+.portal-shell-dashboard .cancel-intro-modal {
+  width: min(100%, 920px) !important;
+  max-height: calc(100vh - 24px) !important;
+  overflow: auto !important;
+  border-radius: 24px !important;
+  padding: 24px !important;
+}
+
+.portal-shell-dashboard .cancel-intro-copy span,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard .cancel-intro-copy h2,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card h3 {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-intro-copy p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-subcopy,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step p {
+  color: #334155 !important;
+}
+
+.portal-shell-dashboard .cancel-intro-plan {
+  background: #f5f7fb !important;
+  border: 1px solid rgba(13, 30, 57, 0.10) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-intro-plan strong,
+.portal-shell-dashboard .cancel-intro-plan span {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-intro-options {
+  gap: 10px !important;
+}
+
+.portal-shell-dashboard .cancel-intro-option {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-intro-option.selected {
+  background: rgba(47, 92, 223, 0.10) !important;
+  border-color: rgba(47, 92, 223, 0.30) !important;
+  box-shadow: 0 0 0 3px rgba(47, 92, 223, 0.10) !important;
+}
+
+.portal-shell-dashboard .cancel-intro-actions .btn-outline {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.18) !important;
+}
+
+.portal-shell-dashboard .cancel-intro-actions .btn-primary {
+  background: linear-gradient(180deg, #3d6ee8 0%, #2f5cdf 100%) !important;
+  color: #ffffff !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel {
+  width: min(100%, 1120px) !important;
+  margin-inline: auto !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected {
+  background: #e9f1ff !important;
+  border-color: rgba(47, 92, 223, 0.30) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-radio {
+  background: #ffffff !important;
+  border-color: rgba(13, 30, 57, 0.18) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected .cancel-radio,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected .cancel-radio {
+  background: #2f5cdf !important;
+  border-color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card {
+  background: #ffffff !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card-recommended {
+  box-shadow: 0 0 0 2px rgba(47, 92, 223, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-product-visual {
+  background: #f4f7fb !important;
+  border: 1px solid rgba(13, 30, 57, 0.10) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-product-visual .cancel-product-copy h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-product-visual .cancel-product-copy p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-product-visual .cancel-kicker {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-footer,
+.portal-shell-dashboard .cancel-flow-panel .cancel-flow-actions-sticky {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-flow-secondary-link {
+  color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-complete-step {
+  width: min(100%, 760px) !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+  align-items: center !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-complete-step h2 {
+  font-size: clamp(24px, 4.3vw, 42px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-complete-step p {
+  max-width: 42rem !important;
+  color: #334155 !important;
+}
+
+.portal-shell-dashboard .gift-flow-modal-body,
+.portal-shell-dashboard .gift-friend-form {
+  width: 100% !important;
+}
+
+.portal-shell-dashboard .gift-flow-choice-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .gift-flow-choice-card:hover {
+  border-color: rgba(47, 92, 223, 0.28) !important;
+  box-shadow: 0 14px 28px rgba(47, 92, 223, 0.08) !important;
+}
+
+.portal-shell-dashboard .gift-flow-choice-title {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .gift-flow-submitted {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .modal-close,
+.portal-shell-dashboard .cancel-flow-close {
+  color: #64748b !important;
+  background: #ffffff !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .modal-close:hover,
+.portal-shell-dashboard .cancel-flow-close:hover {
+  color: #0d1e39 !important;
+  background: rgba(47, 92, 223, 0.08) !important;
+}
+
+.portal-shell-dashboard .action-modal p.modal-note {
+  background: #f5f7fb !important;
+  border: 1px solid rgba(13, 30, 57, 0.10) !important;
+  color: #334155 !important;
+}
+
+.portal-shell-dashboard .action-modal .modal-option-row button,
+.portal-shell-dashboard .action-modal .modal-date-input,
+.portal-shell-dashboard .action-modal .edit-form label,
+.portal-shell-dashboard .action-modal .edit-form input,
+.portal-shell-dashboard .action-modal .edit-form-save {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .action-modal .modal-option-row button,
+.portal-shell-dashboard .action-modal .modal-actions .btn-outline,
+.portal-shell-dashboard .action-modal .modal-actions-row .btn-outline {
+  background: #ffffff !important;
+  border-color: rgba(13, 30, 57, 0.18) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .action-modal .modal-option-row button:hover,
+.portal-shell-dashboard .action-modal .modal-actions .btn-outline:hover,
+.portal-shell-dashboard .action-modal .modal-actions-row .btn-outline:hover {
+  background: rgba(47, 92, 223, 0.08) !important;
+  border-color: rgba(47, 92, 223, 0.24) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .action-modal .modal-actions .btn-primary,
+.portal-shell-dashboard .action-modal .modal-actions-row .btn-primary {
+  background: linear-gradient(180deg, #3d6ee8 0%, #2f5cdf 100%) !important;
+  color: #ffffff !important;
+}
+
+.portal-shell-dashboard .action-modal .modal-date-input {
+  background: #ffffff !important;
+  border-color: rgba(13, 30, 57, 0.16) !important;
+  color: #0d1e39 !important;
+  color-scheme: light;
+}
+
+.portal-shell-dashboard .swap-confirm-card {
+  background: #f5f7fb !important;
+  border-color: rgba(13, 30, 57, 0.10) !important;
+}
+
+.portal-shell-dashboard .swap-confirm-card strong,
+.portal-shell-dashboard .swap-confirm-card p {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .referral-program-page {
+  width: 100% !important;
+  max-width: 940px !important;
+  margin: 0 auto !important;
+  padding-inline: 0 !important;
+}
+
+.portal-shell-dashboard .referral-program-head {
+  max-width: 760px !important;
+  margin: 0 auto 28px !important;
+  text-align: center !important;
+}
+
+.portal-shell-dashboard .referral-program-form {
+  width: min(100%, 680px) !important;
+  margin: 0 auto !important;
+  padding: 24px !important;
+  border-radius: 20px !important;
+}
+
+@media (max-width: 980px) {
+  .portal-shell-dashboard .portal-layout,
+  .portal-shell-dashboard .portal-layout.detail-layout {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    max-width: 860px !important;
+  }
+
+  .portal-shell-dashboard .portal-side-nav {
+    position: relative !important;
+    top: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 8px 4px 10px !important;
+    margin: 0 0 4px !important;
+    border-radius: 18px !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .portal-shell-dashboard .portal-side-nav::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .portal-shell-dashboard .portal-side-nav a {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    min-height: 38px !important;
+    padding: 8px 12px !important;
+  }
+
+  .portal-shell-dashboard .portal-side-nav a.active {
+    box-shadow: 0 8px 18px rgba(47, 92, 223, 0.10) !important;
+  }
+
+  .portal-shell-dashboard .more-menu {
+    right: 0 !important;
+    left: auto !important;
+  }
+
+  .portal-shell-dashboard .workspace-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .portal-shell-dashboard {
+    padding: 16px 12px 44px !important;
+  }
+
+  .portal-shell-dashboard .home-card,
+  .portal-shell-dashboard .portal-page-panel,
+  .portal-shell-dashboard .manage-hero,
+  .portal-shell-dashboard .workspace-card {
+    border-radius: 16px !important;
+    padding: 16px !important;
+  }
+
+  .portal-shell-dashboard .home-topline {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .portal-shell-dashboard .home-topline .home-quick-actions {
+    width: 100% !important;
+  }
+
+  .portal-shell-dashboard .home-topline .home-quick-actions .btn {
+    flex: 1 1 0 !important;
+  }
+
+  .portal-shell-dashboard .home-offer-heading {
+    order: 2 !important;
+    margin: 6px 0 12px !important;
+  }
+
+  .portal-shell-dashboard .portal-offer-panel-home {
+    order: 3 !important;
+  }
+
+  .portal-shell-dashboard .account-summary-strip {
+    order: 4 !important;
+  }
+
+  .portal-shell-dashboard .home-command-card {
+    order: 5 !important;
+  }
+
+  .portal-shell-dashboard .home-offers-grid,
+  .portal-shell-dashboard .manage-offers-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .portal-shell-dashboard .home-offer-card-hero,
+  .portal-shell-dashboard .manage-offer-card-square,
+  .portal-shell-dashboard .manage-offer-card-electrolytes {
+    grid-column: auto !important;
+  }
+
+  .portal-shell-dashboard .home-offer-card-hero {
+    grid-column: 1 / -1 !important;
+  }
+
+  .portal-shell-dashboard .home-offer-card-hero .home-offer-card-img {
+    aspect-ratio: 1.9 / 1 !important;
+  }
+
+  .portal-shell-dashboard .home-offer-card-compact .home-offer-card-img,
+  .portal-shell-dashboard .home-offer-card-swap .home-offer-card-img,
+  .portal-shell-dashboard .home-offer-card-square .home-offer-card-img,
+  .portal-shell-dashboard .manage-offer-card-square .manage-offer-card-img,
+  .portal-shell-dashboard .manage-offer-card-electrolytes .manage-offer-card-img {
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .portal-shell-dashboard .home-offer-card-img img,
+  .portal-shell-dashboard .manage-offer-card-img img {
+    object-position: center center !important;
+  }
+
+  .portal-shell-dashboard .manage-action-row {
+    flex-wrap: wrap !important;
+  }
+
+  .portal-shell-dashboard .manage-action-row .btn,
+  .portal-shell-dashboard .manage-action-row .more-menu-wrap {
+    flex: 1 1 calc(50% - 5px) !important;
+    min-width: 0 !important;
+  }
+
+  .portal-shell-dashboard .more-menu {
+    width: min(100vw - 24px, 260px) !important;
+  }
+
+  .portal-shell-dashboard .rec-product {
+    grid-template-columns: 72px 1fr !important;
+    padding: 10px !important;
+  }
+
+  .portal-shell-dashboard .rec-image {
+    width: 72px !important;
+    height: 72px !important;
+  }
+
+  .portal-shell-dashboard .rec-copy select {
+    min-width: 0 !important;
+  }
+
+  .portal-shell-dashboard .cancel-intro-modal {
+    width: min(100%, calc(100vw - 16px)) !important;
+    padding: 18px !important;
+    border-radius: 20px !important;
+  }
+
+  .portal-shell-dashboard .cancel-intro-actions,
+  .portal-shell-dashboard .cancel-flow-panel .cancel-save-footer,
+  .portal-shell-dashboard .cancel-flow-panel .cancel-flow-actions-sticky {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .portal-shell-dashboard .cancel-intro-actions .btn,
+  .portal-shell-dashboard .cancel-flow-panel .cancel-save-footer .btn,
+  .portal-shell-dashboard .cancel-flow-panel .cancel-flow-actions-sticky .btn {
+    width: 100% !important;
+  }
+
+  .portal-shell-dashboard .cancel-flow-panel .cancel-complete-step {
+    width: 100% !important;
+    padding-inline: 4px !important;
+  }
+
+  .portal-shell-dashboard .cancel-flow-panel .cancel-complete-step h2 {
+    font-size: clamp(24px, 6.8vw, 32px) !important;
+  }
+
+  .portal-shell-dashboard .portal-side-nav {
+    width: calc(100% + 24px) !important;
+    margin: -2px -12px 8px !important;
+    padding-inline: 12px !important;
+    border-radius: 16px !important;
+  }
+}
+
+
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .member-greeting span,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .referral-program-head h1,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .portal-info-card span,
+.portal-shell-dashboard .portal-info-card label,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .home-command-card span,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .home-offer-heading p,
+.portal-shell-dashboard .home-offer-heading span,
+.portal-shell-dashboard .home-offer-card .home-offer-card-label,
+.portal-shell-dashboard .home-offer-card .home-offer-card-title,
+.portal-shell-dashboard .home-offer-card .home-offer-card-copy,
+.portal-shell-dashboard .home-offer-card .home-offer-card-link,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .account-summary-strip span,
+.portal-shell-dashboard .manage-hero h1,
+.portal-shell-dashboard .manage-hero p,
+.portal-shell-dashboard .manage-current-product-card h2,
+.portal-shell-dashboard .manage-current-product-card p,
+.portal-shell-dashboard .manage-offer-card h3,
+.portal-shell-dashboard .manage-offer-card p,
+.portal-shell-dashboard .gift-flow-page h1,
+.portal-shell-dashboard .gift-flow-page h2,
+.portal-shell-dashboard .gift-flow-page p,
+.portal-shell-dashboard .gift-flow-page label,
+.portal-shell-dashboard .gift-flow-modal h1,
+.portal-shell-dashboard .gift-flow-modal h2,
+.portal-shell-dashboard .gift-flow-modal p,
+.portal-shell-dashboard .gift-flow-modal label,
+.portal-shell-dashboard .referral-program-page h1,
+.portal-shell-dashboard .referral-program-page p,
+.portal-shell-dashboard .referral-program-form label,
+.portal-shell-dashboard .referral-program-form label span,
+.portal-shell-dashboard .referral-program-form .referral-policy-note,
+.portal-shell-dashboard .referral-program-form .referral-login-link,
+.portal-shell-dashboard .account-page h1,
+.portal-shell-dashboard .account-page h2,
+.portal-shell-dashboard .account-page p,
+.portal-shell-dashboard .account-page span,
+.portal-shell-dashboard .account-page label,
+.portal-shell-dashboard .account-page .mini-label,
+.portal-shell-dashboard .cancel-flow-panel h1,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel h4,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel span,
+.portal-shell-dashboard .cancel-flow-panel label,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .mini-label,
+.portal-shell-dashboard .action-modal h1,
+.portal-shell-dashboard .action-modal h2,
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal label,
+.portal-shell-dashboard .offer-modal h1,
+.portal-shell-dashboard .offer-modal h2,
+.portal-shell-dashboard .offer-modal h3,
+.portal-shell-dashboard .offer-modal p,
+.portal-shell-dashboard .offer-modal label,
+.portal-shell-dashboard .backup-card-modal h1,
+.portal-shell-dashboard .backup-card-modal h2,
+.portal-shell-dashboard .backup-card-modal h3,
+.portal-shell-dashboard .backup-card-modal p,
+.portal-shell-dashboard .backup-card-modal label,
+.portal-shell-dashboard .portal-page-panel h1,
+.portal-shell-dashboard .portal-page-panel h2,
+.portal-shell-dashboard .portal-page-panel h3,
+.portal-shell-dashboard .portal-page-panel p,
+.portal-shell-dashboard .portal-page-panel span,
+.portal-shell-dashboard .portal-page-panel label {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .referral-program-form label,
+.portal-shell-dashboard .referral-program-form label span,
+.portal-shell-dashboard .referral-program-form input,
+.portal-shell-dashboard .referral-program-form input::placeholder,
+.portal-shell-dashboard .referral-program-form .referral-phone-field,
+.portal-shell-dashboard .referral-program-form .referral-phone-field input,
+.portal-shell-dashboard .referral-program-form .referral-login-link,
+.portal-shell-dashboard .referral-program-form .referral-policy-note {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .referral-program-form label sup,
+.portal-shell-dashboard .gift-flow-form-grid label sup,
+.portal-shell-dashboard .cancel-flow-panel label sup {
+  color: #d03a2f !important;
+}
+
+/* Final light-surface typography cleanup */
+.portal-shell-dashboard {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard :is(
+  .portal-container,
+  .portal-main,
+  .portal-page-panel,
+  .home-card,
+  .home-command-card,
+  .account-summary-strip > div,
+  .portal-info-card,
+  .workspace-card,
+  .billing-workspace-card,
+  .summary-workspace-card,
+  .manage-hero,
+  .manage-current-product-card,
+  .manage-offer-card,
+  .home-offer-card,
+  .referral-program-form,
+  .gift-flow-choice-card,
+  .gift-flow-summary-card,
+  .gift-flow-confirm,
+  .action-modal,
+  .action-modal-wide,
+  .offer-modal,
+  .backup-card-modal,
+  .gift-flow-modal,
+  .cancel-flow-panel,
+  .cancel-flow-panel .cancel-reason-row,
+  .cancel-flow-panel .cancel-issue-type,
+  .cancel-flow-panel .cancel-option-pill,
+  .cancel-flow-panel .cancel-branch-card,
+  .cancel-flow-panel .cancel-save-card,
+  .cancel-flow-panel .cancel-rescue-card,
+  .cancel-flow-panel .cancel-confirm-card,
+  .cancel-flow-panel .cancel-action-card
+) {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard :is(
+  .member-greeting h1,
+  .home-offer-heading h2,
+  .home-command-card h2,
+  .portal-page-head h1,
+  .portal-info-card h2,
+  .referral-program-head h1,
+  .gift-flow-confirm h4,
+  .cancel-flow-panel h2,
+  .cancel-flow-panel h3,
+  .cancel-flow-panel .cancel-step h2,
+  .cancel-flow-panel .cancel-step h3,
+  .cancel-flow-panel .cancel-save-card h3,
+  .cancel-flow-panel .cancel-confirm-card h3,
+  .manage-title-area h1,
+  .workspace-title,
+  .manage-product-name,
+  .manage-product-price strong,
+  .home-offer-card-title,
+  .manage-offer-card-title
+) {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard :is(
+  .member-greeting > span,
+  .member-greeting p,
+  .home-command-card p,
+  .portal-page-head p,
+  .portal-info-card p,
+  .referral-program-head p,
+  .referral-policy-note,
+  .gift-flow-choice-copy,
+  .gift-flow-confirm p,
+  .cancel-flow-panel p,
+  .cancel-flow-panel li,
+  .manage-title-area p,
+  .manage-current-product-card .manage-product-detail,
+  .manage-current-product-card .manage-next-label,
+  .manage-current-product-card .manage-price-per,
+  .home-offer-card-body,
+  .manage-offer-card-body,
+  .cancel-flow-panel .cancel-action-card p,
+  .cancel-flow-panel .cancel-selected-choice,
+  .cancel-flow-panel .cancel-final-selected-label,
+  .cancel-flow-panel .cancel-selected-label
+) {
+  color: #334155 !important;
+}
+
+.portal-shell-dashboard :is(
+  .mini-label,
+  .home-offer-card-eyebrow,
+  .manage-offer-card-eyebrow,
+  .manage-current-product-card .manage-status-badge,
+  .gift-flow-kicker,
+  .cancel-flow-panel .cancel-kicker,
+  .cancel-flow-panel .cancel-step-head .cancel-kicker,
+  .cancel-flow-panel .cancel-step-meta .cancel-kicker,
+  .cancel-flow-panel .cancel-selected-label,
+  .cancel-flow-panel .cancel-final-selected-label,
+  .cancel-flow-panel .cancel-selected-choice
+) {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard :is(
+  .portal-side-nav a,
+  .portal-side-nav a:hover,
+  .portal-side-nav a:visited
+) {
+  color: #475569 !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a.active {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard :is(
+  .portal-page-panel a,
+  .portal-info-card a,
+  .referral-login-link,
+  .cancel-flow-panel .cancel-text-link,
+  .cancel-flow-panel .cancel-back-link,
+  .cancel-flow-panel .cancel-continue-link,
+  .cancel-flow-panel a.cancel-continue-link
+) {
+  color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard :is(
+  .portal-page-panel input,
+  .portal-page-panel textarea,
+  .portal-page-panel select,
+  .referral-program-form input,
+  .gift-flow-modal input,
+  .gift-flow-modal textarea,
+  .gift-flow-modal select,
+  .cancel-flow-panel input,
+  .cancel-flow-panel textarea,
+  .cancel-flow-panel select
+) {
+  color: #0d1e39 !important;
+  background: #ffffff !important;
+}
+
+.portal-shell-dashboard .referral-program-form label,
+.portal-shell-dashboard .referral-program-form label span,
+.portal-shell-dashboard .referral-program-form .referral-phone-field,
+.portal-shell-dashboard .referral-program-form .referral-phone-field input,
+.portal-shell-dashboard .referral-program-form input,
+.portal-shell-dashboard .referral-program-form .referral-policy-note,
+.portal-shell-dashboard .referral-program-form .referral-login-link {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .referral-program-form label sup {
+  color: #d03a2f !important;
+}
+
+.portal-shell-dashboard :is(
+  .btn-outline,
+  .btn-secondary,
+  .gift-flow-actions .btn-outline,
+  .modal-actions .btn-outline,
+  .modal-actions-row .btn-outline,
+  .cancel-save-secondary,
+  .cancel-flow-actions .btn-outline,
+  .cancel-confirm-actions .btn-outline,
+  .claim-gift-btn,
+  .swap-flavor-btn,
+  .manage-action-row .btn-outline,
+  .portal-info-card .btn-outline,
+  .home-command-card .btn-outline,
+  .account-detail-card .btn-outline,
+  .referral-program-form > button[type="submit"] + .referral-login-link,
+  .cancel-flow-panel .cancel-save-secondary,
+  .cancel-flow-panel .cancel-flow-actions .btn-outline,
+  .cancel-flow-panel .cancel-confirm-actions .btn-outline
+) {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard :is(
+  .btn-outline:disabled,
+  .btn-secondary:disabled,
+  .cancel-save-secondary:disabled
+) {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard :is(
+  .btn-primary,
+  .gift-flow-actions .btn-primary,
+  .modal-actions .btn-primary,
+  .modal-actions-row .btn-primary,
+  .cancel-save-primary,
+  .cancel-flow-actions .btn-primary,
+  .cancel-confirm-actions .cancel-confirm-destructive
+) {
+  color: #ffffff !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-insight-card strong {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected {
+  background: #e9f0ff !important;
+  border-color: rgba(47, 92, 223, 0.36) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type.selected strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected small,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type.selected small,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected small {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-radio,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill .cancel-radio {
+  background: #ffffff !important;
+  border-color: rgba(15, 37, 77, 0.22) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected .cancel-radio,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected .cancel-radio {
+  background: #2f5cdf !important;
+  border-color: #2f5cdf !important;
+}
+
+/* Final light portal theme override - actual EOF */
+body {
+  background: #f7f8fa !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard,
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: linear-gradient(180deg, #f7f8fa 0%, #f4f6fb 100%) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-container,
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal,
+.portal-shell-dashboard .cancel-flow-panel,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+  box-shadow: 0 14px 36px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(13, 30, 57, 0.10) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a,
+.portal-shell-dashboard .portal-side-nav a:hover,
+.portal-shell-dashboard .portal-side-nav a.active {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a.active {
+  background: rgba(47, 92, 223, 0.10) !important;
+  border-color: rgba(47, 92, 223, 0.22) !important;
+}
+
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .member-greeting span,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-title-area p span,
+.portal-shell-dashboard .manage-current-product-card .manage-product-name,
+.portal-shell-dashboard .manage-current-product-card .manage-product-detail,
+.portal-shell-dashboard .manage-current-product-card .manage-next-label,
+.portal-shell-dashboard .manage-current-product-card .manage-price-per,
+.portal-shell-dashboard .manage-current-product-card .manage-product-price strong,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .referral-program-head h1,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .offer-modal-copy .modal-eyebrow,
+.portal-shell-dashboard .offer-modal-copy p,
+.portal-shell-dashboard .offer-modal-copy li,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-choice,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h2,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card h3 {
+  color: #0d1e39 !important;
+  opacity: 1 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-eyebrow,
+.portal-shell-dashboard .manage-offer-card-eyebrow,
+.portal-shell-dashboard .manage-current-product-card .manage-status-badge,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-head .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-meta .cancel-kicker,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .portal-info-card .mini-label,
+.portal-shell-dashboard .referral-program-head .mini-label,
+.portal-shell-dashboard .workspace-card .mini-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard .home-offer-card-title,
+.portal-shell-dashboard .manage-offer-card-title,
+.portal-shell-dashboard .manage-product-name,
+.portal-shell-dashboard .manage-product-price strong,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .cancel-flow-panel strong {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .btn-outline,
+.portal-shell-dashboard .btn-secondary,
+.portal-shell-dashboard .gift-flow-actions .btn-outline,
+.portal-shell-dashboard .modal-actions .btn-outline,
+.portal-shell-dashboard .modal-actions-row .btn-outline,
+.portal-shell-dashboard .cancel-save-secondary,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline,
+.portal-shell-dashboard .claim-gift-btn,
+.portal-shell-dashboard .swap-flavor-btn,
+.portal-shell-dashboard .manage-action-row .btn-outline {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.18) !important;
+  box-shadow: none !important;
+}
+
+.portal-shell-dashboard .btn-outline:hover,
+.portal-shell-dashboard .btn-secondary:hover,
+.portal-shell-dashboard .gift-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions-row .btn-outline:hover,
+.portal-shell-dashboard .cancel-save-secondary:hover,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline:hover,
+.portal-shell-dashboard .claim-gift-btn:hover,
+.portal-shell-dashboard .swap-flavor-btn:hover,
+.portal-shell-dashboard .manage-action-row .btn-outline:hover {
+  background: #f5f7fb !important;
+  border-color: rgba(47, 92, 223, 0.28) !important;
+}
+
+.portal-shell-dashboard .btn-primary,
+.portal-shell-dashboard .gift-flow-actions .btn-primary,
+.portal-shell-dashboard .modal-actions .btn-primary,
+.portal-shell-dashboard .modal-actions-row .btn-primary,
+.portal-shell-dashboard .cancel-save-primary,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive {
+  background: linear-gradient(180deg, #3d6ee8 0%, #2f5cdf 100%) !important;
+  color: #ffffff !important;
+  border-color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .btn-primary:hover,
+.portal-shell-dashboard .gift-flow-actions .btn-primary:hover,
+.portal-shell-dashboard .modal-actions .btn-primary:hover,
+.portal-shell-dashboard .modal-actions-row .btn-primary:hover,
+.portal-shell-dashboard .cancel-save-primary:hover,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary:hover,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive:hover {
+  background: linear-gradient(180deg, #315fe0 0%, #254fc5 100%) !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop,
+.portal-shell-dashboard .cancel-intro-backdrop {
+  background: rgba(10, 23, 46, 0.18) !important;
+  backdrop-filter: blur(10px) saturate(110%) !important;
+}
+
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .offer-modal-image,
+.portal-shell-dashboard .gift-flow-image,
+.portal-shell-dashboard .gift-flow-hero,
+.portal-shell-dashboard .cancel-save-card .cancel-product-visual,
+.portal-shell-dashboard .cancel-save-card .cancel-product-thumb {
+  background: #f4f7fb !important;
+  border-color: rgba(13, 30, 57, 0.10) !important;
+}
+
+.portal-shell-dashboard .modal-body,
+.portal-shell-dashboard .gift-flow-modal-body,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-complete-step {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .edit-form input,
+.portal-shell-dashboard .modal-date-input,
+.portal-shell-dashboard .cancel-issue-fields input,
+.portal-shell-dashboard .cancel-issue-fields textarea,
+.portal-shell-dashboard .cancel-note-field textarea,
+.portal-shell-dashboard .referral-program-form input,
+.portal-shell-dashboard .gift-flow-modal input,
+.portal-shell-dashboard .gift-flow-modal textarea,
+.portal-shell-dashboard .gift-flow-modal select {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.14) !important;
+}
+
+.portal-shell-dashboard .edit-form input::placeholder,
+.portal-shell-dashboard .cancel-issue-fields input::placeholder,
+.portal-shell-dashboard .cancel-issue-fields textarea::placeholder,
+.portal-shell-dashboard .cancel-note-field textarea::placeholder,
+.portal-shell-dashboard .referral-program-form input::placeholder,
+.portal-shell-dashboard .gift-flow-modal input::placeholder,
+.portal-shell-dashboard .gift-flow-modal textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected {
+  background: rgba(47, 92, 223, 0.10) !important;
+  border-color: rgba(47, 92, 223, 0.32) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-radio,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill .cancel-radio {
+  background: #ffffff !important;
+  border-color: rgba(13, 30, 57, 0.18) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected .cancel-radio,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected .cancel-radio {
+  background: #2f5cdf !important;
+  border-color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-insight-card {
+  background: #f5f7fb !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-insight-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-insight-card span {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card-recommended {
+  box-shadow: 0 0 0 2px rgba(47, 92, 223, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-continue-link,
+.portal-shell-dashboard .cancel-flow-panel a.cancel-continue-link {
+  color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm {
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .footer-newsletter {
+  background: #f8fafc !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .footer-newsletter a,
+.portal-shell-dashboard .footer-newsletter p,
+.portal-shell-dashboard .footer-newsletter label {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .footer-logo,
+.portal-shell-dashboard .footer-logo * {
+  color: #0d1e39 !important;
+}
+
+/* Final light portal theme override - must remain at EOF so it wins the cascade */
+body {
+  background: #f7f8fa !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard,
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: linear-gradient(180deg, #f7f8fa 0%, #f4f6fb 100%) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-container,
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal,
+.portal-shell-dashboard .cancel-flow-panel,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+  box-shadow: 0 14px 36px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(13, 30, 57, 0.10) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a,
+.portal-shell-dashboard .portal-side-nav a:hover,
+.portal-shell-dashboard .portal-side-nav a.active {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a.active {
+  background: rgba(47, 92, 223, 0.10) !important;
+  border-color: rgba(47, 92, 223, 0.22) !important;
+}
+
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .member-greeting span,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-title-area p span,
+.portal-shell-dashboard .manage-current-product-card .manage-product-name,
+.portal-shell-dashboard .manage-current-product-card .manage-product-detail,
+.portal-shell-dashboard .manage-current-product-card .manage-next-label,
+.portal-shell-dashboard .manage-current-product-card .manage-price-per,
+.portal-shell-dashboard .manage-current-product-card .manage-product-price strong,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .referral-program-head h1,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .offer-modal-copy .modal-eyebrow,
+.portal-shell-dashboard .offer-modal-copy p,
+.portal-shell-dashboard .offer-modal-copy li,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-choice,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h2,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card h3 {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-eyebrow,
+.portal-shell-dashboard .manage-offer-card-eyebrow,
+.portal-shell-dashboard .manage-current-product-card .manage-status-badge,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-head .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-meta .cancel-kicker,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .portal-info-card .mini-label,
+.portal-shell-dashboard .referral-program-head .mini-label,
+.portal-shell-dashboard .workspace-card .mini-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard .home-offer-card-title,
+.portal-shell-dashboard .manage-offer-card-title,
+.portal-shell-dashboard .manage-product-name,
+.portal-shell-dashboard .manage-product-price strong,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .cancel-flow-panel strong {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .btn-outline,
+.portal-shell-dashboard .btn-secondary,
+.portal-shell-dashboard .gift-flow-actions .btn-outline,
+.portal-shell-dashboard .modal-actions .btn-outline,
+.portal-shell-dashboard .modal-actions-row .btn-outline,
+.portal-shell-dashboard .cancel-save-secondary,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline,
+.portal-shell-dashboard .claim-gift-btn,
+.portal-shell-dashboard .swap-flavor-btn,
+.portal-shell-dashboard .manage-action-row .btn-outline {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.18) !important;
+  box-shadow: none !important;
+}
+
+.portal-shell-dashboard .btn-outline:hover,
+.portal-shell-dashboard .btn-secondary:hover,
+.portal-shell-dashboard .gift-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions-row .btn-outline:hover,
+.portal-shell-dashboard .cancel-save-secondary:hover,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline:hover,
+.portal-shell-dashboard .claim-gift-btn:hover,
+.portal-shell-dashboard .swap-flavor-btn:hover,
+.portal-shell-dashboard .manage-action-row .btn-outline:hover {
+  background: #f5f7fb !important;
+  border-color: rgba(47, 92, 223, 0.28) !important;
+}
+
+.portal-shell-dashboard .btn-primary,
+.portal-shell-dashboard .gift-flow-actions .btn-primary,
+.portal-shell-dashboard .modal-actions .btn-primary,
+.portal-shell-dashboard .modal-actions-row .btn-primary,
+.portal-shell-dashboard .cancel-save-primary,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive {
+  background: linear-gradient(180deg, #3d6ee8 0%, #2f5cdf 100%) !important;
+  color: #ffffff !important;
+  border-color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .btn-primary:hover,
+.portal-shell-dashboard .gift-flow-actions .btn-primary:hover,
+.portal-shell-dashboard .modal-actions .btn-primary:hover,
+.portal-shell-dashboard .modal-actions-row .btn-primary:hover,
+.portal-shell-dashboard .cancel-save-primary:hover,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary:hover,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive:hover {
+  background: linear-gradient(180deg, #315fe0 0%, #254fc5 100%) !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop,
+.portal-shell-dashboard .cancel-intro-backdrop {
+  background: rgba(10, 23, 46, 0.18) !important;
+  backdrop-filter: blur(10px) saturate(110%) !important;
+}
+
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal {
+  background: #ffffff !important;
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .offer-modal-image,
+.portal-shell-dashboard .gift-flow-image,
+.portal-shell-dashboard .gift-flow-hero,
+.portal-shell-dashboard .cancel-save-card .cancel-product-visual,
+.portal-shell-dashboard .cancel-save-card .cancel-product-thumb {
+  background: #f4f7fb !important;
+  border-color: rgba(13, 30, 57, 0.10) !important;
+}
+
+.portal-shell-dashboard .modal-body,
+.portal-shell-dashboard .gift-flow-modal-body,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-step,
+.portal-shell-dashboard .cancel-flow-panel .cancel-complete-step {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .edit-form input,
+.portal-shell-dashboard .modal-date-input,
+.portal-shell-dashboard .cancel-issue-fields input,
+.portal-shell-dashboard .cancel-issue-fields textarea,
+.portal-shell-dashboard .cancel-note-field textarea,
+.portal-shell-dashboard .referral-program-form input,
+.portal-shell-dashboard .gift-flow-modal input,
+.portal-shell-dashboard .gift-flow-modal textarea,
+.portal-shell-dashboard .gift-flow-modal select {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.14) !important;
+}
+
+.portal-shell-dashboard .edit-form input::placeholder,
+.portal-shell-dashboard .cancel-issue-fields input::placeholder,
+.portal-shell-dashboard .cancel-issue-fields textarea::placeholder,
+.portal-shell-dashboard .cancel-note-field textarea::placeholder,
+.portal-shell-dashboard .referral-program-form input::placeholder,
+.portal-shell-dashboard .gift-flow-modal input::placeholder,
+.portal-shell-dashboard .gift-flow-modal textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected {
+  background: rgba(47, 92, 223, 0.10) !important;
+  border-color: rgba(47, 92, 223, 0.32) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-radio,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill .cancel-radio {
+  background: #ffffff !important;
+  border-color: rgba(13, 30, 57, 0.18) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row.selected .cancel-radio,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill.selected .cancel-radio {
+  background: #2f5cdf !important;
+  border-color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-insight-card {
+  background: #f5f7fb !important;
+  border-color: rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-insight-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-insight-card span {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card-recommended {
+  box-shadow: 0 0 0 2px rgba(47, 92, 223, 0.12) !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-continue-link,
+.portal-shell-dashboard .cancel-flow-panel a.cancel-continue-link {
+  color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm {
+  border: 1px solid rgba(13, 30, 57, 0.12) !important;
+}
+
+.portal-shell-dashboard .footer-newsletter {
+  background: #f8fafc !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .footer-newsletter a,
+.portal-shell-dashboard .footer-newsletter p,
+.portal-shell-dashboard .footer-newsletter label {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .footer-logo,
+.portal-shell-dashboard .footer-logo * {
+  color: #0d1e39 !important;
+}
+
+/* Pass 7 final light portal override (must be last in file) */
+.portal-shell-dashboard {
+  background: #f7f8fa !important;
+}
+
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: transparent !important;
+}
+
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .member-greeting > span,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-title-area p span,
+.portal-shell-dashboard .manage-current-product-card .manage-product-name,
+.portal-shell-dashboard .manage-current-product-card .manage-product-detail,
+.portal-shell-dashboard .manage-current-product-card .manage-next-label,
+.portal-shell-dashboard .manage-current-product-card .manage-price-per,
+.portal-shell-dashboard .manage-current-product-card .manage-product-price strong,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .referral-program-head h1,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .offer-modal-copy .modal-eyebrow,
+.portal-shell-dashboard .offer-modal-copy p,
+.portal-shell-dashboard .offer-modal-copy li,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-choice,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card p {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-side-nav {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(15, 37, 77, 0.10) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a {
+  color: #334155 !important;
+  background: #ffffff !important;
+  border-color: rgba(15, 37, 77, 0.10) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a.active {
+  background: #e8efff !important;
+  color: #0d1e39 !important;
+  border-color: rgba(47, 92, 223, 0.25) !important;
+}
+
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal {
+  background: #fbfbfd !important;
+  color: #0d1e39 !important;
+  border-color: rgba(15, 37, 77, 0.12) !important;
+}
+
+.portal-shell-dashboard .btn-outline,
+.portal-shell-dashboard .btn-secondary,
+.portal-shell-dashboard .gift-flow-actions .btn-outline,
+.portal-shell-dashboard .modal-actions .btn-outline,
+.portal-shell-dashboard .modal-actions-row .btn-outline,
+.portal-shell-dashboard .cancel-save-secondary,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline,
+.portal-shell-dashboard .claim-gift-btn,
+.portal-shell-dashboard .swap-flavor-btn,
+.portal-shell-dashboard .manage-action-row .btn-outline {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border: 1px solid rgba(15, 37, 77, 0.18) !important;
+}
+
+.portal-shell-dashboard .btn-primary,
+.portal-shell-dashboard .gift-flow-actions .btn-primary,
+.portal-shell-dashboard .modal-actions .btn-primary,
+.portal-shell-dashboard .modal-actions-row .btn-primary,
+.portal-shell-dashboard .cancel-save-primary,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive {
+  background: #2f5cdf !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop {
+  background: rgba(247, 248, 250, 0.84) !important;
+}
+
+.portal-shell-dashboard .footer-newsletter {
+  display: none !important;
+}
+
+/* Pass 6 light portal body overrides (must win over older dark theme blocks) */
+.portal-shell-dashboard {
+  background: #f7f8fa !important;
+}
+
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: transparent !important;
+}
+
+.portal-shell-dashboard .member-greeting :is(h1, span, p),
+.portal-shell-dashboard .home-command-card :is(.mini-label, h2, p),
+.portal-shell-dashboard .home-offer-heading :is(.mini-label, h2),
+.portal-shell-dashboard .account-summary-strip :is(.mini-label, strong),
+.portal-shell-dashboard .manage-title-area :is(h1, p, span, strong),
+.portal-shell-dashboard .manage-current-product-card :is(.manage-product-name, .manage-product-detail, .manage-next-label, .manage-price-per, strong, span),
+.portal-shell-dashboard .portal-page-head :is(h1, p, span, strong),
+.portal-shell-dashboard .portal-info-card :is(h2, p, span, strong, a),
+.portal-shell-dashboard .referral-program-head :is(h1, p, span),
+.portal-shell-dashboard .workspace-card :is(h2, h3, p, span, strong),
+.portal-shell-dashboard .gift-flow-modal-body :is(h2, h3, h4, p, span, strong, label),
+.portal-shell-dashboard .gift-flow-confirm :is(h4, p, span),
+.portal-shell-dashboard .gift-flow-choice-card :is(.gift-flow-choice-title, .gift-flow-choice-copy),
+.portal-shell-dashboard .action-modal :is(h3, p, li, strong, span, label),
+.portal-shell-dashboard .offer-modal-copy :is(.modal-eyebrow, p, li),
+.portal-shell-dashboard .cancel-flow-panel :is(h2, h3, p, span, strong, label, li, .cancel-kicker, .cancel-selected-label, .cancel-selected-choice, .cancel-final-selected-label) {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .member-greeting :is(span, p),
+.portal-shell-dashboard .home-command-card :is(.mini-label, p),
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-current-product-card :is(.manage-product-detail, .manage-next-label, .manage-price-per),
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .workspace-card p,
+.portal-shell-dashboard .gift-flow-modal-body p,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .offer-modal-copy p,
+.portal-shell-dashboard .offer-modal-copy li,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li {
+  color: #475569 !important;
+}
+
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal {
+  background: #fbfbfd !important;
+  color: #0d1e39 !important;
+  border-color: rgba(15, 37, 77, 0.12) !important;
+}
+
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .referral-program-head h1 {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-eyebrow,
+.portal-shell-dashboard .manage-offer-card-eyebrow,
+.portal-shell-dashboard .manage-current-product-card .manage-status-badge,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-head .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-meta .cancel-kicker {
+  color: #2759d3 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-title,
+.portal-shell-dashboard .manage-offer-card-title,
+.portal-shell-dashboard .manage-product-name,
+.portal-shell-dashboard .manage-product-price strong,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .cancel-flow-panel strong {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .btn-outline,
+.portal-shell-dashboard .btn-secondary,
+.portal-shell-dashboard .gift-flow-actions .btn-outline,
+.portal-shell-dashboard .modal-actions .btn-outline,
+.portal-shell-dashboard .modal-actions-row .btn-outline,
+.portal-shell-dashboard .cancel-save-secondary,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline,
+.portal-shell-dashboard .claim-gift-btn,
+.portal-shell-dashboard .swap-flavor-btn,
+.portal-shell-dashboard .manage-action-row .btn-outline {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border: 1px solid rgba(15, 37, 77, 0.18) !important;
+}
+
+.portal-shell-dashboard .btn-outline:hover,
+.portal-shell-dashboard .btn-secondary:hover,
+.portal-shell-dashboard .gift-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions-row .btn-outline:hover,
+.portal-shell-dashboard .cancel-save-secondary:hover,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline:hover,
+.portal-shell-dashboard .manage-action-row .btn-outline:hover {
+  background: #f3f7ff !important;
+  border-color: rgba(47, 92, 223, 0.28) !important;
+}
+
+.portal-shell-dashboard .btn-primary,
+.portal-shell-dashboard .gift-flow-actions .btn-primary,
+.portal-shell-dashboard .modal-actions .btn-primary,
+.portal-shell-dashboard .modal-actions-row .btn-primary,
+.portal-shell-dashboard .cancel-save-primary,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive {
+  background: #2f5cdf !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop {
+  background: rgba(247, 248, 250, 0.84) !important;
+}
+
+.portal-shell-dashboard .footer-newsletter {
+  display: none !important;
+}
+
+/* Pass 5 light portal theme overrides */
+.portal-shell-dashboard {
+  background: #f7f8fa !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+.portal-shell-dashboard .portal-side-nav {
+  background: rgba(255, 255, 255, 0.78) !important;
+  border: 1px solid rgba(15, 37, 77, 0.10) !important;
+  box-shadow: 0 18px 36px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a {
+  color: #334155 !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  border: 1px solid rgba(15, 37, 77, 0.10) !important;
+}
+
+.portal-shell-dashboard .portal-side-nav a.active {
+  background: #e8efff !important;
+  border-color: rgba(47, 92, 223, 0.30) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-page,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .gift-flow-form-grid,
+.portal-shell-dashboard .gift-flow-modal-body,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .offer-modal-copy,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .cancel-flow-panel {
+  background: #fbfbfd !important;
+  color: #0d1e39 !important;
+  border-color: rgba(15, 37, 77, 0.12) !important;
+  box-shadow: 0 18px 40px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .home-card h1,
+.portal-shell-dashboard .home-card h2,
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .member-greeting span,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .home-topline .member-greeting,
+.portal-shell-dashboard .home-offer-heading,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .referral-program-head h1,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .action-modal h3 {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-card p,
+.portal-shell-dashboard .home-topline .member-greeting span,
+.portal-shell-dashboard .home-topline .member-greeting p,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .account-summary-strip span,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .workspace-card p,
+.portal-shell-dashboard .member-greeting span,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .referral-policy-note,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-summary-card p,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-subcopy,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step p {
+  color: #475569 !important;
+}
+
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .portal-page-panel .mini-label,
+.portal-shell-dashboard .workspace-card .mini-label,
+.portal-shell-dashboard .referral-program-head .mini-label,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-meta .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-head .cancel-kicker {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .home-offer-card-body,
+.portal-shell-dashboard .manage-offer-card-body,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 37, 77, 0.12) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-offer-card:hover,
+.portal-shell-dashboard .manage-offer-card:hover,
+.portal-shell-dashboard .home-command-card:hover,
+.portal-shell-dashboard .portal-info-card:hover,
+.portal-shell-dashboard .gift-flow-choice-card:hover,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 18px 44px rgba(15, 37, 77, 0.10) !important;
+}
+
+.portal-shell-dashboard .home-offer-card-eyebrow,
+.portal-shell-dashboard .manage-offer-card-eyebrow,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .gift-flow-summary-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-choice {
+  color: #0f4cc9 !important;
+}
+
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-product-name,
+.portal-shell-dashboard .manage-product-detail,
+.portal-shell-dashboard .manage-next-label,
+.portal-shell-dashboard .manage-price-per,
+.portal-shell-dashboard .manage-product-price strong,
+.portal-shell-dashboard .manage-product-meta,
+.portal-shell-dashboard .manage-product-meta span {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card {
+  background: #ffffff !important;
+  border: 1px solid rgba(15, 37, 77, 0.12) !important;
+}
+
+.portal-shell-dashboard .home-offer-card-title,
+.portal-shell-dashboard .manage-offer-card-title,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .cancel-flow-panel strong {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-cta,
+.portal-shell-dashboard .manage-offer-card-cta,
+.portal-shell-dashboard .referral-login-link,
+.portal-shell-dashboard .gift-flow-back,
+.portal-shell-dashboard .cancel-flow-panel .cancel-text-link,
+.portal-shell-dashboard .cancel-flow-panel .cancel-flow-secondary-link {
+  color: #2f5cdf !important;
+}
+
+.portal-shell-dashboard .home-offer-card-cta:hover,
+.portal-shell-dashboard .manage-offer-card-cta:hover,
+.portal-shell-dashboard .referral-login-link:hover,
+.portal-shell-dashboard .gift-flow-back:hover,
+.portal-shell-dashboard .cancel-flow-panel .cancel-text-link:hover {
+  color: #1f48bb !important;
+}
+
+.portal-shell-dashboard .btn-primary,
+.portal-shell-dashboard .btn.btn-primary,
+.portal-shell-dashboard .gift-flow-actions .btn-primary,
+.portal-shell-dashboard .modal-actions .btn-primary,
+.portal-shell-dashboard .modal-actions-row .btn-primary,
+.portal-shell-dashboard .cancel-save-primary,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive {
+  background: #2f5cdf !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.portal-shell-dashboard .btn-outline,
+.portal-shell-dashboard .btn-secondary,
+.portal-shell-dashboard .gift-flow-actions .btn-outline,
+.portal-shell-dashboard .modal-actions .btn-outline,
+.portal-shell-dashboard .modal-actions-row .btn-outline,
+.portal-shell-dashboard .cancel-save-secondary,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline,
+.portal-shell-dashboard .claim-gift-btn,
+.portal-shell-dashboard .swap-flavor-btn {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border: 1px solid rgba(15, 37, 77, 0.20) !important;
+}
+
+.portal-shell-dashboard .btn-outline:hover,
+.portal-shell-dashboard .btn-secondary:hover,
+.portal-shell-dashboard .gift-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions .btn-outline:hover,
+.portal-shell-dashboard .modal-actions-row .btn-outline:hover,
+.portal-shell-dashboard .cancel-save-secondary:hover,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline:hover,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline:hover {
+  background: #f3f7ff !important;
+  border-color: rgba(47, 92, 223, 0.28) !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop {
+  background: rgba(247, 248, 250, 0.82) !important;
+}
+
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .cancel-intro-modal {
+  background: #fbfbfd !important;
+  border: 1px solid rgba(15, 37, 77, 0.12) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .action-modal p.modal-note,
+.portal-shell-dashboard .modal-body p,
+.portal-shell-dashboard .modal-body li,
+.portal-shell-dashboard .offer-modal-copy p,
+.portal-shell-dashboard .offer-modal-copy li,
+.portal-shell-dashboard .gift-flow-modal-body p,
+.portal-shell-dashboard .gift-flow-modal-body li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card p {
+  color: #475569 !important;
+}
+
+.portal-shell-dashboard .offer-modal-image,
+.portal-shell-dashboard .gift-flow-summary-card img,
+.portal-shell-dashboard .manage-offer-card-img,
+.portal-shell-dashboard .home-offer-card-img,
+.portal-shell-dashboard .claim-free-gift-card {
+  background: #ffffff !important;
+  border-color: rgba(15, 37, 77, 0.10) !important;
+}
+
+.portal-shell-dashboard .cancel-reason-row.selected,
+.portal-shell-dashboard .cancel-option-pill.selected,
+.portal-shell-dashboard .cancel-action-pill,
+.portal-shell-dashboard .cancel-selected-label,
+.portal-shell-dashboard .cancel-final-selected-label,
+.portal-shell-dashboard .gift-flow-choice-card.selected {
+  background: #e8efff !important;
+  border-color: rgba(47, 92, 223, 0.30) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-saved-check {
+  background: linear-gradient(135deg, #2f5cdf, #6fa8ff) !important;
+  color: #ffffff !important;
+}
+
+.portal-shell-dashboard .gift-flow-form-grid input,
+.portal-shell-dashboard .gift-flow-form-grid textarea,
+.portal-shell-dashboard .referral-program-form input,
+.portal-shell-dashboard .edit-form input,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-fields input,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-fields textarea,
+.portal-shell-dashboard .cancel-flow-panel .cancel-note-field textarea,
+.portal-shell-dashboard .modal-date-input {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border: 1px solid rgba(15, 37, 77, 0.16) !important;
+}
+
+.portal-shell-dashboard .gift-flow-form-grid input::placeholder,
+.portal-shell-dashboard .gift-flow-form-grid textarea::placeholder,
+.portal-shell-dashboard .referral-program-form input::placeholder,
+.portal-shell-dashboard .edit-form input::placeholder,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-fields input::placeholder,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-fields textarea::placeholder,
+.portal-shell-dashboard .cancel-flow-panel .cancel-note-field textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+.portal-shell-dashboard .gift-flow-form-grid label,
+.portal-shell-dashboard .referral-program-form label,
+.portal-shell-dashboard .cancel-flow-panel label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-fields label {
+  color: #334155 !important;
+}
+
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-summary-card p,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card p {
+  color: #475569 !important;
+}
+
+.portal-shell-dashboard .footer-newsletter {
+  display: none !important;
+}
+
+.portal-shell-dashboard .cancel-flow-panel .cancel-flow-actions,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-footer,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-actions,
+.portal-shell-dashboard .gift-flow-actions,
+.portal-shell-dashboard .modal-actions,
+.portal-shell-dashboard .modal-actions-row {
+  gap: 12px !important;
+}
+
+@media (max-width: 860px) {
+  .portal-shell-dashboard .portal-side-nav {
+    background: #ffffff !important;
+  }
+
+  .portal-shell-dashboard .home-offer-card,
+  .portal-shell-dashboard .manage-offer-card,
+  .portal-shell-dashboard .portal-page-panel,
+  .portal-shell-dashboard .workspace-card,
+  .portal-shell-dashboard .home-command-card,
+  .portal-shell-dashboard .account-summary-strip > div {
+    box-shadow: 0 12px 28px rgba(15, 37, 77, 0.06) !important;
+  }
+
+  .portal-shell-dashboard .action-modal,
+  .portal-shell-dashboard .action-modal-wide,
+  .portal-shell-dashboard .offer-modal,
+  .portal-shell-dashboard .gift-flow-modal,
+  .portal-shell-dashboard .backup-card-modal,
+  .portal-shell-dashboard .cancel-intro-modal {
+    margin: 12px !important;
+  }
+
+  .portal-shell-dashboard .cancel-flow-panel .cancel-step h2,
+  .portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card h3,
+  .portal-shell-dashboard .cancel-flow-panel .cancel-step-head h2 {
+    line-height: 0.98 !important;
+  }
+}
+
+/* Final cancellation cleanup pass: tighter width, dark product card, closer rescue CTA */
+.cancel-flow-panel .cancel-step,
+.cancel-flow-panel .cancel-save-step,
+.cancel-flow-panel .cancel-rescue-step,
+.cancel-flow-panel .cancel-confirm-step,
+.cancel-flow-panel .cancel-complete-step {
+  max-width: 980px !important;
+}
+
+.cancel-flow-panel .cancel-reason-row.selected {
+  background: rgba(10, 34, 70, 0.72) !important;
+  border-color: rgba(78, 138, 255, 0.86) !important;
+  box-shadow: 0 0 0 3px rgba(78, 138, 255, 0.16) !important;
+}
+
+.cancel-flow-panel .cancel-selected-label,
+.cancel-flow-panel .cancel-final-selected-label,
+.cancel-flow-panel .cancel-action-pill {
+  background: rgba(8, 35, 75, 0.46) !important;
+  border-color: rgba(85, 147, 255, 0.58) !important;
+  color: #f7fbff !important;
+}
+
+.cancel-flow-panel .cancel-issue-type.selected,
+.cancel-flow-panel .cancel-option-pill.selected {
+  background: rgba(10, 34, 70, 0.72) !important;
+  border-color: rgba(78, 138, 255, 0.86) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(78, 138, 255, 0.14) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual {
+  background: linear-gradient(180deg, rgba(8, 26, 54, 0.96), rgba(24, 48, 96, 0.98)) !important;
+  border-color: rgba(103, 148, 214, 0.28) !important;
+  color: #ffffff !important;
+}
+
+.cancel-flow-panel .cancel-product-visual .cancel-kicker,
+.cancel-flow-panel .cancel-product-visual .cancel-product-copy h3,
+.cancel-flow-panel .cancel-product-visual .cancel-product-copy p {
+  color: #ffffff !important;
+}
+
+.cancel-flow-panel .cancel-product-visual .cancel-product-thumb {
+  border-color: rgba(255, 255, 255, 0.18) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual-consistency .cancel-product-thumb {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, .72), transparent 30%),
+    linear-gradient(135deg, #204f99, #4d76d0) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual-cadence .cancel-product-thumb {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, .72), transparent 30%),
+    linear-gradient(135deg, #1d4f8d, #4f8ad7) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual-savings .cancel-product-thumb {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, .72), transparent 30%),
+    linear-gradient(135deg, #27569a, #5d87d9) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual-control .cancel-product-thumb {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, .72), transparent 30%),
+    linear-gradient(135deg, #223b70, #476ec0) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual-product-swap .cancel-product-thumb,
+.cancel-flow-panel .cancel-product-visual-comparison .cancel-product-thumb,
+.cancel-flow-panel .cancel-product-visual-portal .cancel-product-thumb,
+.cancel-flow-panel .cancel-product-visual-general .cancel-product-thumb {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, .72), transparent 30%),
+    linear-gradient(135deg, #1b3f78, #4a76c6) !important;
+}
+
+.cancel-flow-panel .cancel-rescue-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.cancel-flow-panel .cancel-rescue-card-footer .cancel-continue-link {
+  padding: 0;
+  white-space: nowrap;
+}
+
+.cancel-flow-panel .cancel-save-footer {
+  justify-content: flex-end;
+  margin-top: 14px;
+}
+
+/* Final portal/mobile overrides: keep the current portal readable and on-brand. */
+.portal-shell-dashboard .footer-newsletter {
+  display: none !important;
+}
+
+.portal-shell-dashboard .offer-modal-image {
+  background: linear-gradient(180deg, rgba(10, 27, 55, 0.18), rgba(10, 27, 55, 0.08)) !important;
+}
+
+.portal-shell-dashboard .offer-modal-image img {
+  object-fit: cover !important;
+  object-position: center 18% !important;
+}
+
+.portal-shell-dashboard .manage-offers-grid {
+  align-items: stretch;
+}
+
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card {
+  min-width: 0;
+}
+
+.portal-shell-dashboard .manage-offer-card-cta,
+.portal-shell-dashboard .home-offer-card-cta {
+  white-space: nowrap;
+}
+
+.cancel-flow-panel .cancel-save-card,
+.cancel-flow-panel .cancel-rescue-card,
+.cancel-flow-panel .cancel-confirm-card,
+.cancel-flow-panel .cancel-branch-card,
+.cancel-flow-panel .cancel-action-card {
+  background: linear-gradient(160deg, rgba(20, 40, 78, 0.96), rgba(10, 25, 53, 0.94)) !important;
+  border-color: rgba(143, 181, 255, 0.16) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual,
+.cancel-flow-panel .cancel-diagnostic-block {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(143, 181, 255, 0.14) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual {
+  grid-template-columns: 96px minmax(0, 1fr) !important;
+}
+
+.cancel-flow-panel .cancel-product-thumb {
+  background:
+    radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.14), transparent 30%),
+    linear-gradient(135deg, rgba(10, 37, 84, 0.96), rgba(26, 84, 153, 0.72)) !important;
+}
+
+.cancel-flow-panel .cancel-product-visual-electrolytes .cancel-product-thumb {
+  background:
+    radial-gradient(circle at 72% 24%, rgba(255, 255, 255, 0.16), transparent 28%),
+    linear-gradient(135deg, #1f5e33, #7ead5a) !important;
+}
+
+.cancel-flow-panel .cancel-product-copy h3,
+.cancel-flow-panel .cancel-product-copy p,
+.cancel-flow-panel .cancel-insight-card strong,
+.cancel-flow-panel .cancel-action-card strong,
+.cancel-flow-panel .cancel-confirm-card h3 {
+  color: #f7fbff !important;
+}
+
+.cancel-flow-panel .cancel-insight-card,
+.cancel-flow-panel .cancel-selected-choice,
+.cancel-flow-panel .cancel-unlock-note,
+.cancel-flow-panel .cancel-action-pill,
+.cancel-flow-panel .cancel-issue-type,
+.cancel-flow-panel .cancel-option-pill,
+.cancel-flow-panel .cancel-reason-row {
+  background: rgba(10, 25, 53, 0.92) !important;
+  border-color: rgba(136, 176, 255, 0.22) !important;
+  color: rgba(247, 251, 255, 0.92) !important;
+}
+
+.cancel-flow-panel .cancel-selected-choice {
+  background: rgba(10, 25, 53, 0.94) !important;
+  border-color: rgba(80, 140, 255, 0.52) !important;
+}
+
+.cancel-flow-panel .cancel-action-pill {
+  display: inline-flex !important;
+  padding: 7px 10px !important;
+  border-radius: 999px !important;
+  font-size: 10px !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.cancel-flow-panel .cancel-issue-type.selected,
+.cancel-flow-panel .cancel-option-pill.selected,
+.cancel-flow-panel .cancel-reason-row.selected {
+  background: linear-gradient(180deg, rgba(38, 83, 146, 0.98) 0%, rgba(18, 44, 88, 0.98) 100%) !important;
+  border-color: rgba(120, 170, 255, 0.78) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(55, 110, 235, 0.22), 0 14px 28px rgba(0, 0, 0, 0.18) !important;
+}
+
+.cancel-flow-panel .cancel-save-footer {
+  justify-content: flex-start !important;
+  margin-top: 14px !important;
+}
+
+.cancel-flow-panel .cancel-rescue-footer {
+  justify-content: flex-start !important;
+}
+
+.cancel-flow-panel .cancel-rescue-footer-single {
+  margin-top: 16px !important;
+}
+
+.cancel-flow-panel .cancel-flow-actions-sticky {
+  grid-template-columns: minmax(0, 1fr) !important;
+  justify-items: start !important;
+}
+
+.cancel-flow-panel .cancel-flow-actions-sticky .cancel-text-link {
+  justify-self: start !important;
+}
+
+.cancel-flow-panel .cancel-flow-actions-sticky .btn {
+  width: min(100%, 360px) !important;
+}
+
+.cancel-flow-panel .cancel-complete-step {
+  width: min(100%, 640px) !important;
+  margin-inline: auto !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.cancel-flow-panel .cancel-complete-step h2 {
+  font-size: clamp(28px, 5vw, 38px) !important;
+  line-height: 1.05 !important;
+}
+
+.cancel-flow-panel .cancel-complete-step p {
+  max-width: 520px !important;
+  margin-inline: auto !important;
+}
+
+.cancel-flow-panel .cancel-complete-step .btn {
+  width: min(100%, 280px) !important;
+}
+
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide {
+  width: min(100%, 860px) !important;
+}
+
+.portal-shell-dashboard .backup-card-modal .edit-form-row {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+}
+
+@media (max-width: 980px) {
+  .portal-shell-dashboard .portal-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .portal-shell-dashboard .home-topline {
+    order: 1;
+  }
+
+  .portal-shell-dashboard .home-offer-heading {
+    order: 2;
+    margin-top: 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .portal-shell-dashboard .portal-offer-panel-home {
+    order: 3;
+    margin-bottom: 16px;
+  }
+
+  .portal-shell-dashboard .account-summary-strip {
+    order: 4;
+  }
+
+  .portal-shell-dashboard .home-command-card {
+    order: 5;
+  }
+}
+
+@media (max-width: 760px) {
+  .portal-shell-dashboard .offer-modal-image {
+    aspect-ratio: 1.55 / 1 !important;
+  }
+
+  .portal-shell-dashboard .offer-modal-image img {
+    object-fit: contain !important;
+    object-position: center top !important;
+  }
+
+  .cancel-flow-panel .cancel-save-grid,
+  .cancel-flow-panel .cancel-rescue-action-grid,
+  .cancel-flow-panel .cancel-branch-card,
+  .cancel-flow-panel .cancel-confirm-actions {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cancel-flow-panel .cancel-action-card {
+    min-height: 0 !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step {
+    width: 100% !important;
+    padding-inline: 6px !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step h2 {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .portal-shell-dashboard .manage-offers-grid {
+    gap: 12px !important;
+  }
+
+  .portal-shell-dashboard .manage-offer-card {
+    min-width: 0 !important;
+  }
+
+  .portal-shell-dashboard .manage-offer-card-img {
+    aspect-ratio: 1 / 1 !important;
+  }
+
+  .portal-shell-dashboard .manage-offer-card-img img {
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .portal-shell-dashboard .manage-offer-card-cta,
+  .portal-shell-dashboard .home-offer-card-cta {
+    white-space: nowrap !important;
+  }
+
+  .portal-shell-dashboard .swap-flavor-card .swap-flavor-options,
+  .portal-shell-dashboard .gift-flow-choice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .portal-shell-dashboard .gift-flow-form-row {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .portal-shell-dashboard .backup-card-modal .edit-form-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .portal-shell-dashboard .backup-card-modal .edit-form-row label input {
+    min-width: 0;
+  }
+
+  .billing-row p {
+    gap: 10px !important;
+  }
+
+  .mastercard-dot {
+    margin-right: 0 !important;
+  }
+
+  .portal-shell-dashboard .action-modal .modal-actions .btn {
+    min-height: 46px;
+  }
+
+  .cancel-flow-panel .cancel-save-card-head {
+    align-items: flex-start !important;
+  }
+
+  .cancel-flow-panel .cancel-selected-choice {
+    max-width: 100% !important;
+    text-align: left !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step {
+    width: 100% !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step h2 {
+    font-size: clamp(22px, 7vw, 30px) !important;
+    line-height: 1.06 !important;
+  }
+
+  .cancel-flow-panel .cancel-complete-step p {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+  }
+}
 
 /* Final portal cleanup overrides */
 .portal-shell-dashboard .modal-backdrop,
@@ -5351,7 +8504,7 @@ button { font-family: inherit; cursor: pointer; }
 .cancel-flow-panel .cancel-save-footer {
   display: flex;
   justify-content: flex-end;
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .cancel-flow-panel .cancel-flow-actions-sticky {
@@ -6170,21 +9323,29 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 .cancel-flow-panel .cancel-save-card .cancel-product-visual {
-  background: linear-gradient(135deg, #f8fbff 0%, #e9f0ff 100%) !important;
-  border-color: rgba(184, 205, 234, 0.9) !important;
-  color: #102347 !important;
+  background: linear-gradient(180deg, rgba(10, 26, 53, 0.96), rgba(23, 49, 97, 0.98)) !important;
+  border-color: rgba(103, 148, 214, 0.24) !important;
+  color: #ffffff !important;
 }
 
 .cancel-flow-panel .cancel-save-card .cancel-product-copy .cancel-kicker {
-  color: #536278 !important;
+  color: rgba(255, 255, 255, 0.55) !important;
 }
 
 .cancel-flow-panel .cancel-save-card .cancel-product-copy h3 {
-  color: #102347 !important;
+  color: #ffffff !important;
 }
 
 .cancel-flow-panel .cancel-save-card .cancel-product-copy p {
-  color: #536278 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+.cancel-flow-panel .cancel-save-card .cancel-product-thumb {
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+.cancel-flow-panel .cancel-save-footer {
+  align-items: center;
 }
 
 /* Insight cards */
@@ -7161,4 +10322,176 @@ button { font-family: inherit; cursor: pointer; }
 .cancel-flow-panel .cancel-insight-card strong,
 .cancel-flow-panel .cancel-insight-card span {
   color: #ffffff !important;
+}
+
+/* Real EOF light portal override */
+body {
+  background: #f7f8fa !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard,
+.portal-shell-dashboard .portal-layout,
+.portal-shell-dashboard .detail-layout,
+.portal-shell-dashboard .portal-main {
+  background: linear-gradient(180deg, #f7f8fa 0%, #f4f6fb 100%) !important;
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .portal-container,
+.portal-shell-dashboard .home-card,
+.portal-shell-dashboard .home-command-card,
+.portal-shell-dashboard .account-summary-strip > div,
+.portal-shell-dashboard .portal-page-panel,
+.portal-shell-dashboard .portal-info-card,
+.portal-shell-dashboard .workspace-card,
+.portal-shell-dashboard .billing-workspace-card,
+.portal-shell-dashboard .summary-workspace-card,
+.portal-shell-dashboard .manage-hero,
+.portal-shell-dashboard .manage-current-product-card,
+.portal-shell-dashboard .manage-offer-card,
+.portal-shell-dashboard .home-offer-card,
+.portal-shell-dashboard .referral-program-form,
+.portal-shell-dashboard .gift-flow-choice-card,
+.portal-shell-dashboard .gift-flow-summary-card,
+.portal-shell-dashboard .gift-flow-confirm,
+.portal-shell-dashboard .action-modal,
+.portal-shell-dashboard .action-modal-wide,
+.portal-shell-dashboard .offer-modal,
+.portal-shell-dashboard .backup-card-modal,
+.portal-shell-dashboard .gift-flow-modal,
+.portal-shell-dashboard .cancel-intro-modal,
+.portal-shell-dashboard .cancel-flow-panel,
+.portal-shell-dashboard .cancel-flow-panel .cancel-reason-row,
+.portal-shell-dashboard .cancel-flow-panel .cancel-issue-type,
+.portal-shell-dashboard .cancel-flow-panel .cancel-option-pill,
+.portal-shell-dashboard .cancel-flow-panel .cancel-branch-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-rescue-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card {
+  background: #fbfbfd !important;
+  color: #0d1e39 !important;
+  border-color: rgba(15, 37, 77, 0.12) !important;
+  box-shadow: 0 14px 36px rgba(15, 37, 77, 0.08) !important;
+}
+
+.portal-shell-dashboard .member-greeting h1,
+.portal-shell-dashboard .member-greeting span,
+.portal-shell-dashboard .member-greeting p,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-offer-heading h2,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .home-command-card h2,
+.portal-shell-dashboard .home-command-card p,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .account-summary-strip strong,
+.portal-shell-dashboard .manage-title-area h1,
+.portal-shell-dashboard .manage-title-area p,
+.portal-shell-dashboard .manage-title-area p span,
+.portal-shell-dashboard .manage-current-product-card .manage-product-name,
+.portal-shell-dashboard .manage-current-product-card .manage-product-detail,
+.portal-shell-dashboard .manage-current-product-card .manage-next-label,
+.portal-shell-dashboard .manage-current-product-card .manage-price-per,
+.portal-shell-dashboard .manage-current-product-card .manage-product-price strong,
+.portal-shell-dashboard .workspace-title,
+.portal-shell-dashboard .portal-page-head h1,
+.portal-shell-dashboard .portal-page-head p,
+.portal-shell-dashboard .portal-info-card h2,
+.portal-shell-dashboard .portal-info-card p,
+.portal-shell-dashboard .referral-program-head h1,
+.portal-shell-dashboard .referral-program-head p,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-choice-copy,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .gift-flow-confirm p,
+.portal-shell-dashboard .action-modal h3,
+.portal-shell-dashboard .action-modal p,
+.portal-shell-dashboard .action-modal li,
+.portal-shell-dashboard .offer-modal-copy .modal-eyebrow,
+.portal-shell-dashboard .offer-modal-copy p,
+.portal-shell-dashboard .offer-modal-copy li,
+.portal-shell-dashboard .cancel-flow-panel h2,
+.portal-shell-dashboard .cancel-flow-panel h3,
+.portal-shell-dashboard .cancel-flow-panel p,
+.portal-shell-dashboard .cancel-flow-panel li,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-choice,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card strong,
+.portal-shell-dashboard .cancel-flow-panel .cancel-action-card p,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h2,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-save-card h3,
+.portal-shell-dashboard .cancel-flow-panel .cancel-confirm-card h3 {
+  color: #0d1e39 !important;
+  opacity: 1 !important;
+}
+
+.portal-shell-dashboard .home-offer-card-eyebrow,
+.portal-shell-dashboard .manage-offer-card-eyebrow,
+.portal-shell-dashboard .manage-current-product-card .manage-status-badge,
+.portal-shell-dashboard .gift-flow-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-head .cancel-kicker,
+.portal-shell-dashboard .cancel-flow-panel .cancel-step-meta .cancel-kicker,
+.portal-shell-dashboard .home-offer-heading .mini-label,
+.portal-shell-dashboard .home-command-card .mini-label,
+.portal-shell-dashboard .account-summary-strip .mini-label,
+.portal-shell-dashboard .portal-info-card .mini-label,
+.portal-shell-dashboard .referral-program-head .mini-label,
+.portal-shell-dashboard .workspace-card .mini-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-selected-label,
+.portal-shell-dashboard .cancel-flow-panel .cancel-final-selected-label {
+  color: #64748b !important;
+}
+
+.portal-shell-dashboard .home-offer-card-title,
+.portal-shell-dashboard .manage-offer-card-title,
+.portal-shell-dashboard .manage-product-name,
+.portal-shell-dashboard .manage-product-price strong,
+.portal-shell-dashboard .gift-flow-choice-title,
+.portal-shell-dashboard .gift-flow-confirm h4,
+.portal-shell-dashboard .cancel-flow-panel strong {
+  color: #0d1e39 !important;
+}
+
+.portal-shell-dashboard .btn-outline,
+.portal-shell-dashboard .btn-secondary,
+.portal-shell-dashboard .gift-flow-actions .btn-outline,
+.portal-shell-dashboard .modal-actions .btn-outline,
+.portal-shell-dashboard .modal-actions-row .btn-outline,
+.portal-shell-dashboard .cancel-save-secondary,
+.portal-shell-dashboard .cancel-flow-actions .btn-outline,
+.portal-shell-dashboard .cancel-confirm-actions .btn-outline,
+.portal-shell-dashboard .claim-gift-btn,
+.portal-shell-dashboard .swap-flavor-btn,
+.portal-shell-dashboard .manage-action-row .btn-outline {
+  background: #ffffff !important;
+  color: #0d1e39 !important;
+  border: 1px solid rgba(15, 37, 77, 0.18) !important;
+}
+
+.portal-shell-dashboard .btn-primary,
+.portal-shell-dashboard .gift-flow-actions .btn-primary,
+.portal-shell-dashboard .modal-actions .btn-primary,
+.portal-shell-dashboard .modal-actions-row .btn-primary,
+.portal-shell-dashboard .cancel-save-primary,
+.portal-shell-dashboard .cancel-flow-actions .btn-primary,
+.portal-shell-dashboard .cancel-confirm-actions .cancel-confirm-destructive {
+  background: #2f5cdf !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+}
+
+.portal-shell-dashboard .modal-backdrop,
+.portal-shell-dashboard .offer-modal-backdrop,
+.portal-shell-dashboard .cancel-intro-backdrop {
+  background: rgba(247, 248, 250, 0.84) !important;
+}
+
+.portal-shell-dashboard .footer-newsletter {
+  display: none !important;
 }

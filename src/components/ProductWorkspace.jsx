@@ -177,7 +177,7 @@ export default function ProductWorkspace({ compact = false }) {
           onKeyDown={!giftClaimed ? (e) => e.key === "Enter" && handleClaimGift() : undefined}
           aria-label={!giftClaimed ? "Claim your free gift" : undefined}
         >
-          <img src="/assets/omni-claim-free-gift.png" alt="Claim your free gift with your next OMNI order" />
+          <img src="/assets/saba-gift-1.jpg" alt="Claim your free gift with your next OMNI order" />
           <div className="claim-free-gift-overlay">
             {giftClaimed ? (
               <span className="claim-gift-confirmed">
@@ -305,7 +305,10 @@ export default function ProductWorkspace({ compact = false }) {
           actionLabel={modal === "Add backup card" ? "Add card" : undefined}
           actionVariant="primary"
           hideFooter={modal === "Claim Free Gift"}
-          className={modal === "Claim Free Gift" ? "gift-flow-modal" : ""}
+          className={[
+            modal === "Claim Free Gift" ? "gift-flow-modal" : "",
+            modal === "Add backup card" ? "backup-card-modal" : "",
+          ].filter(Boolean).join(" ")}
           size={modal === "Claim Free Gift" || modal === "Add backup card" ? "wide" : "default"}
         >
           {modal === "Claim Free Gift" && giftFlowStep === "choice" && (
