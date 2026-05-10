@@ -423,7 +423,7 @@ button { font-family: inherit; cursor: pointer; }
 .cancel-flow-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 70;
+  z-index: 1000;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1210,7 +1210,7 @@ button { font-family: inherit; cursor: pointer; }
 .footer-mega img[src=""] { display: none; }
 .footer-mega img:not([src]) + .footer-logo-fallback,
 .footer-mega img[src=""] + .footer-logo-fallback { display: inline; }
-.footer-logo-fallback { display: none; }
+.footer-logo-fallback { display: none; text-decoration: none; }
 .footer-bottom {
   max-width: 850px; margin: 12px auto 0; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 12px;
   display: flex; align-items: center; justify-content: space-between; font-size: 11px; color: rgba(255, 255, 255, 0.45);
@@ -3119,7 +3119,6 @@ button { font-family: inherit; cursor: pointer; }
   .footer-mega {
     height: 148px;
     margin-top: 10px;
-    border-bottom: 1px solid #d6e1ee;
   }
 
   .footer-mega img {
@@ -3180,6 +3179,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .portal-side-nav {
+    position: relative;
     display: flex;
     flex-wrap: nowrap;
     width: calc(100% + 20px);
@@ -3354,7 +3354,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .cancel-flow-panel {
-    width: 100vw;
+    width: 100%;
     height: 100dvh;
     min-height: 100svh;
     max-height: none;
@@ -5219,10 +5219,13 @@ button { font-family: inherit; cursor: pointer; }
   gap: 14px;
 }
 
-@media (max-width: 1040px) {
+@media (min-width: 761px) and (max-width: 1040px) {
   .cancel-flow-panel {
     width: min(100vw - 24px, 980px);
   }
+}
+
+@media (max-width: 1040px) {
 
   .cancel-flow-panel .cancel-reason-list,
   .cancel-flow-panel .cancel-save-grid,
