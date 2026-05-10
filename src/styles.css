@@ -2918,9 +2918,17 @@ button { font-family: inherit; cursor: pointer; }
     padding: 7px 9px;
   }
 
-  .home-quick-actions,
-  .manage-action-row {
+  .home-quick-actions {
     grid-template-columns: 1fr;
+  }
+
+  /* 3-col row: Order now spans full width, other 3 share the next row */
+  .manage-action-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .manage-action-row > .btn:first-child {
+    grid-column: 1 / -1;
   }
 
   .manage-title-area h1 {
@@ -4660,8 +4668,20 @@ button { font-family: inherit; cursor: pointer; }
     gap: 12px;
   }
 
-  .manage-offer-card-img {
+  .manage-offer-card-img,
+  .manage-offer-card-square .manage-offer-card-img,
+  .manage-offer-card-electrolytes .manage-offer-card-img {
     aspect-ratio: 16 / 7;
+  }
+
+  .manage-offer-card-square .manage-offer-card-img img {
+    object-fit: cover;
+    object-position: center 62%;
+  }
+
+  .manage-offer-card-electrolytes .manage-offer-card-img img {
+    object-fit: cover;
+    object-position: center 40%;
   }
 
   .gift-flow-kicker {
