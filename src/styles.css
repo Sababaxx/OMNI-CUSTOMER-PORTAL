@@ -2840,6 +2840,7 @@ button { font-family: inherit; cursor: pointer; }
 /* ─── RESPONSIVE ─────────────────────────────────────────────────────────── */
 @media (max-width: 980px) {
   .portal-layout,
+  .portal-layout.detail-layout,
   .detail-layout {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -3165,6 +3166,7 @@ button { font-family: inherit; cursor: pointer; }
   }
 
   .portal-layout,
+  .portal-layout.detail-layout,
   .detail-layout,
   .portal-main,
   .home-card,
