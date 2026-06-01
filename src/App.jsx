@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ActionModal from "./components/ActionModal.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
+import RestartFlow from "./components/RestartFlow.jsx";
 import AccountPage from "./pages/AccountPage.jsx";
 import OrderHistoryPage from "./pages/OrderHistoryPage.jsx";
 import ReferFriendPage from "./pages/ReferFriendPage.jsx";
@@ -12,6 +13,13 @@ import "./styles.css";
 export default function App() {
   const [view, setView] = useState("home");
   const [modal, setModal] = useState(null);
+  const [restartOpen, setRestartOpen] = useState(false);
+  const [restartToast, setRestartToast] = useState("");
+
+  const handleRestarted = () => {
+    setRestartToast("Subscription restarted. Your first order is scheduled.");
+    window.setTimeout(() => setRestartToast(""), 2800);
+  };
 
   const pageProps = {
     activeView: view,
@@ -21,8 +29,8 @@ export default function App() {
 
   const renderPage = () => {
     if (view === "manage") return <SubscriptionDetailPage {...pageProps} onBack={() => setView("home")} />;
-    if (view === "orders") return <OrderHistoryPage onOpenModal={setModal} />;
-    if (view === "refer") return <ReferFriendPage onOpenModal={setModal} />;
+    if (view === "orders") return <OrderHistoryPage onOpenModal={setModal} onRestartOpen={() => setRestartOpen(true)} />;
+    if (view === "refer") return <ReferFriendPage onOpenModal={setModal} onRestartOpen={() => setRestartOpen(true)} />;
     if (view === "account") return <AccountPage onOpenModal={setModal} />;
     return <SubscriptionListPage {...pageProps} onOpen={() => setView("manage")} onAddNew={() => setModal("Add new subscription")} />;
   };
@@ -51,6 +59,12 @@ export default function App() {
           {modal && !["Log out", "Add new subscription", "Copy referral code", "Referral eligibility", "Referral status"].includes(modal) && <p>This OMNI action is ready to connect to the final account flow.</p>}
         </ActionModal>
       )}
+      <RestartFlow
+        open={restartOpen}
+        onClose={() => setRestartOpen(false)}
+        onRestarted={handleRestarted}
+      />
+      {restartToast && <div className="portal-toast" role="status">{restartToast}</div>}
     </>
   );
 }

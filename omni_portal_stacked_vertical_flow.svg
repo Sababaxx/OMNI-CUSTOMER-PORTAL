@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1820" width="1400" height="1820"
+     font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+<defs>
+  <marker id="a" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+    <polygon points="0 0,7 2.5,0 5" fill="#374151"/>
+  </marker>
+  <marker id="ar" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto">
+    <polygon points="0 0,7 2.5,0 5" fill="#DC2626"/>
+  </marker>
+</defs>
+<rect width="1400" height="1820" fill="#ffffff"/>
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     SECTION 1 · HOME DASHBOARD   base_y=30
+     rows 0-8  cy = 55 + i*50
+     page rect  x=50 y=34 w=155 h=452
+     ───────────────────────────────────────────────────────────────────────── -->
+<text x="50" y="23" font-size="9" fill="#9CA3AF" font-weight="600" letter-spacing="1.5">SECTION 1</text>
+
+<rect x="50" y="34" width="155" height="452" rx="4" fill="#2563EB"/>
+<text x="127" y="256" text-anchor="middle" font-size="12" font-weight="700" fill="white">Home Dashboard</text>
+
+<!-- r0  Open Details -->
+<line x1="205" y1="55"  x2="244" y2="55"  stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="38"  width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="59"  text-anchor="middle" font-size="10" fill="#4C1D95">Open Details</text>
+<line x1="399" y1="55"  x2="436" y2="55"  stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="38"  width="150" height="34" rx="3" fill="#2563EB"/>
+<text x="511" y="59"  text-anchor="middle" font-size="10" fill="white">Manage Sub Page</text>
+
+<!-- r1  Manage Subscription -->
+<line x1="205" y1="105" x2="244" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="88"  width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="109" text-anchor="middle" font-size="10" fill="#4C1D95">Manage Subscription</text>
+<line x1="399" y1="105" x2="436" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="88"  width="150" height="34" rx="3" fill="#2563EB"/>
+<text x="511" y="109" text-anchor="middle" font-size="10" fill="white">Manage Sub Page</text>
+
+<!-- r2  Add Product -->
+<line x1="205" y1="155" x2="244" y2="155" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="138" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="159" text-anchor="middle" font-size="10" fill="#4C1D95">Add Product</text>
+<line x1="399" y1="155" x2="436" y2="155" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="138" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="159" text-anchor="middle" font-size="10" fill="#4C1D95">Add Product Modal</text>
+
+<!-- r3  Try OMNI Today -->
+<line x1="205" y1="205" x2="244" y2="205" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="188" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="209" text-anchor="middle" font-size="10" fill="#4C1D95">Try OMNI Today</text>
+<line x1="399" y1="205" x2="436" y2="205" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="188" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="209" text-anchor="middle" font-size="10" fill="#4C1D95">Offer Modal</text>
+
+<!-- r4  Swap Flavor -->
+<line x1="205" y1="255" x2="244" y2="255" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="238" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="259" text-anchor="middle" font-size="10" fill="#4C1D95">Swap Flavor</text>
+<line x1="399" y1="255" x2="436" y2="255" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="238" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="259" text-anchor="middle" font-size="10" fill="#4C1D95">Offer Modal</text>
+
+<!-- r5  Upgrade to Quarterly -->
+<line x1="205" y1="305" x2="244" y2="305" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="288" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="309" text-anchor="middle" font-size="10" fill="#4C1D95">Upgrade Quarterly</text>
+<line x1="399" y1="305" x2="436" y2="305" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="288" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="309" text-anchor="middle" font-size="10" fill="#4C1D95">Offer Modal</text>
+
+<!-- r6  Shop Now -->
+<line x1="205" y1="355" x2="244" y2="355" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="338" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="359" text-anchor="middle" font-size="10" fill="#4C1D95">Shop Now</text>
+<line x1="399" y1="355" x2="436" y2="355" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="338" width="150" height="34" rx="3" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+<text x="511" y="359" text-anchor="middle" font-size="10" fill="#374151">Shop (External)</text>
+
+<!-- r7  Profile Icon -->
+<line x1="205" y1="405" x2="244" y2="405" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="388" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="409" text-anchor="middle" font-size="10" fill="#4C1D95">Profile Icon</text>
+<line x1="399" y1="405" x2="436" y2="405" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="388" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="409" text-anchor="middle" font-size="10" fill="#4C1D95">Account Area</text>
+
+<!-- r8  Cart Icon -->
+<line x1="205" y1="455" x2="244" y2="455" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="438" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="459" text-anchor="middle" font-size="10" fill="#4C1D95">Cart Icon</text>
+<line x1="399" y1="455" x2="436" y2="455" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="438" width="150" height="34" rx="3" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+<text x="511" y="459" text-anchor="middle" font-size="10" fill="#374151">Cart (External)</text>
+
+<!-- divider -->
+<line x1="50" y1="510" x2="700" y2="510" stroke="#E5E7EB" stroke-width="1"/>
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     SECTION 2 · ORDER HISTORY   base_y=530
+     rows 0-1   cy = 555 + i*50
+     page rect  x=50 y=534 w=155 h=106
+     ───────────────────────────────────────────────────────────────────────── -->
+<text x="50" y="523" font-size="9" fill="#9CA3AF" font-weight="600" letter-spacing="1.5">SECTION 2</text>
+
+<rect x="50" y="534" width="155" height="106" rx="4" fill="#2563EB"/>
+<text x="127" y="590" text-anchor="middle" font-size="12" font-weight="700" fill="white">Order History</text>
+
+<!-- r0  Order List -->
+<line x1="205" y1="555" x2="244" y2="555" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="538" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="559" text-anchor="middle" font-size="10" fill="#4C1D95">Order List</text>
+<line x1="399" y1="555" x2="436" y2="555" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="538" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="559" text-anchor="middle" font-size="10" fill="#4C1D95">Order Summary View</text>
+
+<!-- r1  Order Detail -->
+<line x1="205" y1="605" x2="244" y2="605" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="588" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="609" text-anchor="middle" font-size="10" fill="#4C1D95">Order Detail</text>
+<line x1="399" y1="605" x2="436" y2="605" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="588" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="609" text-anchor="middle" font-size="10" fill="#4C1D95">Item Details Modal</text>
+
+<!-- divider -->
+<line x1="50" y1="660" x2="700" y2="660" stroke="#E5E7EB" stroke-width="1"/>
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     SECTION 3 · REFER A FRIEND   base_y=680
+     rows 0-2   cy = 705 + i*50
+     page rect  x=50 y=684 w=155 h=156
+     ───────────────────────────────────────────────────────────────────────── -->
+<text x="50" y="673" font-size="9" fill="#9CA3AF" font-weight="600" letter-spacing="1.5">SECTION 3</text>
+
+<rect x="50" y="684" width="155" height="156" rx="4" fill="#2563EB"/>
+<text x="127" y="764" text-anchor="middle" font-size="12" font-weight="700" fill="white">Refer a Friend</text>
+
+<!-- r0  Copy Referral Code -->
+<line x1="205" y1="705" x2="244" y2="705" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="688" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="709" text-anchor="middle" font-size="10" fill="#4C1D95">Copy Referral Code</text>
+<line x1="399" y1="705" x2="436" y2="705" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="688" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="709" text-anchor="middle" font-size="10" fill="#4C1D95">Referral Code Modal</text>
+
+<!-- r1  Referral Eligibility -->
+<line x1="205" y1="755" x2="244" y2="755" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="738" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="759" text-anchor="middle" font-size="10" fill="#4C1D95">Referral Eligibility</text>
+<line x1="399" y1="755" x2="436" y2="755" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="738" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="759" text-anchor="middle" font-size="10" fill="#4C1D95">Eligibility Modal</text>
+
+<!-- r2  Referral Status -->
+<line x1="205" y1="805" x2="244" y2="805" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="788" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="809" text-anchor="middle" font-size="10" fill="#4C1D95">Referral Status</text>
+<line x1="399" y1="805" x2="436" y2="805" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="788" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="809" text-anchor="middle" font-size="10" fill="#4C1D95">Status Modal</text>
+
+<!-- divider -->
+<line x1="50" y1="858" x2="1350" y2="858" stroke="#E5E7EB" stroke-width="1"/>
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     SECTION 4 · MANAGE SUBSCRIPTIONS   base_y=876
+     rows 0-11  cy = 901 + i*52
+     page rect  x=50 y=880 w=155 h=620
+     ───────────────────────────────────────────────────────────────────────── -->
+<text x="50" y="869" font-size="9" fill="#9CA3AF" font-weight="600" letter-spacing="1.5">SECTION 4</text>
+
+<rect x="50" y="880" width="155" height="620" rx="4" fill="#2563EB"/>
+<text x="127" y="1182" text-anchor="middle" font-size="11" font-weight="700" fill="white">Manage</text>
+<text x="127" y="1197" text-anchor="middle" font-size="11" font-weight="700" fill="white">Subscriptions</text>
+
+<!-- row cy helper: 901 + i*52  →  0=901 1=953 2=1005 3=1057 4=1109 5=1161 6=1213 7=1265 8=1317 9=1369 10=1421 11=1473 -->
+
+<!-- r0  Back -->
+<line x1="205" y1="901" x2="244" y2="901" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="884" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="905" text-anchor="middle" font-size="10" fill="#4C1D95">Back</text>
+<line x1="399" y1="901" x2="436" y2="901" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="884" width="150" height="34" rx="3" fill="#2563EB"/>
+<text x="511" y="905" text-anchor="middle" font-size="10" fill="white">Home Dashboard</text>
+
+<!-- r1  Order Now -->
+<line x1="205" y1="953" x2="244" y2="953" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="936" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="957" text-anchor="middle" font-size="10" fill="#4C1D95">Order Now</text>
+<line x1="399" y1="953" x2="436" y2="953" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="936" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="957" text-anchor="middle" font-size="10" fill="#4C1D95">Order Now Modal</text>
+
+<!-- r2  Next Order Date -->
+<line x1="205" y1="1005" x2="244" y2="1005" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="988" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1009" text-anchor="middle" font-size="10" fill="#4C1D95">Next Order Date</text>
+<line x1="399" y1="1005" x2="436" y2="1005" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="988" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1009" text-anchor="middle" font-size="10" fill="#4C1D95">Change Date Modal</text>
+
+<!-- r3  Skip -->
+<line x1="205" y1="1057" x2="244" y2="1057" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1040" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1061" text-anchor="middle" font-size="10" fill="#4C1D95">Skip</text>
+<line x1="399" y1="1057" x2="436" y2="1057" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="1040" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1061" text-anchor="middle" font-size="10" fill="#4C1D95">Skip Confirm</text>
+<line x1="586" y1="1057" x2="623" y2="1057" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="623" y="1040" width="145" height="34" rx="3" fill="#16A34A"/>
+<text x="695" y="1061" text-anchor="middle" font-size="10" fill="white">Saved ✓</text>
+
+<!-- r4  More (trunk to sub-items at rows 5,6,8,9) -->
+<line x1="205" y1="1109" x2="244" y2="1109" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1092" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1113" text-anchor="middle" font-size="10" fill="#4C1D95">More</text>
+<!-- vertical trunk: right of More (399) to x=420, then down to r9 cy=1369 -->
+<path d="M399,1109 L420,1109 L420,1369" stroke="#374151" stroke-width="1.5" fill="none"/>
+<!-- branches to sub-items -->
+<line x1="420" y1="1161" x2="436" y2="1161" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<line x1="420" y1="1213" x2="436" y2="1213" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<line x1="420" y1="1317" x2="436" y2="1317" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<line x1="420" y1="1369" x2="436" y2="1369" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+
+<!-- r5  Pause Sub (from More) -->
+<rect x="436" y="1144" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1165" text-anchor="middle" font-size="10" fill="#4C1D95">Pause Sub</text>
+<line x1="586" y1="1161" x2="623" y2="1161" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="623" y="1144" width="145" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="695" y="1165" text-anchor="middle" font-size="10" fill="#4C1D95">Pause Modal</text>
+<line x1="768" y1="1161" x2="805" y2="1161" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="805" y="1144" width="140" height="34" rx="3" fill="#16A34A"/>
+<text x="875" y="1165" text-anchor="middle" font-size="10" fill="white">Paused ✓</text>
+
+<!-- r6  Cancel Sub (from More) — full cancel path -->
+<rect x="436" y="1196" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1217" text-anchor="middle" font-size="10" fill="#4C1D95">Cancel Sub</text>
+<line x1="586" y1="1213" x2="623" y2="1213" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="623" y="1196" width="145" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="695" y="1217" text-anchor="middle" font-size="10" fill="#4C1D95">Cancel Intro</text>
+<line x1="768" y1="1213" x2="805" y2="1213" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="805" y="1196" width="140" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="875" y="1217" text-anchor="middle" font-size="10" fill="#4C1D95">Reason Select</text>
+
+<!-- from Reason Select → Save Offer path (straight right, r6) -->
+<line x1="945" y1="1213" x2="982" y2="1213" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="982" y="1196" width="140" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="1052" y="1217" text-anchor="middle" font-size="10" fill="#4C1D95">Save Offer</text>
+<line x1="1122" y1="1213" x2="1159" y2="1213" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="1159" y="1196" width="140" height="34" rx="3" fill="#16A34A"/>
+<text x="1229" y="1217" text-anchor="middle" font-size="10" fill="white">Saved ✓</text>
+
+<!-- r7  Final Confirm path (fork down from Reason Select) -->
+<!-- vertical fork from Reason Select bottom (875,1230) down to r7 cy=1265, then right -->
+<path d="M875,1230 L875,1265 L982,1265" stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#a)"/>
+<rect x="982" y="1248" width="140" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="1052" y="1269" text-anchor="middle" font-size="10" fill="#4C1D95">Final Confirm</text>
+<line x1="1122" y1="1265" x2="1159" y2="1265" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="1159" y="1248" width="140" height="34" rx="3" fill="#DC2626"/>
+<text x="1229" y="1269" text-anchor="middle" font-size="10" fill="white">Cancelled ✗</text>
+
+<!-- r8  Manage Payment (from More) -->
+<rect x="436" y="1300" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1321" text-anchor="middle" font-size="10" fill="#4C1D95">Manage Payment</text>
+<line x1="586" y1="1317" x2="623" y2="1317" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="623" y="1300" width="145" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="695" y="1321" text-anchor="middle" font-size="10" fill="#4C1D95">Payment Modal</text>
+
+<!-- r9  Update Shipping (from More) -->
+<rect x="436" y="1352" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1373" text-anchor="middle" font-size="10" fill="#4C1D95">Update Shipping</text>
+<line x1="586" y1="1369" x2="623" y2="1369" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="623" y="1352" width="145" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="695" y="1373" text-anchor="middle" font-size="10" fill="#4C1D95">Shipping Modal</text>
+
+<!-- r10  Upgrade Quarterly (offer card) -->
+<line x1="205" y1="1421" x2="244" y2="1421" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1404" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1425" text-anchor="middle" font-size="10" fill="#4C1D95">Upgrade Quarterly</text>
+<line x1="399" y1="1421" x2="436" y2="1421" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="1404" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1425" text-anchor="middle" font-size="10" fill="#4C1D95">Offer Modal</text>
+
+<!-- r11  Add Electrolytes (offer card) -->
+<line x1="205" y1="1473" x2="244" y2="1473" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1456" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1477" text-anchor="middle" font-size="10" fill="#4C1D95">Add Electrolytes</text>
+<line x1="399" y1="1473" x2="436" y2="1473" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="1456" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1477" text-anchor="middle" font-size="10" fill="#4C1D95">Offer Modal</text>
+
+<!-- divider -->
+<line x1="50" y1="1528" x2="1350" y2="1528" stroke="#E5E7EB" stroke-width="1"/>
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     SECTION 5 · ACCOUNT   base_y=1546
+     rows 0-2   cy = 1571 + i*52
+     page rect  x=50 y=1550 w=155 h=160
+     ───────────────────────────────────────────────────────────────────────── -->
+<text x="50" y="1539" font-size="9" fill="#9CA3AF" font-weight="600" letter-spacing="1.5">SECTION 5</text>
+
+<rect x="50" y="1550" width="155" height="160" rx="4" fill="#2563EB"/>
+<text x="127" y="1632" text-anchor="middle" font-size="12" font-weight="700" fill="white">Account</text>
+
+<!-- r0  Edit Profile -->
+<line x1="205" y1="1571" x2="244" y2="1571" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1554" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1575" text-anchor="middle" font-size="10" fill="#4C1D95">Edit Profile</text>
+<line x1="399" y1="1571" x2="436" y2="1571" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="1554" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1575" text-anchor="middle" font-size="10" fill="#4C1D95">Profile Modal</text>
+
+<!-- r1  Payment Details -->
+<line x1="205" y1="1623" x2="244" y2="1623" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1606" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1627" text-anchor="middle" font-size="10" fill="#4C1D95">Payment Details</text>
+<line x1="399" y1="1623" x2="436" y2="1623" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="1606" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1627" text-anchor="middle" font-size="10" fill="#4C1D95">Payment Modal</text>
+
+<!-- r2  Shipping Address -->
+<line x1="205" y1="1675" x2="244" y2="1675" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1658" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1679" text-anchor="middle" font-size="10" fill="#4C1D95">Shipping Address</text>
+<line x1="399" y1="1675" x2="436" y2="1675" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="436" y="1658" width="150" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="511" y="1679" text-anchor="middle" font-size="10" fill="#4C1D95">Address Modal</text>
+
+<!-- divider -->
+<line x1="50" y1="1730" x2="900" y2="1730" stroke="#E5E7EB" stroke-width="1"/>
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     SECTION 6 · LOG OUT   base_y=1748
+     row 0  cy=1773
+     page rect  x=50 y=1752 w=155 h=52
+     ───────────────────────────────────────────────────────────────────────── -->
+<text x="50" y="1741" font-size="9" fill="#9CA3AF" font-weight="600" letter-spacing="1.5">SECTION 6</text>
+
+<rect x="50" y="1752" width="155" height="52" rx="4" fill="#2563EB"/>
+<text x="127" y="1781" text-anchor="middle" font-size="12" font-weight="700" fill="white">Log Out</text>
+
+<line x1="205" y1="1778" x2="244" y2="1778" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+<rect x="244" y="1761" width="155" height="34" rx="3" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+<text x="321" y="1782" text-anchor="middle" font-size="10" fill="#4C1D95">Log Out Modal</text>
+<line x1="399" y1="1778" x2="436" y2="1778" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ar)"/>
+<rect x="436" y="1761" width="150" height="34" rx="3" fill="#DC2626"/>
+<text x="511" y="1782" text-anchor="middle" font-size="10" fill="white">Logged Out ✗</text>
+
+<!-- ─────────────────────────────────────────────────────────────────────────
+     LEGEND   bottom-right
+     ───────────────────────────────────────────────────────────────────────── -->
+<g transform="translate(950,1742)">
+  <rect width="400" height="66" rx="4" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1"/>
+  <rect x="12" y="12" width="24" height="14" rx="2" fill="#2563EB"/>
+  <text x="42" y="23" font-size="9" fill="#374151">Page</text>
+  <rect x="92" y="12" width="24" height="14" rx="2" fill="#EDE9FE" stroke="#7C3AED" stroke-width="1"/>
+  <text x="122" y="23" font-size="9" fill="#374151">Action / Modal</text>
+  <rect x="232" y="12" width="24" height="14" rx="2" fill="#16A34A"/>
+  <text x="262" y="23" font-size="9" fill="#374151">Saved ✓</text>
+  <rect x="322" y="12" width="24" height="14" rx="2" fill="#DC2626"/>
+  <text x="352" y="23" font-size="9" fill="#374151">Cancel / Out</text>
+  <rect x="12" y="42" width="24" height="14" rx="2" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="42" y="53" font-size="9" fill="#374151">External</text>
+  <line x1="92" y1="49" x2="116" y2="49" stroke="#374151" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="122" y="53" font-size="9" fill="#374151">Flow arrow</text>
+  <line x1="222" y1="49" x2="246" y2="49" stroke="#DC2626" stroke-width="1.5" marker-end="url(#ar)"/>
+  <text x="252" y="53" font-size="9" fill="#374151">Cancel arrow</text>
+</g>
+
+</svg>

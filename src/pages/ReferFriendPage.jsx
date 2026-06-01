@@ -1,6 +1,10 @@
 import React from "react";
+import Button from "../components/Button.jsx";
+import { subscriptionStatus } from "../data/subscription.js";
 
-export default function ReferFriendPage({ onOpenModal }) {
+export default function ReferFriendPage({ onOpenModal, onRestartOpen }) {
+  const isInactive = subscriptionStatus === "inactive";
+
   return (
     <section className="referral-program-page" aria-label="Refer a friend">
       <div className="referral-program-head">
@@ -10,6 +14,13 @@ export default function ReferFriendPage({ onOpenModal }) {
           Share your personal link with friends and let OMNI review the submission.
         </p>
       </div>
+
+      {isInactive && (
+        <div className="referral-inactive-notice">
+          <p>Referral rewards may require an active OMNI account in good standing.</p>
+          <Button variant="outline" size="sm" onClick={onRestartOpen}>Restart subscription</Button>
+        </div>
+      )}
 
       <form className="referral-program-form" onSubmit={(event) => { event.preventDefault(); onOpenModal("Referral eligibility"); }}>
         <label>

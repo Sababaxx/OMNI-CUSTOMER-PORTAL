@@ -1,6 +1,9 @@
 // Placeholder data for the OMNI customer portal.
 // Replace with your real backend data source.
 
+// Toggle this to switch between active and inactive portal states.
+export const subscriptionStatus = "inactive"; // "active" | "inactive"
+
 export const subscription = {
   id: "76645269745",
   status: "Active",
@@ -10,7 +13,6 @@ export const subscription = {
   frequency: "Deliver every 4 weeks",
   shippingPerDelivery: 8.0,
   total: 115.0,
-  // Used for offer banner mapping. pouchCount: 1 | 2 | 3. orderCount: total orders placed.
   pouchCount: 3,
   orderCount: 2,
   products: [
@@ -49,4 +51,16 @@ export const subscription = {
     expires: "11/26",
     updatedOn: "April 30, 2026",
   },
+};
+
+// Last subscription snapshot — used by the inactive state to show
+// what the customer had before they cancelled/lapsed.
+export const lastSubscription = {
+  product: "Daily Creatine Gummy",
+  flavor: "Peach",
+  cadence: "Every 4 weeks",
+  lastOrderDate: "April 17, 2026",
+  lastOrderValue: "$52.62",
+  shipping: subscription.shipping,
+  payment: subscription.payment,
 };

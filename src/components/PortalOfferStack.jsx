@@ -134,6 +134,114 @@ const homeOffers = [
   },
 ];
 
+// ── Inactive home winback offers ────────────────────────────────────────────
+const inactiveHomeOffers = [
+  {
+    id: "inactive-gummies",
+    imageUrl: "/assets/omni-static-1.png",
+    alt: "Restart Daily Creatine Gummies",
+    modalTitle: "Restart Daily Creatine Gummies",
+    actionLabel: "Restart now",
+    isRestart: true,
+    offerCopy: {
+      eyebrow: "Daily creatine gummies",
+      image: "/assets/omni-static-1.png",
+      imageAlt: "OMNI Creatine Monohydrate Gummies",
+      body: "Pick up where you left off. One pouch of Daily Creatine Gummies, delivered on your schedule. No scoops, no shaker, no mess.",
+      bullets: ["Choose peach or watermelon", "30 servings per pouch", "Adjust or cancel anytime from the portal"],
+      note: "Nothing ships until you confirm your order.",
+    },
+    variant: "hero",
+  },
+  {
+    id: "inactive-flavor",
+    imageUrl: "/assets/omni-offer-2.png",
+    alt: "Try a new OMNI flavor",
+    modalTitle: "Try a New Flavor",
+    actionLabel: "Choose flavor",
+    isRestart: true,
+    offerCopy: {
+      eyebrow: "Try New Flavor",
+      image: "/assets/omni-offer-2.png",
+      imageAlt: "OMNI Creatine Gummies flavor options",
+      body: "Restart with a fresh taste. Switch between Peach and Watermelon before your first order ships.",
+      bullets: ["Switch to Peach or Watermelon", "Same great daily routine", "Choose timing before anything is scheduled"],
+      note: "Flavor is confirmed before checkout.",
+    },
+    variant: "campaign",
+  },
+  {
+    id: "inactive-quarterly",
+    imageUrl: "/assets/omni-quarterly-upgrade.png",
+    alt: "Restart quarterly and save",
+    modalTitle: "Restart Quarterly and Save",
+    actionLabel: "Restart quarterly",
+    isRestart: true,
+    offerCopy: {
+      eyebrow: "Better value",
+      image: "/assets/omni-quarterly-upgrade.png",
+      imageAlt: "OMNI Creatine Gummies quarterly offer",
+      body: "Restart on a quarterly cadence for better per-order value and fewer billing cycles. Same creatine routine, less to manage.",
+      bullets: ["Save more per pouch quarterly", "Fewer orders to track", "Edit, skip, or cancel anytime"],
+      note: "Your next billing starts after you confirm restart.",
+    },
+    variant: "hero",
+  },
+  {
+    id: "inactive-electrolytes",
+    imageUrl: "/assets/omni-stack-electrolytes.jpg",
+    alt: "Add OMNI Electrolytes to your routine",
+    modalTitle: "Add Electrolytes to Routine",
+    actionLabel: "Add electrolytes",
+    isRestart: true,
+    offerCopy: {
+      eyebrow: "Daily hydration",
+      image: "/assets/omni-stack-electrolytes.jpg",
+      imageAlt: "OMNI Creatine and Electrolytes stick packs",
+      body: "Restart with a stack. Add OMNI Creatine + Electrolytes stick packs to your creatine routine for daily hydration support.",
+      bullets: ["Available in pear or peach", "Ships with your creatine order", "One delivery, zero extra shipping"],
+      note: "Flavor and pricing confirmed before checkout.",
+    },
+    variant: "campaign",
+  },
+];
+
+// ── Inactive manage reactivation offers ─────────────────────────────────────
+const inactiveManageOffers = [
+  {
+    id: "inactive-manage-gummies",
+    imageUrl: "/assets/omni-quarterly-upgrade.png",
+    alt: "Restart your creatine gummy routine",
+    modalTitle: "Restart Creatine Gummies",
+    actionLabel: "Restart now",
+    isRestart: true,
+    offerCopy: {
+      eyebrow: "Pick up where you left off",
+      image: "/assets/omni-quarterly-upgrade.png",
+      imageAlt: "OMNI Creatine Gummies",
+      body: "Restart your daily creatine routine with the same product you had before. Choose a new cadence or keep the same schedule.",
+      bullets: ["Same product, fresh start", "Choose peach or watermelon", "Set your own cadence"],
+      note: "Nothing ships until you confirm.",
+    },
+  },
+  {
+    id: "inactive-manage-electrolytes",
+    imageUrl: "/assets/omni-stack-electrolytes.jpg",
+    alt: "Add electrolytes to your restart",
+    modalTitle: "Add Electrolytes",
+    actionLabel: "Add to restart",
+    isRestart: true,
+    offerCopy: {
+      eyebrow: "Build your stack",
+      image: "/assets/omni-stack-electrolytes.jpg",
+      imageAlt: "OMNI Creatine and Electrolytes",
+      body: "Add OMNI Electrolytes to your restart order. Hydration support bundled in one delivery.",
+      bullets: ["Pear or peach flavors", "Bundled with creatine order", "No extra shipping"],
+      note: "Confirmed before checkout.",
+    },
+  },
+];
+
 export default function PortalOfferStack({
   customerName = "Debbie",
   email = "buy@omnicreatine.com",
@@ -141,9 +249,15 @@ export default function PortalOfferStack({
   showIntro = true,
   compact = false,
   variant = "manage",
+  onRestartOpen,
 }) {
   const [activeOffer, setActiveOffer] = useState(null);
-  const activeOffers = variant === "home" ? homeOffers : variant === "manage" ? manageOffers : offers;
+  const activeOffers =
+    variant === "home" ? homeOffers
+    : variant === "manage" ? manageOffers
+    : variant === "inactive-home" ? inactiveHomeOffers
+    : variant === "inactive-manage" ? inactiveManageOffers
+    : offers;
 
   const renderOfferCopy = (offer) => (
     <div className="offer-modal-copy">
@@ -192,6 +306,84 @@ export default function PortalOfferStack({
             title={activeOffer.modalTitle}
             onClose={() => setActiveOffer(null)}
             actionLabel={activeOffer.actionLabel}
+            size="wide"
+          >
+            {renderOfferCopy(activeOffer)}
+          </ActionModal>
+        )}
+      </section>
+    );
+  }
+
+  // ── Inactive home variant: winback grid ───────────────────────────────────
+  if (variant === "inactive-home") {
+    return (
+      <section className="home-offers-section" aria-label="Restart options">
+        <div className="home-offers-grid">
+          {inactiveHomeOffers.map((offer, index) => (
+            <button
+              key={offer.id}
+              type="button"
+              className={`home-offer-card${index === 0 ? " home-offer-card-hero" : " home-offer-card-compact"}${offer.id === "inactive-quarterly" ? " home-offer-card-square" : ""}`}
+              onClick={() => setActiveOffer(offer)}
+            >
+              <div className="home-offer-card-img">
+                <img src={offer.imageUrl} alt={offer.alt} draggable="false" />
+              </div>
+              <div className="home-offer-card-body">
+                <span className="home-offer-card-eyebrow">{offer.offerCopy.eyebrow}</span>
+                <span className="home-offer-card-title">{offer.modalTitle}</span>
+                <span className="home-offer-card-cta">{offer.actionLabel} →</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {activeOffer && (
+          <ActionModal
+            title={activeOffer.modalTitle}
+            onClose={() => setActiveOffer(null)}
+            actionLabel={activeOffer.isRestart ? "Restart subscription" : activeOffer.actionLabel}
+            onAction={activeOffer.isRestart ? () => { setActiveOffer(null); if (onRestartOpen) onRestartOpen(); } : undefined}
+            size="wide"
+          >
+            {renderOfferCopy(activeOffer)}
+          </ActionModal>
+        )}
+      </section>
+    );
+  }
+
+  // ── Inactive manage variant: 2-col reactivation cards ─────────────────────
+  if (variant === "inactive-manage") {
+    return (
+      <section className="manage-offers-grid-section" aria-label="Restart options">
+        <div className="manage-offers-grid">
+          {inactiveManageOffers.map((offer) => (
+            <button
+              key={offer.id}
+              type="button"
+              className={`manage-offer-card${offer.id === "inactive-manage-gummies" ? " manage-offer-card-square" : " manage-offer-card-electrolytes"}`}
+              onClick={() => setActiveOffer(offer)}
+            >
+              <div className="manage-offer-card-img">
+                <img src={offer.imageUrl} alt={offer.alt} draggable="false" />
+              </div>
+              <div className="manage-offer-card-body">
+                <span className="manage-offer-card-eyebrow">{offer.offerCopy.eyebrow}</span>
+                <span className="manage-offer-card-title">{offer.modalTitle}</span>
+                <span className="manage-offer-card-cta">{offer.actionLabel} →</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        {activeOffer && (
+          <ActionModal
+            title={activeOffer.modalTitle}
+            onClose={() => setActiveOffer(null)}
+            actionLabel={activeOffer.isRestart ? "Restart subscription" : activeOffer.actionLabel}
+            onAction={activeOffer.isRestart ? () => { setActiveOffer(null); if (onRestartOpen) onRestartOpen(); } : undefined}
             size="wide"
           >
             {renderOfferCopy(activeOffer)}

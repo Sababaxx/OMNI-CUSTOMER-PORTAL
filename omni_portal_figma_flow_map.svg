@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2680 1280" width="2680" height="1280"
+     font-family="system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif">
+<defs>
+  <filter id="sh" x="-6%" y="-6%" width="116%" height="124%">
+    <feDropShadow dx="0" dy="3" stdDeviation="7" flood-color="#0f2347" flood-opacity=".10"/>
+  </filter>
+  <marker id="arr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+    <polygon points="0 0, 9 3.5, 0 7" fill="#94a3b8"/>
+  </marker>
+  <marker id="arr-red" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+    <polygon points="0 0, 9 3.5, 0 7" fill="#dc2626"/>
+  </marker>
+  <marker id="arr-green" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+    <polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/>
+  </marker>
+</defs>
+
+<!-- ═══════════════════════════════════════════════════════════ BACKGROUND -->
+<rect width="2680" height="1280" fill="#ECF0F7"/>
+
+<!-- ═══════════════════════════════════════════════════════════ TITLE BAR -->
+<rect width="2680" height="60" fill="#0F2347"/>
+<text x="30" y="23" font-size="10" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="2">OMNI CUSTOMER PORTAL</text>
+<text x="30" y="44" font-size="17" font-weight="800" fill="#fff" letter-spacing="-.4">Visual Click Flow Map — Every Screen · Every Button · Every Result</text>
+<text x="2650" y="38" text-anchor="end" font-size="10" fill="rgba(255,255,255,.4)">figma-ready SVG · 2026</text>
+
+<!-- ═══════════════════════════════════════════════════════════ COLUMN LABELS -->
+<text x="240" y="80" text-anchor="middle" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.8">HOME DASHBOARD</text>
+<text x="670" y="80" text-anchor="middle" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.8">MANAGE SUBSCRIPTION</text>
+<text x="1100" y="80" text-anchor="middle" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.8">ACTION MODALS</text>
+<text x="1530" y="80" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626" letter-spacing="1.8">CANCEL ENTRY</text>
+<text x="1960" y="80" text-anchor="middle" font-size="9" font-weight="700" fill="#dc2626" letter-spacing="1.8">CANCELLATION FLOW</text>
+<text x="2390" y="80" text-anchor="middle" font-size="9" font-weight="700" fill="#64748b" letter-spacing="1.8">OUTCOMES</text>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COLUMN A — HOME DASHBOARD  (x=50)
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- A1 · SITE HEADER -->
+<g transform="translate(50,92)" filter="url(#sh)">
+  <rect width="380" height="126" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#0F2347"/>
+  <rect y="32" width="380" height="12" fill="#0F2347"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">GLOBAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Site Header</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Visible on every page</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Shop Now</text>
+  <text x="24" y="106" font-size="10" fill="#2563eb">→ External shop link</text>
+  <rect x="160" y="85" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="170" y="92" font-size="10.5" fill="#334155">Click: Profile icon</text>
+  <text x="170" y="106" font-size="10" fill="#2563eb">→ Account area (UI placeholder)</text>
+  <rect x="310" y="85" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="320" y="92" font-size="10.5" fill="#334155">Cart icon</text>
+  <text x="320" y="106" font-size="10" fill="#2563eb">→ Cart (placeholder)</text>
+</g>
+
+<!-- A2 · PORTAL NAVIGATION -->
+<g transform="translate(50,232)" filter="url(#sh)">
+  <rect width="380" height="236" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#1B3E7A"/>
+  <rect y="32" width="380" height="12" fill="#1B3E7A"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">NAVIGATION</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Portal Nav Sidebar</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Left nav on all portal pages</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Home</text>
+  <text x="24" y="106" font-size="10" fill="#2563eb">→ Home Dashboard (active view)</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Order History</text>
+  <text x="24" y="134" font-size="10" fill="#2563eb">→ Order History Page</text>
+  <rect x="14" y="141" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="148" font-size="10.5" fill="#334155">Click: Refer a Friend</text>
+  <text x="24" y="162" font-size="10" fill="#2563eb">→ Refer a Friend Page</text>
+  <rect x="14" y="169" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="176" font-size="10.5" fill="#334155">Click: Manage Subscriptions</text>
+  <text x="24" y="190" font-size="10" fill="#2563eb">→ Manage Subscription Page</text>
+  <rect x="14" y="197" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="204" font-size="10.5" fill="#334155">Click: Account</text>
+  <text x="24" y="218" font-size="10" fill="#2563eb">→ Account Page</text>
+  <rect x="14" y="225" width="5" height="5" rx="1.5" fill="#94a3b8"/>
+  <text x="24" y="232" font-size="10.5" fill="#334155">Click: Log out</text>
+</g>
+
+<!-- A3 · HOME DASHBOARD -->
+<g transform="translate(50,484)" filter="url(#sh)">
+  <rect width="380" height="300" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#0F2347"/>
+  <rect y="32" width="380" height="12" fill="#0F2347"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">PAGE</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Home Dashboard</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Hello Saba — account overview + offers</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Manage subscription</text>
+  <text x="24" y="106" font-size="10" fill="#2563eb">→ Opens Manage Subscription Page</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Add product</text>
+  <text x="24" y="134" font-size="10" fill="#2563eb">→ Opens Add New Subscription modal</text>
+  <rect x="14" y="141" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="148" font-size="10.5" fill="#334155">Click: Open details</text>
+  <text x="24" y="162" font-size="10" fill="#2563eb">→ Opens Manage Subscription Page</text>
+  <line x1="14" y1="172" x2="366" y2="172" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="186" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">MEMBER OFFERS — VISIBLE BELOW COMMAND CARD</text>
+  <rect x="14" y="193" width="5" height="5" rx="1.5" fill="#166534"/>
+  <text x="24" y="200" font-size="10.5" fill="#334155">Click: Try OMNI today card</text>
+  <text x="24" y="214" font-size="10" fill="#16a34a">→ Opens Try OMNI Today offer modal</text>
+  <rect x="14" y="221" width="5" height="5" rx="1.5" fill="#166534"/>
+  <text x="24" y="228" font-size="10.5" fill="#334155">Click: Swap Flavor card</text>
+  <text x="24" y="242" font-size="10" fill="#16a34a">→ Opens Swap Flavor offer modal</text>
+  <rect x="14" y="249" width="5" height="5" rx="1.5" fill="#166534"/>
+  <text x="24" y="256" font-size="10.5" fill="#334155">Click: Upgrade to Quarterly card</text>
+  <text x="24" y="270" font-size="10" fill="#16a34a">→ Opens Upgrade to Quarterly offer modal</text>
+  <line x1="14" y1="280" x2="366" y2="280" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="294" font-size="10" fill="#64748b" font-style="italic">Each offer modal has: image · copy · CTA button</text>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COLUMN B — MANAGE SUBSCRIPTION  (x=480)
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- B1 · MANAGE SUBSCRIPTION PAGE -->
+<g transform="translate(480,92)" filter="url(#sh)">
+  <rect width="380" height="326" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#0F2347"/>
+  <rect y="32" width="380" height="12" fill="#0F2347"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">PAGE</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Manage Subscription</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Every 4 weeks · $42 · Next June 26</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: ← Back</text>
+  <text x="24" y="106" font-size="10" fill="#2563eb">→ Returns to Home Dashboard</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Order now</text>
+  <text x="24" y="134" font-size="10" fill="#2563eb">→ Opens Order Now modal</text>
+  <rect x="14" y="141" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="148" font-size="10.5" fill="#334155">Click: Next order date</text>
+  <text x="24" y="162" font-size="10" fill="#2563eb">→ Opens Change Next Order Date modal</text>
+  <rect x="14" y="169" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="176" font-size="10.5" fill="#334155">Click: Skip</text>
+  <text x="24" y="190" font-size="10" fill="#2563eb">→ Opens Skip Confirm modal</text>
+  <rect x="14" y="197" width="5" height="5" rx="1.5" fill="#0F2347"/>
+  <text x="24" y="204" font-size="10.5" fill="#334155">Click: More</text>
+  <text x="24" y="218" font-size="10" fill="#2563eb">→ Opens More dropdown (below)</text>
+  <line x1="14" y1="228" x2="366" y2="228" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="242" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">MEMBER OFFERS — BELOW PRODUCT CARD</text>
+  <rect x="14" y="249" width="5" height="5" rx="1.5" fill="#166534"/>
+  <text x="24" y="256" font-size="10.5" fill="#334155">Click: Upgrade to Quarterly card</text>
+  <text x="24" y="270" font-size="10" fill="#16a34a">→ Opens Quarterly upgrade offer modal</text>
+  <rect x="14" y="277" width="5" height="5" rx="1.5" fill="#166534"/>
+  <text x="24" y="284" font-size="10.5" fill="#334155">Click: Add Electrolytes card</text>
+  <text x="24" y="298" font-size="10" fill="#16a34a">→ Opens Add Electrolytes offer modal</text>
+  <line x1="14" y1="308" x2="366" y2="308" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="320" font-size="10" fill="#64748b" font-style="italic">Each offer modal has: image · copy · CTA button</text>
+</g>
+
+<!-- B2 · MORE DROPDOWN -->
+<g transform="translate(480,434)" filter="url(#sh)">
+  <rect width="380" height="192" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#1B3E7A"/>
+  <rect y="32" width="380" height="12" fill="#1B3E7A"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">DROPDOWN</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">More Menu</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Appears below More button on Manage page</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Pause subscription</text>
+  <text x="24" y="106" font-size="10" fill="#2563eb">→ Opens Pause Subscription modal</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#dc2626"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Cancel subscription</text>
+  <text x="24" y="134" font-size="10" fill="#dc2626">→ Opens Cancel Intro Video Modal</text>
+  <rect x="14" y="141" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="148" font-size="10.5" fill="#334155">Click: Manage payment</text>
+  <text x="24" y="162" font-size="10" fill="#2563eb">→ Opens Manage Payment modal</text>
+  <rect x="14" y="169" width="5" height="5" rx="1.5" fill="#1B3E7A"/>
+  <text x="24" y="176" font-size="10.5" fill="#334155">Click: Update shipping</text>
+  <text x="24" y="190" font-size="10" fill="#2563eb">→ Opens Update Shipping modal</text>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COLUMN C — ACTION MODALS  (x=910)
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- C1 · ORDER NOW MODAL -->
+<g transform="translate(910,92)" filter="url(#sh)">
+  <rect width="380" height="118" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Order Now</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Confirm immediate order charge</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#334155"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Close (×)</text>
+  <text x="24" y="106" font-size="10" fill="#2563eb">→ Modal closes · stays on Manage page</text>
+</g>
+
+<!-- C2 · CHANGE DATE MODAL -->
+<g transform="translate(910,226)" filter="url(#sh)">
+  <rect width="380" height="132" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Change Next Order Date</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Date picker — choose new delivery date</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#334155"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Save date</text>
+  <text x="24" y="106" font-size="10" fill="#16a34a">→ Toast: "Next order date updated" · modal closes</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#94a3b8"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Close (×)</text>
+</g>
+
+<!-- C3 · SKIP CONFIRM MODAL -->
+<g transform="translate(910,374)" filter="url(#sh)">
+  <rect width="380" height="154" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Skip This Order?</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Confirm skip — subscription stays active</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#16a34a"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Yes, skip it</text>
+  <text x="24" y="106" font-size="10" fill="#16a34a">→ Skip Success Screen</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#334155"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Keep my order</text>
+  <text x="24" y="134" font-size="10" fill="#2563eb">→ Modal closes · stays on Manage page</text>
+  <line x1="14" y1="143" x2="366" y2="143" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="152" font-size="9.5" fill="#64748b" font-style="italic">Skip does not cancel subscription</text>
+</g>
+
+<!-- C4 · SKIP SUCCESS -->
+<g transform="translate(910,544)" filter="url(#sh)">
+  <rect width="380" height="100" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#166534"/>
+  <rect y="32" width="380" height="12" fill="#166534"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">SCREEN</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Skip Success ✓</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">RESULT</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Full-page success state on Manage screen</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="10.5" fill="#16a34a">✓  Order skipped · Subscription stays active</text>
+</g>
+
+<!-- C5 · PAUSE MODAL -->
+<g transform="translate(910,660)" filter="url(#sh)">
+  <rect width="380" height="154" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Pause Subscription</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Choose pause length — 3 options</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#334155"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: 4 weeks</text>
+  <text x="24" y="106" font-size="10" fill="#16a34a">→ Toast: "Subscription paused for 4 weeks"</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#334155"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: 8 weeks</text>
+  <text x="24" y="134" font-size="10" fill="#16a34a">→ Toast: "Subscription paused for 8 weeks"</text>
+  <rect x="14" y="141" width="5" height="5" rx="1.5" fill="#334155"/>
+  <text x="24" y="148" font-size="10.5" fill="#334155">Click: 12 weeks → Same toast pattern</text>
+</g>
+
+<!-- C6 · PAYMENT MODAL -->
+<g transform="translate(910,830)" filter="url(#sh)">
+  <rect width="380" height="100" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Manage Payment</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Update saved payment method</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="10.5" fill="#334155">Click: Close (×)  →  Modal closes</text>
+</g>
+
+<!-- C7 · SHIPPING MODAL -->
+<g transform="translate(910,946)" filter="url(#sh)">
+  <rect width="380" height="100" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Update Shipping</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Update shipping address for future orders</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="10.5" fill="#334155">Click: Close (×)  →  Modal closes</text>
+</g>
+
+<!-- C8 · ADD SUBSCRIPTION MODAL -->
+<g transform="translate(910,1062)" filter="url(#sh)">
+  <rect width="380" height="100" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Add New Subscription</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Start new sub (gummies / electrolytes)</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="10.5" fill="#334155">Click: Close (×)  →  Modal closes</text>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COLUMN D — CANCEL ENTRY  (x=1340)
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- D1 · CANCEL INTRO VIDEO MODAL -->
+<g transform="translate(1340,92)" filter="url(#sh)">
+  <rect width="380" height="296" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#7F1D1D"/>
+  <rect y="32" width="380" height="12" fill="#7F1D1D"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">CANCEL ENTRY</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Cancel Intro Video Modal</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Founder message video · skip options</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SKIP OPTIONS (select before clicking)</text>
+  <text x="14" y="106" font-size="10.5" fill="#334155">  • Skip 1 week   • Skip 2 weeks   • Skip 4 weeks</text>
+  <line x1="14" y1="116" x2="366" y2="116" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="123" width="5" height="5" rx="1.5" fill="#16a34a"/>
+  <text x="24" y="130" font-size="10.5" fill="#334155">Click: Skip next order (primary)</text>
+  <text x="24" y="144" font-size="10" fill="#16a34a">→ Toast: "[Skip choice] saved" · modal closes</text>
+  <rect x="14" y="151" width="5" height="5" rx="1.5" fill="#dc2626"/>
+  <text x="24" y="158" font-size="10.5" fill="#334155">Click: Continue to cancellation</text>
+  <text x="24" y="172" font-size="10" fill="#dc2626">→ Opens Cancellation Flow (Step 1)</text>
+  <rect x="14" y="179" width="5" height="5" rx="1.5" fill="#94a3b8"/>
+  <text x="24" y="186" font-size="10.5" fill="#334155">Click: Close (×) or backdrop</text>
+  <text x="24" y="200" font-size="10" fill="#2563eb">→ Closes modal · returns to Manage page</text>
+  <line x1="14" y1="210" x2="366" y2="210" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="224" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">VIDEO CONTROLS</text>
+  <text x="14" y="238" font-size="10.5" fill="#334155">Video autoplays · customer can pause / scrub</text>
+  <line x1="14" y1="248" x2="366" y2="248" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="262" font-size="9" fill="#64748b" font-style="italic">Triggered via: More → Cancel subscription</text>
+  <text x="14" y="276" font-size="9" fill="#64748b" font-style="italic">Backdrop click also closes modal</text>
+</g>
+
+<!-- D2 · LOG OUT MODAL -->
+<g transform="translate(1340,404)" filter="url(#sh)">
+  <rect width="380" height="110" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#334155"/>
+  <rect y="32" width="380" height="12" fill="#334155"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">MODAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Log Out</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Confirm portal session logout</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="85" width="5" height="5" rx="1.5" fill="#334155"/>
+  <text x="24" y="92" font-size="10.5" fill="#334155">Click: Close (×)  →  Modal closes · session continues</text>
+  <text x="14" y="106" font-size="9" fill="#64748b" font-style="italic">Triggered via: Nav → Log out</text>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COLUMN E — CANCELLATION FLOW  (x=1770)
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- E1 · STEP 1: REASON SELECT -->
+<g transform="translate(1770,92)" filter="url(#sh)">
+  <rect width="380" height="316" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#991B1B"/>
+  <rect y="32" width="380" height="12" fill="#991B1B"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">CANCEL FLOW · STEP 1 OF 5</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Reason Selection</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">"Want to adjust anything before you cancel?"</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">14 SELECTABLE REASONS</text>
+  <text x="14" y="107" font-size="10" fill="#334155">• I haven't seen results yet</text>
+  <text x="14" y="120" font-size="10" fill="#334155">• Hard to remember / not consistent</text>
+  <text x="14" y="133" font-size="10" fill="#334155">• I'm stocked up</text>
+  <text x="14" y="146" font-size="10" fill="#334155">• Too expensive to continue</text>
+  <text x="14" y="159" font-size="10" fill="#334155">• I just wanted to try once</text>
+  <text x="14" y="172" font-size="10" fill="#334155">• Flavor or texture not a fit</text>
+  <text x="14" y="185" font-size="10" fill="#334155">• Too much sugar / too sweet</text>
+  <text x="14" y="198" font-size="10" fill="#334155">• Not agreeing with my digestion</text>
+  <text x="200" y="107" font-size="10" fill="#334155">• Orders ship too fast</text>
+  <text x="200" y="120" font-size="10" fill="#334155">• I no longer need it</text>
+  <text x="200" y="133" font-size="10" fill="#334155">• Issue with my gummies</text>
+  <text x="200" y="146" font-size="10" fill="#334155">• Packaging issue</text>
+  <text x="200" y="159" font-size="10" fill="#334155">• Found a better alternative</text>
+  <text x="200" y="172" font-size="10" fill="#334155">• Trouble editing subscription</text>
+  <text x="200" y="185" font-size="10" fill="#334155">• Other reason</text>
+  <line x1="14" y1="208" x2="366" y2="208" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="215" width="5" height="5" rx="1.5" fill="#dc2626"/>
+  <text x="24" y="222" font-size="10.5" fill="#334155">Click: Continue to next step</text>
+  <text x="24" y="236" font-size="10" fill="#dc2626">→ Opens Save Page (Step 2) · reason-specific</text>
+  <rect x="14" y="243" width="5" height="5" rx="1.5" fill="#94a3b8"/>
+  <text x="24" y="250" font-size="10.5" fill="#334155">Click: Back</text>
+  <text x="24" y="264" font-size="10" fill="#2563eb">→ Closes flow · returns to Manage page</text>
+  <line x1="14" y1="274" x2="366" y2="274" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="288" font-size="9" fill="#64748b" font-style="italic">Continue button disabled until reason selected</text>
+  <text x="14" y="302" font-size="9" fill="#64748b" font-style="italic">Backdrop click also closes flow from this step</text>
+</g>
+
+<!-- E2 · STEP 2: SAVE PAGE -->
+<g transform="translate(1770,424)" filter="url(#sh)">
+  <rect width="380" height="272" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#991B1B"/>
+  <rect y="32" width="380" height="12" fill="#991B1B"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">CANCEL FLOW · STEP 2 OF 5</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Save / Retention Page</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Reason-specific headline + save offer</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SAVE CTAs (vary by reason · 2-4 options)</text>
+  <text x="14" y="107" font-size="10" fill="#334155">Build habit plan / consistency plan / product plan</text>
+  <text x="14" y="120" font-size="10" fill="#334155">Skip next order · Move to 8 or 12 weeks</text>
+  <text x="14" y="133" font-size="10" fill="#334155">Pause subscription · Apply 50% off 3 orders</text>
+  <text x="14" y="146" font-size="10" fill="#334155">Swap to better fit · Switch to electrolyte packs</text>
+  <text x="14" y="159" font-size="10" fill="#334155">Contact support (issue/digestion/sugar reasons)</text>
+  <line x1="14" y1="169" x2="366" y2="169" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="176" width="5" height="5" rx="1.5" fill="#92400E"/>
+  <text x="24" y="183" font-size="10.5" fill="#334155">Click: Any save CTA</text>
+  <text x="24" y="197" font-size="10" fill="#92400E">→ Opens Branch Screen (Step 3)</text>
+  <rect x="14" y="204" width="5" height="5" rx="1.5" fill="#475569"/>
+  <text x="24" y="211" font-size="10.5" fill="#334155">Click: Contact support (select reasons)</text>
+  <text x="24" y="225" font-size="10" fill="#2563eb">→ Opens Gorgias support URL in new tab</text>
+  <rect x="14" y="232" width="5" height="5" rx="1.5" fill="#dc2626"/>
+  <text x="24" y="239" font-size="10.5" fill="#334155">Click: Review final step (text link)</text>
+  <text x="24" y="253" font-size="10" fill="#dc2626">→ Opens Rescue Page (Step 4)</text>
+  <line x1="14" y1="262" x2="366" y2="262" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="270" font-size="9" fill="#64748b" font-style="italic">CTAs locked until sub-reason is selected (most flows)</text>
+</g>
+
+<!-- E3 · STEP 3: BRANCH SCREEN -->
+<g transform="translate(1770,712)" filter="url(#sh)">
+  <rect width="380" height="242" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#92400E"/>
+  <rect y="32" width="380" height="12" fill="#92400E"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">CANCEL FLOW · STEP 3 OF 5</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Branch / Save Screen</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Select specific option within the save action</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">BRANCH TYPES</text>
+  <text x="14" y="107" font-size="10" fill="#334155">cadence → 4 / 8 / 12 weeks / Custom date</text>
+  <text x="14" y="120" font-size="10" fill="#334155">skip → Skip 1 / 2 / 4 weeks</text>
+  <text x="14" y="133" font-size="10" fill="#334155">pause → Pause 2 / 4 / 8 weeks / Custom restart</text>
+  <text x="14" y="146" font-size="10" fill="#334155">savings → 50% off 3 orders / Skip + keep offer</text>
+  <text x="14" y="159" font-size="10" fill="#334155">product → Electrolyte packs / Peach / Watermelon</text>
+  <text x="14" y="172" font-size="10" fill="#334155">plan / education → Guided save option</text>
+  <line x1="14" y1="182" x2="366" y2="182" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="189" width="5" height="5" rx="1.5" fill="#16a34a"/>
+  <text x="24" y="196" font-size="10.5" fill="#334155">Click: Save button (confirm selection)</text>
+  <text x="24" y="210" font-size="10" fill="#16a34a">→ Saved Screen ✓ (subscription kept)</text>
+  <rect x="14" y="217" width="5" height="5" rx="1.5" fill="#dc2626"/>
+  <text x="24" y="224" font-size="10.5" fill="#334155">Click: Review final step (text link)</text>
+  <text x="24" y="238" font-size="10" fill="#dc2626">→ Rescue Page (Step 4)</text>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COLUMN F — OUTCOMES  (x=2200)
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- F1 · STEP 4: RESCUE PAGE -->
+<g transform="translate(2200,92)" filter="url(#sh)">
+  <rect width="380" height="244" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#991B1B"/>
+  <rect y="32" width="380" height="12" fill="#991B1B"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">CANCEL FLOW · STEP 4 OF 5</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Rescue Page</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">"Choose what you'd like to do next"</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">RECOMMENDED + OPTIONAL ACTION CARDS</text>
+  <text x="14" y="107" font-size="10" fill="#334155">Rescue options are reason-specific:</text>
+  <text x="14" y="120" font-size="10" fill="#334155">  Issue → Contact support / Pause</text>
+  <text x="14" y="133" font-size="10" fill="#334155">  Stocked/Fast → 12 weeks / Skip</text>
+  <text x="14" y="146" font-size="10" fill="#334155">  Expensive → Pause / Skip</text>
+  <text x="14" y="159" font-size="10" fill="#334155">  Taste/Texture → Swap flavor / Switch format</text>
+  <text x="14" y="172" font-size="10" fill="#334155">  No longer need → Pause / Skip</text>
+  <line x1="14" y1="182" x2="366" y2="182" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="189" width="5" height="5" rx="1.5" fill="#92400E"/>
+  <text x="24" y="196" font-size="10.5" fill="#334155">Click: Any action card CTA</text>
+  <text x="24" y="210" font-size="10" fill="#92400E">→ Opens Branch Screen (Step 3) to save</text>
+  <rect x="14" y="217" width="5" height="5" rx="1.5" fill="#dc2626"/>
+  <text x="24" y="224" font-size="10.5" fill="#334155">Click: Continue to final cancellation</text>
+  <text x="24" y="238" font-size="10" fill="#dc2626">→ Final Confirm (Step 5)</text>
+</g>
+
+<!-- F2 · STEP 5: FINAL CONFIRM -->
+<g transform="translate(2200,352)" filter="url(#sh)">
+  <rect width="380" height="222" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#991B1B"/>
+  <rect y="32" width="380" height="12" fill="#991B1B"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">CANCEL FLOW · STEP 5 OF 5</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Final Confirm</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">"Choose how you'd like to finish"</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">FINAL CANCEL REASON PILLS (example labels)</text>
+  <text x="14" y="107" font-size="10" fill="#334155">Product issue · Too much product · Price concern</text>
+  <text x="14" y="120" font-size="10" fill="#334155">Considering another product · Not using it · Other</text>
+  <line x1="14" y1="130" x2="366" y2="130" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="14" y="137" width="5" height="5" rx="1.5" fill="#475569"/>
+  <text x="24" y="144" font-size="10.5" fill="#334155">Click: Contact support</text>
+  <text x="24" y="158" font-size="10" fill="#2563eb">→ Opens Gorgias support URL · new tab</text>
+  <rect x="14" y="165" width="5" height="5" rx="1.5" fill="#dc2626"/>
+  <text x="24" y="172" font-size="10.5" fill="#334155">Click: Cancel subscription</text>
+  <text x="24" y="186" font-size="10" fill="#dc2626">→ Cancelled Screen ✓</text>
+  <rect x="14" y="193" width="5" height="5" rx="1.5" fill="#94a3b8"/>
+  <text x="24" y="200" font-size="10.5" fill="#334155">Click: Back to options</text>
+  <text x="24" y="214" font-size="10" fill="#2563eb">→ Returns to Rescue Page (Step 4)</text>
+</g>
+
+<!-- F3 · SAVED SCREEN -->
+<g transform="translate(2200,590)" filter="url(#sh)">
+  <rect width="380" height="140" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#166534"/>
+  <rect y="32" width="380" height="12" fill="#166534"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">OUTCOME · SUBSCRIPTION KEPT</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Saved Screen ✓</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Checkmark + save confirmation message</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="10" fill="#334155">Example: "Your next order was skipped."</text>
+  <text x="14" y="106" font-size="10" fill="#334155">Subscription stays active. Reached via Step 3 save.</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#166534"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Return to subscription overview</text>
+  <text x="24" y="134" font-size="10" fill="#16a34a">→ Flow closes · returns to Manage page</text>
+</g>
+
+<!-- F4 · CANCELLED SCREEN -->
+<g transform="translate(2200,746)" filter="url(#sh)">
+  <rect width="380" height="140" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#6B1C1C"/>
+  <rect y="32" width="380" height="12" fill="#6B1C1C"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">OUTCOME · SUBSCRIPTION CANCELLED</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Cancelled Screen ✓</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">SCREEN</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Checkmark + cancellation confirmed</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="10" fill="#334155">"Your subscription has been cancelled."</text>
+  <text x="14" y="106" font-size="10" fill="#334155">Account access remains. Reached via Step 5.</text>
+  <rect x="14" y="113" width="5" height="5" rx="1.5" fill="#6B1C1C"/>
+  <text x="24" y="120" font-size="10.5" fill="#334155">Click: Done</text>
+  <text x="24" y="134" font-size="10" fill="#2563eb">→ Flow closes · returns to Manage page</text>
+</g>
+
+<!-- F5 · EXTERNAL SUPPORT -->
+<g transform="translate(2200,902)" filter="url(#sh)">
+  <rect width="380" height="110" rx="12" fill="#fff"/>
+  <rect width="380" height="44" rx="12" fill="#475569"/>
+  <rect y="32" width="380" height="12" fill="#475569"/>
+  <text x="14" y="16" font-size="9" font-weight="600" fill="rgba(255,255,255,.55)" letter-spacing="1.5">EXTERNAL</text>
+  <text x="14" y="33" font-size="13" font-weight="700" fill="#fff">Contact Support (Gorgias)</text>
+  <text x="14" y="57" font-size="9" font-weight="600" fill="#94a3b8" letter-spacing="1.2">DESTINATION</text>
+  <text x="14" y="70" font-size="11" font-weight="600" fill="#0f2347">Opens in new tab with cancellation context</text>
+  <line x1="14" y1="78" x2="366" y2="78" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="14" y="92" font-size="10" fill="#334155">Triggered from: Step 2 save page (issue/digestion)</text>
+  <text x="14" y="106" font-size="10" fill="#334155">Also triggered from: Step 5 Final Confirm</text>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ARROWS — MAIN HORIZONTAL FLOW
+     ══════════════════════════════════════════════════════════════════════════ -->
+
+<!-- A3 Home → B1 Manage (Manage subscription / Open details) -->
+<line x1="430" y1="590" x2="475" y2="590" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+<text x="452" y="585" text-anchor="middle" font-size="8" fill="#94a3b8">nav</text>
+
+<!-- B2 More Dropdown → D1 Cancel Intro (Cancel subscription) -->
+<path d="M860,554 C1000,554 1200,234 1335,234" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="5,3" fill="none" marker-end="url(#arr-red)"/>
+<text x="1090" y="366" font-size="8" fill="#dc2626">Cancel sub</text>
+
+<!-- D1 Cancel Intro → E1 Reason Select (Continue to cancellation) -->
+<line x1="1720" y1="240" x2="1765" y2="240" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr-red)"/>
+<text x="1742" y="235" text-anchor="middle" font-size="8" fill="#dc2626">continue</text>
+
+<!-- E1 Step 1 → E2 Step 2 (Continue to next step) -->
+<line x1="1960" y1="408" x2="1960" y2="419" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-red)"/>
+
+<!-- E2 Step 2 → E3 Step 3 (CTA → branch) -->
+<line x1="1960" y1="696" x2="1960" y2="707" stroke="#92400E" stroke-width="2" marker-end="url(#arr)"/>
+
+<!-- E2 Step 2 → F1 Rescue (Review final step) -->
+<path d="M2150,610 C2175,610 2175,210 2195,210" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arr-red)"/>
+
+<!-- E3 Step 3 → F1 Rescue (Review final step) -->
+<path d="M2150,810 C2180,810 2180,290 2195,290" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arr-red)"/>
+
+<!-- E3 Step 3 → F3 Saved (Save button) -->
+<path d="M2150,790 C2185,790 2185,635 2195,660" stroke="#16a34a" stroke-width="1.8" stroke-dasharray="4,3" fill="none" marker-end="url(#arr-green)"/>
+
+<!-- F1 Rescue → F2 Final Confirm (Continue to final) -->
+<line x1="2390" y1="336" x2="2390" y2="347" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-red)"/>
+
+<!-- F1 Rescue → E3 Branch (action card CTA → save) -->
+<path d="M2200,225 C2175,225 2175,830 2150,830" stroke="#92400E" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arr)"/>
+
+<!-- F2 Final → F4 Cancelled -->
+<line x1="2390" y1="574" x2="2390" y2="741" stroke="#dc2626" stroke-width="2" marker-end="url(#arr-red)"/>
+
+<!-- F2 Final → F5 Support (Contact support) -->
+<path d="M2580,500 C2620,500 2620,955 2580,957" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arr)"/>
+
+<!-- E2 Step 2 → F5 Support (Contact support — issue flows) -->
+<path d="M2150,590 C2190,590 2600,900 2580,950" stroke="#475569" stroke-width="1.3" stroke-dasharray="4,3" fill="none" marker-end="url(#arr)"/>
+
+<!-- B1 Manage → C1-C7 Action Modals (horizontal arrows at column boundary) -->
+<line x1="860" y1="204" x2="905" y2="152" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="860" y1="204" x2="905" y2="288" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="860" y1="240" x2="905" y2="432" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="860" y1="475" x2="905" y2="718" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="860" y1="555" x2="905" y2="888" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+<line x1="860" y1="605" x2="905" y2="1000" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+
+<!-- C3 Skip Confirm → C4 Skip Success -->
+<line x1="1100" y1="528" x2="1100" y2="539" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-green)"/>
+
+<!-- A2 Nav → B1 Manage (nav shortcut) -->
+<line x1="430" y1="408" x2="475" y2="280" stroke="#94a3b8" stroke-width="1.3" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+
+<!-- A3 Home offer cards → Modals note -->
+<text x="60" y="808" font-size="9" fill="#16a34a" font-style="italic">↓ Each offer card below</text>
+<text x="60" y="820" font-size="9" fill="#16a34a" font-style="italic">opens its own offer modal</text>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     LEGEND
+     ══════════════════════════════════════════════════════════════════════════ -->
+<g transform="translate(50,1090)">
+  <rect width="840" height="136" rx="10" fill="rgba(255,255,255,.75)"/>
+  <text x="16" y="22" font-size="10" font-weight="700" fill="#0f2347" letter-spacing="1.5">LEGEND</text>
+  <!-- color swatches -->
+  <rect x="16" y="32" width="14" height="14" rx="3" fill="#0F2347"/>
+  <text x="36" y="43" font-size="10" fill="#334155">Page / Main Screen</text>
+  <rect x="16" y="54" width="14" height="14" rx="3" fill="#1B3E7A"/>
+  <text x="36" y="65" font-size="10" fill="#334155">Navigation / Dropdown / Info Modal</text>
+  <rect x="16" y="76" width="14" height="14" rx="3" fill="#166534"/>
+  <text x="36" y="87" font-size="10" fill="#334155">Offer Card / Saved Outcome</text>
+  <rect x="16" y="98" width="14" height="14" rx="3" fill="#334155"/>
+  <text x="36" y="109" font-size="10" fill="#334155">Action Modal (neutral)</text>
+  <rect x="16" y="120" width="14" height="14" rx="3" fill="#94a3b8"/>
+  <text x="36" y="131" font-size="10" fill="#334155">Closes / dismisses</text>
+
+  <rect x="220" y="32" width="14" height="14" rx="3" fill="#991B1B"/>
+  <text x="240" y="43" font-size="10" fill="#334155">Cancel Flow Step (active risk)</text>
+  <rect x="220" y="54" width="14" height="14" rx="3" fill="#7F1D1D"/>
+  <text x="240" y="65" font-size="10" fill="#334155">Cancel Entry (intro modal)</text>
+  <rect x="220" y="76" width="14" height="14" rx="3" fill="#6B1C1C"/>
+  <text x="240" y="87" font-size="10" fill="#334155">Cancelled Outcome</text>
+  <rect x="220" y="98" width="14" height="14" rx="3" fill="#92400E"/>
+  <text x="240" y="109" font-size="10" fill="#334155">Branch / Save Screen (amber = save)</text>
+  <rect x="220" y="120" width="14" height="14" rx="3" fill="#475569"/>
+  <text x="240" y="131" font-size="10" fill="#334155">External (Gorgias support link)</text>
+
+  <!-- arrow types -->
+  <line x1="430" y1="39" x2="490" y2="39" stroke="#94a3b8" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="496" y="43" font-size="10" fill="#334155">Navigation / modal open</text>
+  <line x1="430" y1="59" x2="490" y2="59" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr-red)"/>
+  <text x="496" y="63" font-size="10" fill="#334155">Cancel flow progression</text>
+  <line x1="430" y1="79" x2="490" y2="79" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#arr-green)"/>
+  <text x="496" y="83" font-size="10" fill="#334155">Save / positive outcome</text>
+  <line x1="430" y1="99" x2="490" y2="99" stroke="#475569" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr)"/>
+  <text x="496" y="103" font-size="10" fill="#334155">External link (new tab)</text>
+</g>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SECTION BACKGROUND TINTS
+     ══════════════════════════════════════════════════════════════════════════ -->
+<!-- Cancel zone tint (behind cols D and E) -->
+<rect x="1330" y="68" width="850" height="1000" rx="8" fill="#FFF5F5" opacity=".45"/>
+<!-- Green zone tint (col F outcomes - saved) -->
+<rect x="2190" y="580" width="400" height="170" rx="8" fill="#F0FDF4" opacity=".6"/>
+
+</svg>

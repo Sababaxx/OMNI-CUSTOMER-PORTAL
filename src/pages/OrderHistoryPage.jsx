@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../components/Button.jsx";
+import { subscriptionStatus } from "../data/subscription.js";
 
 const orders = [
   { number: "#OMNI-1048", date: "April 17, 2026", status: "Fulfilled", product: "OMNI Creatine Gummy / Peach", total: "$52.62" },
@@ -7,13 +8,22 @@ const orders = [
   { number: "#OMNI-0937", date: "January 30, 2026", status: "Fulfilled", product: "OMNI Creatine Gummy / Peach", total: "$50.00" },
 ];
 
-export default function OrderHistoryPage({ onOpenModal }) {
+export default function OrderHistoryPage({ onOpenModal, onRestartOpen }) {
+  const isInactive = subscriptionStatus === "inactive";
+
   return (
     <section className="portal-page-panel" aria-label="Order history">
       <div className="portal-page-head">
         <h1>Order History</h1>
         <p>Review recent OMNI orders and fulfillment details.</p>
       </div>
+
+      {isInactive && (
+        <div className="orders-inactive-callout">
+          <span>Want to restart your OMNI routine?</span>
+          <Button variant="outline" size="sm" onClick={onRestartOpen}>Restart subscription</Button>
+        </div>
+      )}
 
       <div className="order-history-list">
         {orders.map((order) => (

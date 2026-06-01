@@ -5282,3 +5282,255 @@ button { font-family: inherit; cursor: pointer; }
     max-width: none;
   }
 }
+
+
+/* ─── INACTIVE SUBSCRIPTION STATE ───────────────────────────────────────── */
+
+/* Inline status pill in the summary strip */
+.inactive-status-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--omni-text-3);
+  background: var(--omni-surface);
+  border: 1px solid var(--omni-divider);
+  border-radius: 999px;
+  padding: 2px 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Inactive badge on product card — replaces green Active badge */
+.manage-status-badge-inactive {
+  background: var(--omni-surface);
+  color: var(--omni-text-3);
+  border-color: var(--omni-divider);
+}
+
+/* Subcopy under the manage page inactive headline */
+.manage-inactive-sub {
+  font-size: 14px !important;
+  color: var(--omni-text-2) !important;
+  font-weight: 500 !important;
+  max-width: 440px;
+}
+
+/* Order History soft callout */
+.orders-inactive-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--omni-surface);
+  border: 1px solid var(--omni-card-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--omni-text-2);
+  font-weight: 600;
+}
+
+/* Referral inactive notice */
+.referral-inactive-notice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--omni-surface);
+  border: 1px solid var(--omni-card-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin: 0 auto 32px;
+  width: min(100%, 820px);
+  font-size: 14px;
+  color: var(--omni-text-2);
+  font-weight: 600;
+}
+.referral-inactive-notice p { margin: 0; }
+
+/* ─── RESTART FLOW MODAL ─────────────────────────────────────────────────── */
+
+.restart-flow-modal {
+  width: min(480px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+/* Step indicator dots */
+.restart-step-indicator {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+.restart-step-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  transition: background 0.2s;
+}
+.restart-step-dot.active { background: var(--omni-primary); }
+.restart-step-dot.done   { background: var(--omni-active-green); }
+
+.restart-flow-modal h3 {
+  margin: 0 0 4px;
+  font-size: 19px;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+}
+.restart-sub {
+  font-size: 12px;
+  color: var(--omni-text-3);
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+
+/* Option cards */
+.restart-option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 4px;
+}
+.restart-option-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1.5px solid var(--omni-card-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.restart-option-card:hover { border-color: var(--omni-primary); background: #f4f7ff; }
+
+.restart-option-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.restart-option-label {
+  font-size: 13px;
+  font-weight: 750;
+  color: var(--omni-text);
+}
+.restart-option-detail {
+  font-size: 11px;
+  color: var(--omni-text-3);
+  font-weight: 600;
+}
+.restart-option-price {
+  font-size: 12px;
+  font-weight: 750;
+  color: var(--omni-primary);
+  white-space: nowrap;
+}
+.restart-option-note {
+  font-size: 10px;
+  font-weight: 750;
+  color: var(--omni-active-green);
+  background: #d1fae5;
+  border-radius: 5px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+.restart-option-arrow {
+  font-size: 14px;
+  color: var(--omni-text-3);
+  flex-shrink: 0;
+}
+
+.restart-back-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--omni-primary);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Review step */
+.restart-review-card {
+  background: var(--omni-surface);
+  border: 1px solid var(--omni-card-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.restart-review-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+.restart-review-row strong {
+  font-size: 12px;
+  color: var(--omni-text);
+  text-align: right;
+}
+.restart-review-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.restart-review-actions .btn { width: 100%; }
+
+/* ─── MANAGE PAGE inactive additions ─────────────────────────────────────── */
+
+/* manage-hero in inactive mode: title stacks vertically instead of grid */
+.manage-hero-inactive-wrap .manage-hero {
+  display: block;
+}
+
+/* ─── MOBILE responsive — inactive ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .account-summary-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .orders-inactive-callout,
+  .referral-inactive-notice {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  /* Inactive action row: primary full-width, secondaries in 3-col row */
+  .manage-action-row-inactive {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100%;
+    flex-wrap: unset !important;
+  }
+  .manage-action-row-inactive .btn:first-child {
+    grid-column: 1 / -1;
+  }
+  .manage-action-row-inactive .btn {
+    white-space: normal !important;
+    height: auto !important;
+    min-height: 38px;
+    font-size: 11px !important;
+    padding: 8px 6px !important;
+    line-height: 1.2;
+  }
+  .restart-flow-modal {
+    max-height: calc(100vh - 24px);
+    border-radius: 14px;
+  }
+  .restart-review-row {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .restart-review-row strong { text-align: left; }
+}

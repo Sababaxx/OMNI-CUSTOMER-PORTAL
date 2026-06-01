@@ -1,0 +1,16 @@
+{
+  "name": "OMNI Portal Map Builder",
+  "id": "omni-portal-map-builder",
+  "api": "1.0.0",
+  "main": "code.js",
+  "editorType": [
+    "figma",
+    "figjam"
+  ],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": [
+      "none"
+    ]
+  }
+}
