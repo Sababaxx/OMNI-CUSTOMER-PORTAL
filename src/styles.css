@@ -5460,17 +5460,17 @@ button { font-family: inherit; cursor: pointer; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 24px 16px 20px;
-  background: linear-gradient(160deg, #001a4d 0%, #002266 100%);
+  padding: 28px 20px 24px;
+  background: var(--omni-surface, #f7f7f5);
+  border: 1px solid var(--omni-card-border, #e8e8e4);
   border-radius: 12px;
   gap: 0;
 }
 .restart-confirmed-check {
-  width: 54px;
-  height: 54px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  border: 1.5px solid rgba(255,255,255,0.25);
+  background: var(--omni-active-green, #16a34a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5481,22 +5481,22 @@ button { font-family: inherit; cursor: pointer; }
   font-weight: 850;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6ee7b7;
-  margin-bottom: 8px;
+  color: var(--omni-active-green, #16a34a);
+  margin-bottom: 6px;
 }
 .restart-confirmed-hero h3 {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: var(--omni-text, #0a0a0a);
   margin: 0 0 8px;
 }
 .restart-confirmed-tagline {
   font-size: 13px;
-  color: rgba(255,255,255,0.68);
+  color: var(--omni-text-3, #6b7280);
   margin: 0;
   line-height: 1.5;
-  max-width: 320px;
+  max-width: 300px;
 }
 
 /* Product summary card */
