@@ -5432,6 +5432,8 @@ button { font-family: inherit; cursor: pointer; }
   white-space: nowrap;
 }
 .restart-option-note {
+  display: inline-block;
+  width: fit-content;
   font-size: 10px;
   font-weight: 750;
   color: var(--omni-active-green);
@@ -5444,6 +5446,146 @@ button { font-family: inherit; cursor: pointer; }
   font-size: 14px;
   color: var(--omni-text-3);
   flex-shrink: 0;
+}
+
+/* Confirmation screen */
+.restart-confirmed {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.restart-confirmed-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px 20px;
+  background: linear-gradient(160deg, #001a4d 0%, #002266 100%);
+  border-radius: 12px;
+  gap: 0;
+}
+.restart-confirmed-check {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.restart-confirmed-kicker {
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6ee7b7;
+  margin-bottom: 8px;
+}
+.restart-confirmed-hero h3 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+.restart-confirmed-tagline {
+  font-size: 13px;
+  color: rgba(255,255,255,0.68);
+  margin: 0;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+/* Product summary card */
+.restart-confirmed-product-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--omni-surface);
+  border: 1px solid var(--omni-card-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.restart-confirmed-product-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #eef3ff;
+  flex-shrink: 0;
+}
+.restart-confirmed-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.restart-confirmed-product-name {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--omni-text);
+}
+.restart-confirmed-product-detail {
+  font-size: 11px;
+  color: var(--omni-text-3);
+  font-weight: 600;
+}
+.restart-confirmed-product-status {
+  font-size: 11px;
+  font-weight: 750;
+  color: var(--omni-active-green);
+}
+
+/* Perks list */
+.restart-confirmed-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--omni-card-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.restart-confirmed-perk {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  background: #fff;
+  border-bottom: 1px solid var(--omni-card-border);
+}
+.restart-confirmed-perk:last-child { border-bottom: 0; }
+.restart-confirmed-perk-icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 28px;
+  text-align: center;
+}
+.restart-confirmed-perk div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.restart-confirmed-perk strong {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--omni-text);
+}
+.restart-confirmed-perk span {
+  font-size: 11px;
+  color: var(--omni-text-3);
+  font-weight: 600;
+}
+
+.restart-confirmed .btn { width: 100%; }
+
+.restart-confirmed-footnote {
+  font-size: 11px;
+  color: var(--omni-text-3);
+  text-align: center;
+  margin: 0;
 }
 
 .restart-back-link {

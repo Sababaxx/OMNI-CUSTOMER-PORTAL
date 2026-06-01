@@ -17,7 +17,7 @@ const CADENCES = [
   { id: "quarterly", label: "Quarterly", note: "Best value" },
 ];
 
-const STEPS = ["product", "flavor", "cadence", "review"];
+const STEPS = ["product", "flavor", "cadence", "review", "confirmed"];
 
 export default function RestartFlow({ open, onClose, onRestarted }) {
   const [step, setStep] = useState(0);
@@ -42,7 +42,8 @@ export default function RestartFlow({ open, onClose, onRestarted }) {
   };
 
   const handleClose = () => { reset(); onClose(); };
-  const handleConfirm = () => { reset(); onClose(); if (onRestarted) onRestarted(); };
+  const handleConfirm = () => { setStep(4); if (onRestarted) onRestarted(); };
+  const handleDone = () => { reset(); onClose(); };
 
   const cadence = selectedCadence || CADENCES[0];
   const totalEstimate = product.price + 8.0;
@@ -60,17 +61,21 @@ export default function RestartFlow({ open, onClose, onRestarted }) {
         className="action-modal restart-flow-modal"
         onClick={(e) => e.stopPropagation()}
       >
-        <button type="button" className="modal-close" onClick={handleClose} aria-label="Close">×</button>
+        {stepId !== "confirmed" && (
+          <button type="button" className="modal-close" onClick={handleClose} aria-label="Close">×</button>
+        )}
 
-        {/* Step dots */}
-        <div className="restart-step-indicator" aria-hidden="true">
-          {STEPS.map((s, i) => (
-            <span
-              key={s}
-              className={`restart-step-dot${i === step ? " active" : i < step ? " done" : ""}`}
-            />
-          ))}
-        </div>
+        {/* Step dots — hidden on confirmation */}
+        {stepId !== "confirmed" && (
+          <div className="restart-step-indicator" aria-hidden="true">
+            {STEPS.slice(0, 4).map((s, i) => (
+              <span
+                key={s}
+                className={`restart-step-dot${i === step ? " active" : i < step ? " done" : ""}`}
+              />
+            ))}
+          </div>
+        )}
 
         {/* ── Step 0: Choose product ─────────────────────────────── */}
         {stepId === "product" && (
@@ -144,6 +149,58 @@ export default function RestartFlow({ open, onClose, onRestarted }) {
             </div>
             <button type="button" className="restart-back-link" onClick={back}>← Back</button>
           </>
+        )}
+
+        {/* ── Step 4: Confirmed ─────────────────────────────────── */}
+        {stepId === "confirmed" && (
+          <div className="restart-confirmed">
+            <div className="restart-confirmed-hero">
+              <div className="restart-confirmed-check" aria-hidden="true">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12.5L10 17.5L19 8" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span className="restart-confirmed-kicker">You're back</span>
+              <h3>Good call. Let's go.</h3>
+              <p className="restart-confirmed-tagline">Your daily creatine routine is locked in. Nothing to track — it just shows up.</p>
+            </div>
+
+            <div className="restart-confirmed-product-card">
+              <img src="/assets/omni-product-peach.png" alt="OMNI Creatine Gummies" className="restart-confirmed-product-img" />
+              <div className="restart-confirmed-product-info">
+                <span className="restart-confirmed-product-name">{(selectedProduct || PRODUCTS[0]).label}</span>
+                <span className="restart-confirmed-product-detail">{selectedFlavor || "Peach"} · {(selectedCadence || CADENCES[0]).label}</span>
+                <span className="restart-confirmed-product-status">Active — first order scheduled</span>
+              </div>
+            </div>
+
+            <div className="restart-confirmed-perks">
+              <div className="restart-confirmed-perk">
+                <span className="restart-confirmed-perk-icon">📦</span>
+                <div>
+                  <strong>Ships to your door</strong>
+                  <span>{lastSubscription.shipping.line1}, {lastSubscription.shipping.cityRegion}</span>
+                </div>
+              </div>
+              <div className="restart-confirmed-perk">
+                <span className="restart-confirmed-perk-icon">🔒</span>
+                <div>
+                  <strong>Member pricing locked in</strong>
+                  <span>You pay less than retail — every order</span>
+                </div>
+              </div>
+              <div className="restart-confirmed-perk">
+                <span className="restart-confirmed-perk-icon">⚡</span>
+                <div>
+                  <strong>Cancel or pause anytime</strong>
+                  <span>Full control from the portal, no calls needed</span>
+                </div>
+              </div>
+            </div>
+
+            <Button variant="primary" onClick={handleDone}>Back to portal</Button>
+            <p className="restart-confirmed-footnote">A confirmation email is on its way to {lastSubscription.shipping.name.split(" ")[0]}.</p>
+          </div>
         )}
 
         {/* ── Step 3: Review & confirm ───────────────────────────── */}
