@@ -155,6 +155,54 @@ Product card shows: product name, flavor · quantity · cadence, **Active** badg
 *Active manage page: action row (Order now · Next order date · Skip · More), product card
 with Active badge, and member offers below.*
 
+### 3.1 Free gift — one-time, segment-specific  *(fixes Levani #3)*
+
+The "Claim Free Gift" card sits in the manage workspace. It must behave as a **one-time
+gift**, never as a recurring subscription line.
+
+- Tapping the card opens a modal with two paths:
+  - **Ship with my next order** → confirm → the one-time gift is attached to the next
+    shipment → success toast ("locked in, ships with your next order").
+  - **Send to a friend** → opens a **shipping-address form** (name, address, city, state,
+    zip, contact) → send → styled "gift confirmed, we'll get it to {friend}" overlay.
+- After claiming, the gift is **locked** (the card hides / can't be re-claimed) so it can't
+  become recurring or be claimed twice.
+- **Which gift** is shown is segment-driven (customers who did XYZ → free peach; customers
+  who did XY → a different one-time gift). This is a display/eligibility rule per customer.
+
+![Free gift — send to a friend address form](docs/assets/18-gift-friend.png)
+*"Send to a friend" opens an address form; the gift ships to that address as a one-time item.*
+
+### 3.2 Swap flavor
+
+- Select Peach or Watermelon → **Confirm swap** → review modal (shows the new flavor) →
+  confirm → applies to the **next order only**; product and frequency stay the same.
+
+![Swap flavor — confirm modal](docs/assets/19-swap-flavor.png)
+*Flavor swap always routes through a confirmation before it applies to the next order.*
+
+### 3.3 Recommended products — "You might also like"
+
+- Each recommended product has a **variant selector** (flavor / quantity) and price.
+- **Add** → "Add to next order" confirmation → the selected variant is added to the
+  upcoming shipment (flavor + final pricing confirmed before checkout).
+
+### 3.4 Shipping / billing / backup card
+
+- **Edit shipping** → address form → save → reflected on the page.
+- **Edit billing** → payment form → save (connects to the payment provider in production).
+- **Add backup card** → card form → stored as a fallback, charged only if the primary card
+  fails.
+
+### 3.5 Order summary
+
+- Shows **subtotal + shipping + total** for the next order.
+- **Coupon / promo field** with Apply → validates the code and updates the total.
+
+![Manage workspace — shipping, billing, summary, recommendations](docs/assets/20-workspace-details.png)
+*The lower manage workspace: shipping, billing (with backup card), order summary + coupon,
+and recommended products — every Edit/Add opens a real modal that saves.*
+
 ---
 
 ## 4. Paused state (manage + home)
@@ -278,9 +326,18 @@ notification.
 - **Which gift** is shown depends on the customer segment / history:
   - Customers who did **XYZ** → see e.g. **free Peach** gift.
   - Customers who did **XY** → see a **different** one-time gift.
-- Claim flow: card → "Claim your free gift" confirm (shows exactly which one-time gift and
-  that it ships once with the next order) → confirm → styled "Gift added to your next
-  order" screen. The recurring plan is unchanged.
+- Claim flow: card → modal with two paths → confirm → styled success; the recurring plan
+  is unchanged:
+  - **Ship with my next order** — the one-time gift rides along on the next scheduled
+    shipment.
+  - **Send to a friend** — opens a shipping-address form and sends the gift to that
+    address instead.
+- Once claimed, the offer is **locked** (can't be re-claimed) so it stays a one-time gift.
+- Full behavior of this flow is documented in **§3.1**.
+
+![Free gift — ship to me vs send to a friend](docs/assets/17-gift-choice.png)
+*The free gift is a one-time item with two paths (self / friend) — never a recurring
+subscription line (fixes #3).*
 
 ### 7.3 Other offers (stack, add electrolytes, swap flavor, add gummies)
 
@@ -342,13 +399,33 @@ The four steps, then the styled success screen:
 
 ## 11. Account
 
-- Shows profile, shipping, payment, and per-subscription summaries.
-- Every "Edit"/"Update" opens a real edit modal that saves and reflects on the page — no
-  dead edit buttons.
+- Shows detail cards: **Name**, **Email**, **Shipping address**, **Payment method**.
+- Each card has **Edit** → opens the matching edit modal (`Edit name` / `Edit email` /
+  `Edit shipping address` / `Edit payment method`) → save → the card reflects the change.
+- No dead edit buttons — every Edit must open a working form and persist.
 
 ---
 
-## 12. Confirmation / success pattern (styling contract)
+## 12. Miscellaneous flows (don't miss these)
+
+Small surfaces that still need real behavior:
+
+| Trigger | Location | Behavior |
+|--------|----------|----------|
+| **Add product / Add new subscription** | Home (active) | Opens product selection → confirm → adds a **new, separate** subscription (respects R2 — it's its own record). |
+| **Cancel intro — "Skip next order"** | Start of cancel flow | Offers to skip the next order *before* entering the reason list; taking it skips and exits the flow (retention). |
+| **Order details** | Order History | "View details" opens the order's detail view (items, totals, fulfillment) — not a dead button. |
+| **Log out** | Nav | Confirms and ends the session. |
+| **Refer a Friend — Review status** | Refer page | Opens the referral status view. |
+
+> **Multiple subscriptions (R2 restated):** the data model must key everything by
+> `subscriptionId`. "Add product" creates a second subscription; cancelling/pausing/
+> reactivating one must leave the others untouched. This is the single biggest data bug in
+> the current build and must be fixed at the model level, not per-screen.
+
+---
+
+## 13. Confirmation / success pattern (styling contract)
 
 Reuse one consistent, styled success component across restart, cancel, pause, offers, and
 gift claims:
@@ -364,10 +441,10 @@ the modal is incomplete.
 
 ---
 
-## 13. Checklist to consider a flow "done"
+## 14. Checklist to consider a flow "done"
 
 - [ ] The button changes real state (R1).
-- [ ] It ends on the styled confirmation screen (§12).
+- [ ] It ends on the styled confirmation screen (§13).
 - [ ] It touches only the selected subscription (R2).
 - [ ] If it's a keep-vs-leave choice, the "stay" button is highlighted (R3).
 - [ ] The page reflects the new state after returning (R4).
