@@ -15,6 +15,9 @@ Read this next to the two live builds:
 > **How to use this doc:** every section states the *rule* (what must happen) and the
 > *why*. Don't reproduce screenshots — reproduce the behavior. If a button exists but
 > does nothing, it is not done.
+>
+> **Pairing with Shopify / Loop / Recharge:** for the data model and the exact API call
+> behind every action, see the companion **[PORTAL-INTEGRATION.md](PORTAL-INTEGRATION.md)**.
 
 ---
 
