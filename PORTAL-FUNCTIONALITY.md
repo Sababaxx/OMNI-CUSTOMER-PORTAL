@@ -55,6 +55,10 @@ Example: on a cancellation save screen offering "Skip next order", the **Skip** 
 highlighted (primary); "Continue cancellation" is a small secondary link. Apply this to
 **every** flow that has a keep-vs-leave decision.
 
+![Cancellation save screen — retention button highlighted](docs/assets/13-cancel-save.png)
+*R3 in practice: the retention action ("Build my consistency plan") is the solid primary
+button; "Review final step" (continue to cancel) is a small text link. The eye lands on staying.*
+
 ### R4 — State drives the UI, from one source of truth
 There are exactly three subscription states. The whole portal reads from a single status
 value per subscription and re-renders when it changes:
@@ -102,6 +106,17 @@ customer can trigger, and each ends in a styled confirmation.
 **Resume date logic (pause):** `resumeDate = today + N weeks` from the chosen pause
 length (4/8/12 weeks etc.). Show it everywhere the paused state appears.
 
+The same page, three states — layout stays identical, content and CTAs swap:
+
+![Home — inactive state](docs/assets/01-home-inactive.png)
+*`inactive`: status "Inactive", last product/cadence/order, primary CTA is **Restart subscription**.*
+
+![Home — active state](docs/assets/07-home-active.png)
+*`active`: next order date, plan, order value, savings; primary CTA is **Manage subscription**.*
+
+![Manage — paused state](docs/assets/11-manage-paused.png)
+*`paused`: "Paused" title + resume date, muted badge, primary CTA is **Resume subscription**.*
+
 ---
 
 ## 2. Home page
@@ -136,6 +151,10 @@ One card per subscription. For each active subscription the action row is:
 Product card shows: product name, flavor · quantity · cadence, **Active** badge, "Next
 {date}", price/order. All values come from that subscription's record.
 
+![Manage subscription — active](docs/assets/09-manage-active.png)
+*Active manage page: action row (Order now · Next order date · Skip · More), product card
+with Active badge, and member offers below.*
+
 ---
 
 ## 4. Paused state (manage + home)
@@ -158,6 +177,9 @@ Entry points: Manage "Pause", and the Cancel flow "Pause" save option.
 2. Confirm → subscription becomes `paused`, `resumeDate` computed.
 3. Styled confirmation: "Paused — resumes {date}. Resume anytime from the portal."
 4. Only that subscription is paused (R2).
+
+![Pause length modal](docs/assets/10-pause-modal.png)
+*Pause flow: pick a length, confirm, subscription moves to `paused` with a computed resume date.*
 
 ---
 
@@ -209,6 +231,18 @@ Cancel intro (value reminder / skip-next offer)
 | Trouble editing | Show portal controls, contact support |
 | Other | Free-text note, flexible options |
 
+Key screens in the flow:
+
+![Cancellation — reason select](docs/assets/12-cancel-reasons.png)
+*Reason select. Each reason must lead to its **own** distinct save content (fixes #2).*
+
+![Cancellation — final confirmation step](docs/assets/14-cancel-final.png)
+*Required final confirmation step (fixes #1): destructive "Cancel subscription" vs "Contact
+support". Cancellation never completes in one click.*
+
+![Cancellation — cancelled success](docs/assets/15-cancelled.png)
+*Styled cancelled screen — the flow lands here; only the selected subscription is cancelled (R2).*
+
 ---
 
 ## 7. Offers  *(fixes Levani #3 and #4)*
@@ -216,6 +250,10 @@ Cancel intro (value reminder / skip-next offer)
 Every offer follows R1: **card → confirmation modal (review) → confirm → styled "done"
 screen → change applied.** Today most offer buttons open a modal but confirming does
 nothing. That must be wired end to end.
+
+![Offer confirmation modal](docs/assets/08-offer-modal.png)
+*Offer review modal: the customer sees exactly what will happen before confirming. Confirm
+must apply the change and show a styled success — not silently close.*
 
 ### 7.1 Quarterly upgrade — segment-gated  *(fixes Levani #4 + the "quarterly idea")*
 
@@ -264,6 +302,23 @@ Steps: **Product → Flavor → Cadence → Review → Confirm → "You're back"
 - The success screen is styled (green check, "You're back", product summary, perks, "Back
   to portal") — the customer should feel good about returning, not just get a toast.
 - R2: reactivation activates **only the one** subscription, not all.
+
+The four steps, then the styled success screen:
+
+![Restart — choose product](docs/assets/02-restart-product.png)
+*Step 1 — product.*
+
+![Restart — choose flavor](docs/assets/03-restart-flavor.png)
+*Step 2 — flavor.*
+
+![Restart — choose cadence](docs/assets/04-restart-cadence.png)
+*Step 3 — cadence.*
+
+![Restart — review](docs/assets/05-restart-review.png)
+*Step 4 — review (nothing ships until this is confirmed).*
+
+![Restart — confirmed success screen](docs/assets/06-restart-confirmed.png)
+*Success: "You're back" — product summary, shipping/pricing perks, single button back to the portal.*
 
 ---
 
