@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../components/Button.jsx";
-import { subscriptionStatus } from "../data/subscription.js";
+import { useSubscription } from "../context/SubscriptionContext.jsx";
 
 const orders = [
   { number: "#OMNI-1048", date: "April 17, 2026", status: "Fulfilled", product: "OMNI Creatine Gummy / Peach", total: "$52.62" },
@@ -9,7 +9,7 @@ const orders = [
 ];
 
 export default function OrderHistoryPage({ onOpenModal, onRestartOpen }) {
-  const isInactive = subscriptionStatus === "inactive";
+  const { isInactive } = useSubscription();
 
   return (
     <section className="portal-page-panel" aria-label="Order history">

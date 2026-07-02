@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../components/Button.jsx";
-import { subscriptionStatus } from "../data/subscription.js";
+import { useSubscription } from "../context/SubscriptionContext.jsx";
 
 export default function ReferFriendPage({ onOpenModal, onRestartOpen }) {
-  const isInactive = subscriptionStatus === "inactive";
+  const { isInactive } = useSubscription();
 
   return (
     <section className="referral-program-page" aria-label="Refer a friend">

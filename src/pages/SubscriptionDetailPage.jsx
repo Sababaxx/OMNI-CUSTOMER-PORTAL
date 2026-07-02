@@ -8,11 +8,12 @@ import PortalOfferStack from "../components/PortalOfferStack.jsx";
 import ProductWorkspace from "../components/ProductWorkspace.jsx";
 import RestartFlow from "../components/RestartFlow.jsx";
 import { ChevronLeft } from "../components/Icons.jsx";
-import { subscription, subscriptionStatus, lastSubscription } from "../data/subscription.js";
+import { subscription, lastSubscription } from "../data/subscription.js";
+import { useSubscription } from "../context/SubscriptionContext.jsx";
 
 export default function SubscriptionDetailPage({ activeView = "manage", onNavigate, onLogout, onBack }) {
   const sub = subscription;
-  const isInactive = subscriptionStatus === "inactive";
+  const { isInactive, isPaused, pauseInfo, pauseSubscription, resumeSubscription } = useSubscription();
 
   const [modal, setModal] = useState(null);
   const [moreOpen, setMoreOpen] = useState(false);
@@ -36,6 +37,8 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
   const saveNextOrderDate = () => { showToast("Next order date updated."); setModal(null); };
   const handleSkip = () => { setMoreOpen(false); setSkipConfirm(true); };
   const confirmSkip = () => { setSkipConfirm(false); setSkipSuccess(true); };
+  const handlePause = (label) => { pauseSubscription(label); setModal(null); showToast(`Subscription paused for ${label}.`); };
+  const handleResume = () => { resumeSubscription(); showToast("Subscription resumed. Your next order is scheduled."); };
 
   const displayDate = nextOrderDate
     ? new Date(nextOrderDate + "T00:00:00").toLocaleDateString("en-US", { month: "long", day: "numeric" })
@@ -81,6 +84,15 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
                   <h1>Your subscription</h1>
                   <p className="manage-inactive-sub">Restart when you're ready. Choose your timing before anything ships.</p>
                 </>
+              ) : isPaused ? (
+                <>
+                  <h1>Paused</h1>
+                  <p className="manage-inactive-sub">
+                    {pauseInfo?.resumeDate
+                      ? `Your subscription is paused and resumes ${pauseInfo.resumeDate}. Resume anytime.`
+                      : "Your subscription is paused. Resume anytime."}
+                  </p>
+                </>
               ) : (
                 <>
                   <h1>Every 4 weeks</h1>
@@ -90,13 +102,20 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
             </div>
 
             {/* ── Action row — inactive replaces active controls ─────── */}
-            <div className={`manage-action-row${isInactive ? " manage-action-row-inactive" : ""}`}>
+            <div className={`manage-action-row${isInactive || isPaused ? " manage-action-row-inactive" : ""}`}>
               {isInactive ? (
                 <>
                   <Button variant="primary" onClick={() => setRestartOpen(true)}>Restart subscription</Button>
                   <Button variant="outline" onClick={() => setRestartOpen(true)}>Change products</Button>
                   <Button variant="outline" onClick={() => openModal("Update shipping")}>Update shipping</Button>
                   <Button variant="outline" onClick={() => openModal("Update payment")}>Update payment</Button>
+                </>
+              ) : isPaused ? (
+                <>
+                  <Button variant="primary" onClick={handleResume}>Resume subscription</Button>
+                  <Button variant="outline" onClick={() => openModal("Update shipping")}>Update shipping</Button>
+                  <Button variant="outline" onClick={() => openModal("Update payment")}>Update payment</Button>
+                  <Button variant="outline" onClick={openCancelIntro}>Cancel subscription</Button>
                 </>
               ) : (
                 <>
@@ -134,11 +153,13 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
                     : "Peach · 1 pouch · every 4 weeks"}
                 </span>
                 <div className="manage-product-meta">
-                  <span className={`manage-status-badge${isInactive ? " manage-status-badge-inactive" : ""}`}>
-                    {isInactive ? "Inactive" : "Active"}
+                  <span className={`manage-status-badge${isInactive || isPaused ? " manage-status-badge-inactive" : ""}`}>
+                    {isInactive ? "Inactive" : isPaused ? "Paused" : "Active"}
                   </span>
                   {isInactive
                     ? <span className="manage-next-label">Last ordered {lastSubscription.lastOrderDate}</span>
+                    : isPaused
+                    ? <span className="manage-next-label">Resumes {pauseInfo?.resumeDate || "when you're ready"}</span>
                     : <span className="manage-next-label">Next {displayDate}</span>}
                 </div>
               </div>
@@ -187,9 +208,9 @@ export default function SubscriptionDetailPage({ activeView = "manage", onNaviga
             <>
               <p>Pause deliveries for a short break without canceling your OMNI subscription. Pick a pause length.</p>
               <div className="modal-option-row">
-                <button type="button" onClick={() => { showToast("Subscription paused for 4 weeks."); setModal(null); }}>4 weeks</button>
-                <button type="button" onClick={() => { showToast("Subscription paused for 8 weeks."); setModal(null); }}>8 weeks</button>
-                <button type="button" onClick={() => { showToast("Subscription paused for 12 weeks."); setModal(null); }}>12 weeks</button>
+                <button type="button" onClick={() => handlePause("4 weeks")}>4 weeks</button>
+                <button type="button" onClick={() => handlePause("8 weeks")}>8 weeks</button>
+                <button type="button" onClick={() => handlePause("12 weeks")}>12 weeks</button>
               </div>
             </>
           )}

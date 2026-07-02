@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button.jsx";
 import { lastSubscription } from "../data/subscription.js";
+import { useSubscription } from "../context/SubscriptionContext.jsx";
 
 const PRODUCTS = [
   { id: "gummies-1", label: "Daily Creatine Gummies", detail: "1 pouch · 30 servings", price: 42.0, hasFlavor: true },
@@ -20,6 +21,7 @@ const CADENCES = [
 const STEPS = ["product", "flavor", "cadence", "review", "confirmed"];
 
 export default function RestartFlow({ open, onClose, onRestarted }) {
+  const { reactivate } = useSubscription();
   const [step, setStep] = useState(0);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedFlavor, setSelectedFlavor] = useState(null);
@@ -42,7 +44,15 @@ export default function RestartFlow({ open, onClose, onRestarted }) {
   };
 
   const handleClose = () => { reset(); onClose(); };
-  const handleConfirm = () => { setStep(4); if (onRestarted) onRestarted(); };
+  const handleConfirm = () => {
+    reactivate({
+      product: product.label,
+      flavor: selectedFlavor || flavors[0],
+      cadence: (selectedCadence || CADENCES[0]).label,
+    });
+    setStep(4);
+    if (onRestarted) onRestarted();
+  };
   const handleDone = () => { reset(); onClose(); };
 
   const cadence = selectedCadence || CADENCES[0];

@@ -3,11 +3,23 @@ import Button from "../components/Button.jsx";
 import PortalNav from "../components/PortalNav.jsx";
 import PortalOfferStack from "../components/PortalOfferStack.jsx";
 import RestartFlow from "../components/RestartFlow.jsx";
-import { subscription, subscriptionStatus, lastSubscription } from "../data/subscription.js";
+import { subscription, lastSubscription } from "../data/subscription.js";
+import { useSubscription } from "../context/SubscriptionContext.jsx";
 
 function SubscriptionListPage({ activeView = "home", onNavigate, onOpen, onAddNew, onLogout }) {
-  const isInactive = subscriptionStatus === "inactive";
+  const { isInactive, isPaused, pauseInfo, resumeSubscription } = useSubscription();
   const [restartOpen, setRestartOpen] = useState(false);
+  const [toast, setToast] = useState("");
+
+  const showToast = (message) => {
+    setToast(message);
+    window.setTimeout(() => setToast(""), 2600);
+  };
+
+  const handleResume = () => {
+    resumeSubscription();
+    showToast("Subscription resumed. Your next order is scheduled.");
+  };
 
   return (
     <div className="portal-shell portal-shell-dashboard">
@@ -30,6 +42,11 @@ function SubscriptionListPage({ activeView = "home", onNavigate, onOpen, onAddNe
                     <Button variant="primary" onClick={() => setRestartOpen(true)}>Restart subscription</Button>
                     <Button variant="outline" onClick={() => onNavigate("orders")}>View past orders</Button>
                   </>
+                ) : isPaused ? (
+                  <>
+                    <Button variant="primary" onClick={handleResume}>Resume subscription</Button>
+                    <Button variant="outline" onClick={onOpen}>Manage subscription</Button>
+                  </>
                 ) : (
                   <>
                     <Button variant="primary" onClick={onOpen}>Manage subscription</Button>
@@ -39,7 +56,7 @@ function SubscriptionListPage({ activeView = "home", onNavigate, onOpen, onAddNe
               </div>
             </div>
 
-            {/* ── Summary strip — same 4-cell grid, inactive swaps cell labels ── */}
+            {/* ── Summary strip — same 4-cell grid, content swaps by state ── */}
             <div className="account-summary-strip">
               {isInactive ? (
                 <>
@@ -58,6 +75,25 @@ function SubscriptionListPage({ activeView = "home", onNavigate, onOpen, onAddNe
                   <div>
                     <span className="mini-label">Last order</span>
                     <strong>{lastSubscription.lastOrderDate} · {lastSubscription.lastOrderValue}</strong>
+                  </div>
+                </>
+              ) : isPaused ? (
+                <>
+                  <div>
+                    <span className="mini-label">Subscription status</span>
+                    <strong>Paused</strong>
+                  </div>
+                  <div>
+                    <span className="mini-label">Resumes</span>
+                    <strong>{pauseInfo?.resumeDate || "When you're ready"}</strong>
+                  </div>
+                  <div>
+                    <span className="mini-label">Current plan</span>
+                    <strong>{subscription.frequency.replace("Deliver ", "")}</strong>
+                  </div>
+                  <div>
+                    <span className="mini-label">Order value</span>
+                    <strong>${subscription.total.toFixed(2)} + ${subscription.shippingPerDelivery.toFixed(2)} shipping</strong>
                   </div>
                 </>
               ) : (
@@ -82,7 +118,7 @@ function SubscriptionListPage({ activeView = "home", onNavigate, onOpen, onAddNe
               )}
             </div>
 
-            {/* ── Command card — same component style, copy swapped for inactive ── */}
+            {/* ── Command card — same component style, copy swapped by state ── */}
             <div className="home-command-card">
               {isInactive ? (
                 <>
@@ -92,6 +128,15 @@ function SubscriptionListPage({ activeView = "home", onNavigate, onOpen, onAddNe
                     <p>Your past order is saved so restarting is easy. Choose your timing before anything ships.</p>
                   </div>
                   <Button variant="outline" onClick={() => setRestartOpen(true)}>Choose a new routine</Button>
+                </>
+              ) : isPaused ? (
+                <>
+                  <div>
+                    <span className="mini-label">Your subscription is paused</span>
+                    <h2>{pauseInfo?.resumeDate ? `Resumes ${pauseInfo.resumeDate}` : "Paused"}</h2>
+                    <p>No orders will ship while you're paused. Resume anytime and your next delivery picks right back up.</p>
+                  </div>
+                  <Button variant="outline" onClick={handleResume}>Resume now</Button>
                 </>
               ) : (
                 <>
@@ -124,6 +169,8 @@ function SubscriptionListPage({ activeView = "home", onNavigate, onOpen, onAddNe
         open={restartOpen}
         onClose={() => setRestartOpen(false)}
       />
+
+      {toast && <div className="portal-toast" role="status">{toast}</div>}
     </div>
   );
 }

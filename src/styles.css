@@ -5307,6 +5307,9 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--omni-text-3);
   border-color: var(--omni-divider);
 }
+.manage-status-badge-inactive::before {
+  background: var(--omni-text-3);
+}
 
 /* Subcopy under the manage page inactive headline */
 .manage-inactive-sub {

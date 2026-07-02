@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import Button from "./Button.jsx";
+import { useSubscription } from "../context/SubscriptionContext.jsx";
 
 const SUPPORT_URL = "https://contact.gorgias.help/en-US/forms/0c4rzba9";
 const FINAL_STEP_LABEL = "Review final step";
@@ -1042,7 +1043,7 @@ function CancellationFinalConfirm({ reason, onBack, onConfirm }) {
   );
 }
 
-function CancellationSavedScreen({ message, onDone }) {
+function CancellationSavedScreen({ message, onDone, isPause, pauseInfo }) {
   return (
     <div className="cancel-step cancel-complete-step cancel-complete-step-saved">
       <div className="cancel-saved-check" aria-hidden="true">
@@ -1050,9 +1051,13 @@ function CancellationSavedScreen({ message, onDone }) {
           <path d="M9.2 16.1 5.7 12.6l-1.8 1.8 5.3 5.3L20 9l-1.8-1.8z" />
         </svg>
       </div>
-      <span className="cancel-kicker">Saved</span>
+      <span className="cancel-kicker">{isPause ? "Paused" : "Saved"}</span>
       <h2>{message}</h2>
-      <p>Your subscription stays active. You can return to the overview and keep managing your order.</p>
+      <p>
+        {isPause
+          ? `Your subscription is paused${pauseInfo?.resumeDate ? ` and resumes ${pauseInfo.resumeDate}` : ""}. You can resume anytime from the portal.`
+          : "Your subscription stays active. You can return to the overview and keep managing your order."}
+      </p>
       <Button variant="primary" onClick={onDone}>Return to subscription overview</Button>
     </div>
   );
@@ -1075,11 +1080,13 @@ function CancellationCompleteScreen({ onDone }) {
 }
 
 export default function CancellationFlow({ open, onClose, onKept, onSupportStarted }) {
+  const { pauseSubscription, cancelSubscription, pauseInfo } = useSubscription();
   const [selectedReasonId, setSelectedReasonId] = useState("");
   const [step, setStep] = useState("reason");
   const [branch, setBranch] = useState("");
   const [branchPreselect, setBranchPreselect] = useState("");
   const [savedMessage, setSavedMessage] = useState("");
+  const [savedIsPause, setSavedIsPause] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const backdropRef = useRef(null);
   const selectedReason = useMemo(
@@ -1112,6 +1119,7 @@ export default function CancellationFlow({ open, onClose, onKept, onSupportStart
     setBranch("");
     setBranchPreselect("");
     setSavedMessage("");
+    setSavedIsPause(false);
     setSubmitted(false);
     onClose();
   };
@@ -1152,6 +1160,12 @@ export default function CancellationFlow({ open, onClose, onKept, onSupportStart
 
   const handleSaved = (message, choice) => {
     const finalMessage = message || "Your subscription update was saved.";
+    if (branch === "pause") {
+      pauseSubscription(choice);
+      setSavedIsPause(true);
+    } else {
+      setSavedIsPause(false);
+    }
     setSavedMessage(finalMessage);
     setStep("saved");
     trackCancellationEvent("save_completed", { reasonId: selectedReason?.id, branch, choice, message: finalMessage });
@@ -1221,11 +1235,12 @@ export default function CancellationFlow({ open, onClose, onKept, onSupportStart
             onBack={() => setStep("rescue")}
             onConfirm={() => {
               trackCancellationEvent("final_cancellation_confirmed", { reasonId: selectedReason.id });
+              cancelSubscription();
               setSubmitted(true);
             }}
           />
         )}
-        {savedMessage && <CancellationSavedScreen message={savedMessage} onDone={closeFlow} />}
+        {savedMessage && <CancellationSavedScreen message={savedMessage} onDone={closeFlow} isPause={savedIsPause} pauseInfo={pauseInfo} />}
         {submitted && <CancellationCompleteScreen onDone={closeFlow} />}
       </section>
     </div>
